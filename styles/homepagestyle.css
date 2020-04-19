@@ -8,7 +8,7 @@ html, body
 
 .slide_container slider
 {
-	margin-top: 100px;
+	
 	display:block;
 	width: 100%;
 	height: 50%;
@@ -84,6 +84,7 @@ html, body
 
 .line1
 {
+	margin-top: 28%;
 	border: 1px solid black;
 }
 
@@ -100,7 +101,6 @@ html, body
 
 .body_container h2
 {
-	margin-top: 32%;
 	text-align: center;
 }
 
