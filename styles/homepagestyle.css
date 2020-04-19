@@ -8,7 +8,7 @@ html, body
 
 .slide_container slider
 {
-	margin-top: -23px;
+	margin-top: -21px;
 	display:block;
 	width: 100%;
 	height: 50%;
@@ -118,8 +118,29 @@ html, body
 {
 	text-align: center;
 }
+#firstcol
+{
+	margin-top: 20px;
+}
+.item
+{
+	padding: 20px;
+	border: 1px solid red;
+}
+
+#secondcol
+{
+	margin-top: 30px;
+}
+
+.blog
+{
+	margin-top: 30px;
+}
 
 footer
 {
-	background-color:#4285F4;
+	margin-top: 20px;
+	background-color:#252525;
+	color: white;
 }
