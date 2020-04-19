@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+	<meta charset="utf-8"/>
+	<title> Welcome To Craft Pop House</title>
+</head>
+
+<body>
+	<h1> Registration Form <h1>
+	<fieldset>
+	<legend> Personal Details:</legend>
+	<form action="/action_page.php">
+	<label>Name: <input type="text" name="Uname" required="required" ,maxlength="15"/> </label>
+	<p><label>Email: <input type="text" name="Uemail" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/> </label></p>
+	<p><label>Address: <input type="text" name="Uaddress" required="required" size="20" /> </label></p>
+	<p><label>Contact: <input type="tel" name="Ucontact" 
+			placeholder="###-###-####" pattern="\(\d{2}\) +\d{3}-\d{4}" required="required"/> </label></p>
+	<p><label>Date: <input type="date" name="Udate" required="required"/> </label></p>
+	<p><label>Password: <input type="Password" name="Upassword" required="required" placeholder="Enter Passwords"
+			pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+			title="Must contain at least one  uppercase and one number and lowercase letter, and at least 8 or more characters"/></label></p>
+	<p><label>Reconfirm Password: <input type="Password" name="Rpassword" required="required" placeholder="Reconfirm Passwords"/></label></p>
+	<input type="reset" value="Reset" /> 
+	<input type="submit" value="Submit">
+	</form>
+	</fieldset>
+</body>
+</html>
+	
+	
+	
