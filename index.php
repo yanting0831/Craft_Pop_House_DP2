@@ -45,86 +45,104 @@
 		<hr class="line2">
 		<h3>Featured Products</h3>
 		<div class="container">
-			<div class="row">
+			<div id="firstcol" class="row">
 				<div class="col-md-3">
-					<img class="card-img" src="images/bag1.jpg" style="width: 100%">
+					
 					<div class="card-body">
-						<h4 class="card title">ASD</h4>
-						<p> example </p>
-						<a href="#" class="btn btn-primary">See Details</a>
+						<div class="item">
+						<img class="card-img" src="images/bag1.jpg" style="width: 100%">
+							<h4 class="card title">ASD</h4>
+							<p> example </p>
+							<a href="#" class="btn btn-primary">See Details</a>
+						</div>
 					</div>
 					
 				</div>
 				
 				<div class="col-md-3">
-					<img class="card-img" src="images/bag2.jpg" style="width: 100%">
+					
 					<div class="card-body">
-						<h4 class="card title">ASD</h4>
-						<p> example </p>
-						<a href="#" class="btn btn-primary">See Details</a>
+						<div class="item">
+						<img class="card-img" src="images/bag2.jpg" style="width: 100%">
+							<h4 class="card title">ASD</h4>
+							<p> example </p>
+							<a href="#" class="btn btn-primary">See Details</a>
+						</div>
 					</div>
 					
 				</div>
 				
 				<div class="col-md-3">
-					<img class="card-img" src="images/candle3.jpg" style="width: 100%">
 					<div class="card-body">
-						<h4 class="card title">ASD</h4>
-						<p> example </p>
-						<a href="#" class="btn btn-primary">See Details</a>
+						<div class="item">
+						<img class="card-img" src="images/candle3.jpg" style="width: 100%">
+							<h4 class="card title">ASD</h4>
+							<p> example </p>
+							<a href="#" class="btn btn-primary">See Details</a>
+						</div>
 					</div>
 					
 				</div>
 				
 				<div class="col-md-3">
-					<img class="card-img" src="images/candle4.jpg" style="width: 100%">
 					<div class="card-body">
-						<h4 class="card title">ASD</h4>
-						<p> example </p>
-						<a href="#" class="btn btn-primary">See Details</a>
+						<div class="item">
+						<img class="card-img" src="images/candle4.jpg" style="width: 100%">
+							<h4 class="card title">ASD</h4>
+							<p> example </p>
+							<a href="#" class="btn btn-primary">See Details</a>
+						</div>
 					</div>
 					
 				</div>
 				
 			</div>
 			
-			<div class="row">
+			<div id="secondcol" class="row">
 				<div class="col-md-3">
-					<img class="card-img" src="images/soap1.jpg" style="width: 100%">
 					<div class="card-body">
-						<h4 class="card title">ASD</h4>
-						<p> example </p>
-						<a href="#" class="btn btn-primary">See Details</a>
+						<div class="item">
+						<img class="card-img" src="images/soap1.jpg" style="width: 100%">
+							<h4 class="card title">ASD</h4>
+							<p> example </p>
+							<a href="#" class="btn btn-primary">See Details</a>
+						</div>
 					</div>
 					
 				</div>
 				
 				<div class="col-md-3">
-					<img class="card-img" src="images/soap4.jpg" style="width: 100%">
 					<div class="card-body">
-						<h4 class="card title">ASD</h4>
-						<p> example </p>
-						<a href="#" class="btn btn-primary">See Details</a>
+						<div class="item">
+						<img class="card-img" src="images/soap4.jpg" style="width: 100%">
+							<h4 class="card title">ASD</h4>
+							<p> example </p>
+							<a href="#" class="btn btn-primary">See Details</a>
+						</div>
 					</div>
 					
 				</div>
 				
 				<div class="col-md-3">
-					<img class="card-img" src="images/wood3.jpg" style="width: 100%">
 					<div class="card-body">
-						<h4 class="card title">ASD</h4>
-						<p> example </p>
-						<a href="#" class="btn btn-primary">See Details</a>
+						<div class="item">
+						<img class="card-img" src="images/wood3.jpg" style="width: 100%">
+							<h4 class="card title">ASD</h4>
+							<p> example </p>
+							<a href="#" class="btn btn-primary">See Details</a>
+						</div>
 					</div>
 					
 				</div>
 				
 				<div class="col-md-3">
-					<img class="card-img" src="images/wood4.jpg" style="width: 100%">
 					<div class="card-body">
-						<h4 class="card title">ASD</h4>
-						<p> example </p>
-						<a href="#" class="btn btn-primary">See Details</a>
+						<div class="item">
+						<img class="card-img" src="images/wood4.jpg" style="width: 100%">
+							<h4 class="card title">ASD</h4>
+							<p> example </p>
+							<a href="#" class="btn btn-primary">See Details</a>
+						</div>
 					</div>
 					
 				</div>
@@ -132,7 +150,7 @@
 			</div>
 		</div>
 
-		<h3>Featured Blog</h3>
+		<h3 class="blog">Featured Blog</h3>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6"><p>APRIL 19, 2020<p></div>
