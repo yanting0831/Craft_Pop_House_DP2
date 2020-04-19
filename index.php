@@ -9,10 +9,12 @@
 	<meta name="author" content="Ricky Su"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link href="styles/homepagestyle.css" rel="stylesheet">
+	<link href="styles/homepagestyle.css" rel="stylesheet" type="text/css">
 	
 	<!--Bootstrap-->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the pae via file://-->
     <!--[if lt IE 9]>
@@ -23,7 +25,7 @@
 <body>
 
 	<?php
-		include "nav_header.php";
+		include "includes/nav_header.php";
 	?>
 	
 	<div class="slide_container">
@@ -45,7 +47,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-3">
-					<img class="card-img" src="images/1.jpg" style="width: 100%">
+					<img class="card-img" src="images/bag1.jpg" style="width: 100%">
 					<div class="card-body">
 						<h4 class="card title">ASD</h4>
 						<p> example </p>
@@ -55,7 +57,7 @@
 				</div>
 				
 				<div class="col-md-3">
-					<img class="card-img" src="images/1.jpg" style="width: 100%">
+					<img class="card-img" src="images/bag2.jpg" style="width: 100%">
 					<div class="card-body">
 						<h4 class="card title">ASD</h4>
 						<p> example </p>
@@ -65,7 +67,7 @@
 				</div>
 				
 				<div class="col-md-3">
-					<img class="card-img" src="images/1.jpg" style="width: 100%">
+					<img class="card-img" src="images/candle3.jpg" style="width: 100%">
 					<div class="card-body">
 						<h4 class="card title">ASD</h4>
 						<p> example </p>
@@ -75,7 +77,7 @@
 				</div>
 				
 				<div class="col-md-3">
-					<img class="card-img" src="images/1.jpg" style="width: 100%">
+					<img class="card-img" src="images/candle4.jpg" style="width: 100%">
 					<div class="card-body">
 						<h4 class="card title">ASD</h4>
 						<p> example </p>
@@ -88,7 +90,7 @@
 			
 			<div class="row">
 				<div class="col-md-3">
-					<img class="card-img" src="images/1.jpg" style="width: 100%">
+					<img class="card-img" src="images/soap1.jpg" style="width: 100%">
 					<div class="card-body">
 						<h4 class="card title">ASD</h4>
 						<p> example </p>
@@ -98,7 +100,7 @@
 				</div>
 				
 				<div class="col-md-3">
-					<img class="card-img" src="images/1.jpg" style="width: 100%">
+					<img class="card-img" src="images/soap4.jpg" style="width: 100%">
 					<div class="card-body">
 						<h4 class="card title">ASD</h4>
 						<p> example </p>
@@ -108,7 +110,7 @@
 				</div>
 				
 				<div class="col-md-3">
-					<img class="card-img" src="images/1.jpg" style="width: 100%">
+					<img class="card-img" src="images/wood3.jpg" style="width: 100%">
 					<div class="card-body">
 						<h4 class="card title">ASD</h4>
 						<p> example </p>
@@ -118,7 +120,7 @@
 				</div>
 				
 				<div class="col-md-3">
-					<img class="card-img" src="images/1.jpg" style="width: 100%">
+					<img class="card-img" src="images/wood4.jpg" style="width: 100%">
 					<div class="card-body">
 						<h4 class="card title">ASD</h4>
 						<p> example </p>
@@ -151,13 +153,8 @@
 	</div>
 	
 	
-	<!-- jQuery - required for Bootstraop's Javascript plugins) -->
-    <script src="js/jquery.min.js"></script>
-    <!-- All Bootstrap plugins file -->
-    <script src="js/bootstrap.min.js"></script>
-	
 	<?php
-		include "footer.php";
+		include "includes/footer.php";
 	?>
 </body>
 
