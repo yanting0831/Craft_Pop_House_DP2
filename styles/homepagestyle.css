@@ -114,10 +114,11 @@ html, body
 	text-align: center;
 }
 
-.body_container p
+.container
 {
 	text-align: center;
 }
+
 #firstcol
 {
 	margin-top: 20px;
