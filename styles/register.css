@@ -4,10 +4,39 @@ h1{
 }
 
 div{
+	
 	width:500px;
 	border:2px solid green;
 	padding:25px;
 	margin: 0px auto;
-
 	text-align;center;
+}
+
+.nameline {
+	background-color: transparent;
+
+    outline: none;
+    outline-style: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid #eeeeee 1px;
+    padding: 3px 10px;
+}
+.registerbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+.box img
+{
+	margin-top:30px;
+	overflow:hidden; 
+	float:right;
+	position:relative;
 }
