@@ -33,6 +33,23 @@
 		<div class="contact">Contact Us</div>
 	</div>
 	
+	<div class="content">
+		<h3>Malaysia Craft Council (Malaysia Handicraft Centre)</h3>
+		<hr/>
+		<h4>Address:</h4>
+		<p>No. 17, Tingkat 1, Jalan Court House, 93000 Kuching, Sarawak, Malaysia.
+		<h4>Contact No.</h4>
+		<p>Tel: +6082- 245652 / +6082-426042</p>
+		<p>Fax: +6082-420253</p>
+		
+		<h4>Email:</h4>
+		<p>INFO (<a href="mailto:info@sarawakhandicraft.com.my">info@sarawakhandicraft.com.my</a>)</p>
+		<p>VENDOR (<a href="mailto:vendor@sarawakhandicraft.com.my">vendor@sarawakhandicraft.com.my</a>)</p>
+		<p>MEDIA (<a href="mailto:media@sarawakhandicraft.com.my">media@sarawakhandicraft.com.my</a>)</p>
+		<p>ACCOUNTS (<a href="mailto:accounts@sarawakhandicraft.com.my">accounts@sarawakhandicraft.com.my</a>)</p>
+	</div>
+	
+	
 	<?php
 		include "includes/footer.php";
 	?>
