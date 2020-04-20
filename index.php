@@ -30,10 +30,10 @@
 	
 	<div class="slide_container">
 		<slider>
-			<slide><p>Slide 1</p></slide>
-			<slide><p>Slide 2</p></slide>
-			<slide><p>Slide 3</p></slide>
-			<slide><p>Slide 4</p></slide>
+			<slide><p>HERITAGE FROM MALAYSIA</p></slide>
+			<slide><p>Traditional Carves</p></slide>
+			<slide><p>Original Accessories</p></slide>
+			<slide><p>Candles</p></slide>
 		</slider>
 	</div>
 	
