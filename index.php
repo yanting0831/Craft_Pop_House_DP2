@@ -33,7 +33,7 @@
 			<slide><p>HERITAGE FROM MALAYSIA</p></slide>
 			<slide><p>Traditional Carves</p></slide>
 			<slide><p>Original Accessories</p></slide>
-			<slide><p>Candles</p></slide>
+			<slide><p>Handmade Candles</p></slide>
 		</slider>
 	</div>
 	
