@@ -149,25 +149,7 @@
 				
 			</div>
 		</div>
-
-		<h3 class="blog">Featured Blog</h3>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6"><p>APRIL 19, 2020<p></div>
-				<div class="col-md-6"><p>APRIL 19, 2020<p></div>
-			</div>
-			
-			<div class="row">
-				<div class="col-md-6"><p>APRIL 19, 2020<p></div>
-				
-			</div>
-			
-			<div class="row">
-				<div class="col-md-6"><p>APRIL 19, 2020<p></div>
-				
-			</div>
-			
-		</div>
+		
 	</div>
 	
 	
