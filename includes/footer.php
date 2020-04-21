@@ -13,11 +13,11 @@
 		<div class="row">
 
 			<!-- Grid column -->
-			<div class="col-md-6 mt-md-0 mt-3">
+			<div class="col-md-4 mt-md-0 mt-3">
 
 			<!-- Content -->
-			<h5 class="text-uppercase">Footer Content</h5>
-			<p>Here you can use rows and columns to organize your footer content.</p>
+			<h5 class="text-uppercase">About Craft Pop House</h5>
+			<p>Craft Pop House is an affordable marketplace for purchasing handicraft items such as bags, candles, soaps and others.</p>
 
 			</div>
 			<!-- Grid column -->
@@ -25,23 +25,23 @@
 			<hr class="clearfix w-100 d-md-none pb-3">
 	
 			<!-- Grid column -->
-			<div class="col-md-3 mb-md-0 mb-3">
+			<div class="col-md-3">
 
 			<!-- Links -->
-			<h5 class="text-uppercase">PRODUCT</h5>
+			<h5 class="text-uppercase">Need Help?</h5>
 
 			<ul class="list-unstyled">
 			  <li>
-				<a href="#!">Link 1</a>
+				<a href="#!">About CPH</a>
 			  </li>
 			  <li>
-				<a href="#!">Link 2</a>
+				<a href="#!">Blog</a>
 			  </li>
 			  <li>
-				<a href="#!">Link 3</a>
+				<a href="#!">Contact</a>
 			  </li>
 			  <li>
-				<a href="#!">Link 4</a>
+				<a href="#!">FAQs</a>
 			  </li>
 			</ul>
 
@@ -49,7 +49,7 @@
 		  <!-- Grid column -->
 
 		  <!-- Grid column -->
-		  <div class="col-md-3 mb-md-0 mb-3">
+		  <div class="col-md-2">
 
 			<!-- Links -->
 			<h5 class="text-uppercase">CONTACT</h5>
@@ -59,12 +59,26 @@
 				<a href="#!">Find Us</a>
 			  </li>
 			  <li>
-				<a href="#!">FAQ</a>
-			  </li>
-			  <li>
 				<a href="#!">HELP</a>
 			  </li>
 			</ul>
+
+		  </div>
+		  <!-- Grid column -->
+		  
+		  <!-- Grid column -->
+		  <div class="col-md-3">
+
+			<!-- Links -->
+			<h5 class="text-uppercase">Email NewsLetters</h5>
+
+			<p>Subscribe to receive latest updates and news.</p>
+			
+			
+			<input type="text" class="form-control" placeholder="Your email"
+			aria-label="Your email" aria-describedby="basic-addon2">
+			<button class="btn btn-primary" type="submit">Submit</button>
+			
 
 		  </div>
 		  <!-- Grid column -->
@@ -76,8 +90,7 @@
 		<!-- Footer Links -->
 
 		<!-- Copyright -->
-		<div class="footer-copyright text-center py-3">© 2020 Copyright:
-		<a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+		<div class="footer-copyright text-center py-3">© 2020 Copyright. All Rights Reserved.
 		</div>
 		<!-- Copyright -->
 
