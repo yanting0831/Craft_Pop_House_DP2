@@ -15,12 +15,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the pae via file://-->
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respons.min.js"></script>
-    <![endif]-->
+	
 </head>
 <body>
 
@@ -51,9 +46,9 @@
 					<div class="card-body">
 						<div class="item">
 						<img class="card-img" src="images/bag1.jpg" style="width: 100%">
-							<h4 class="card title">ASD</h4>
-							<p> example </p>
-							<a href="#" class="btn btn-primary">See Details</a>
+							<h4 class="card title">Handmade Rattan Handbag</h4>
+							<p> RM50.00 </p>
+							<a href="bag1.php" class="btn btn-primary">See Details</a>
 						</div>
 					</div>
 					
@@ -64,9 +59,9 @@
 					<div class="card-body">
 						<div class="item">
 						<img class="card-img" src="images/bag2.jpg" style="width: 100%">
-							<h4 class="card title">ASD</h4>
-							<p> example </p>
-							<a href="#" class="btn btn-primary">See Details</a>
+							<h4 class="card title">Handmade Rattan Crossbody Bag</h4>
+							<p> RM45.00 </p>
+							<a href="bag2.php" class="btn btn-primary">See Details</a>
 						</div>
 					</div>
 					
@@ -76,9 +71,9 @@
 					<div class="card-body">
 						<div class="item">
 						<img class="card-img" src="images/candle3.jpg" style="width: 100%">
-							<h4 class="card title">ASD</h4>
-							<p> example </p>
-							<a href="#" class="btn btn-primary">See Details</a>
+							<h4 class="card title">Alpine Morning Original Jar Candle</h4>
+							<p> RM45.00 </p>
+							<a href="candle3.php" class="btn btn-primary">See Details</a>
 						</div>
 					</div>
 					
@@ -88,9 +83,9 @@
 					<div class="card-body">
 						<div class="item">
 						<img class="card-img" src="images/candle4.jpg" style="width: 100%">
-							<h4 class="card title">ASD</h4>
-							<p> example </p>
-							<a href="#" class="btn btn-primary">See Details</a>
+							<h4 class="card title">A Calm & Quiet Place Jar Candle</h4>
+							<p> RM45.00 </p>
+							<a href="candle4.php" class="btn btn-primary">See Details</a>
 						</div>
 					</div>
 					
@@ -103,9 +98,9 @@
 					<div class="card-body">
 						<div class="item">
 						<img class="card-img" src="images/soap1.jpg" style="width: 100%">
-							<h4 class="card title">ASD</h4>
-							<p> example </p>
-							<a href="#" class="btn btn-primary">See Details</a>
+							<h4 class="card title">Deep Clean Charcoal Soap</h4>
+							<p> RM15.00 </p>
+							<a href="soap1.php" class="btn btn-primary">See Details</a>
 						</div>
 					</div>
 					
@@ -115,9 +110,9 @@
 					<div class="card-body">
 						<div class="item">
 						<img class="card-img" src="images/soap4.jpg" style="width: 100%">
-							<h4 class="card title">ASD</h4>
-							<p> example </p>
-							<a href="#" class="btn btn-primary">See Details</a>
+							<h4 class="card title">Lavender Olive Soap</h4>
+							<p> RM20.00 </p>
+							<a href="soap4.php" class="btn btn-primary">See Details</a>
 						</div>
 					</div>
 					
@@ -127,9 +122,9 @@
 					<div class="card-body">
 						<div class="item">
 						<img class="card-img" src="images/wood3.jpg" style="width: 100%">
-							<h4 class="card title">ASD</h4>
-							<p> example </p>
-							<a href="#" class="btn btn-primary">See Details</a>
+							<h4 class="card title">The Owl</h4>
+							<p> RM95.00 </p>
+							<a href="wood3.php" class="btn btn-primary">See Details</a>
 						</div>
 					</div>
 					
@@ -139,9 +134,9 @@
 					<div class="card-body">
 						<div class="item">
 						<img class="card-img" src="images/wood4.jpg" style="width: 100%">
-							<h4 class="card title">ASD</h4>
-							<p> example </p>
-							<a href="#" class="btn btn-primary">See Details</a>
+							<h4 class="card title">The Grand Piano</h4>
+							<p> RM85.00 </p>
+							<a href="wood4.php" class="btn btn-primary">See Details</a>
 						</div>
 					</div>
 					

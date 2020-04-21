@@ -15,24 +15,25 @@
 </head>
 
 <body>
-	<header>
-	</header>
+	<?php
+		include "includes/nav_header.php";
+	?>
 	
 	<nav aria-label="breadcrumb">
 	  <ol class="breadcrumb">
 		<li class="breadcrumb-item"><a href="#">Home</a></li>
 		<li class="breadcrumb-item"><a href="#">Hand Crafted Soap</a></li>
-		<li class="breadcrumb-item active" aria-current="page">Deep Clean Charcoal Soap</li>
+		<li class="breadcrumb-item active" aria-current="page">Lavender Olive Soap</li>
 	  </ol>
 	</nav>
 	
 	<div class="soap">
-		<img src="images/soap-1.jpg" alt="handicraft soap" class="charcoal">
-		<h2>Deep Clean Charcoal Soap</h2>
-		<p>Charcoal detoxifies skin by absorbing oil and impurities that cause acne and blackheads. Shea butter, castor oil & wheat germ oil help to soothen skin and promote scar healing especially for acne. Suitable for oily skin with pimples and acne.</p>
-		<p><b>Ingredients</b>: Organic soymilk, sweet almond oil, olive oil, shea butter, sesame oil, coconut oil, palm oil, castor oil, wheatgerm oil, sodium hydroxide. adding: charcoal powder, essential oils of tea tree, peppermint and eucalyptus.</p>
+		<img src="images/soap-4.jpg" alt="handicraft soap" class="lavender">
+		<h2>Lavender Olive Soap</h2>
+		<p>To make this bar, we infused lavender flowers into olive oil for 2 months. This soap is also superfatted with evening primrose oil to help with skin inflammations, acne and itching.This soap is suitable for normal, sentisive and dry skin types.</p>
+		<p><b>Ingredients:</b> 2 months infusion of lavender in olive oil, coconut oil, palm oil, lye. Adding: lavender buds and lavender essential oil. </p>
 		<p><b>Dimension(s):</b> 10cm x 5cm x 1.5cm</p>
-		<p>RM15.00</p>
+		<p>RM20.00</p>
 		<form>
 			<label for="quantity">Quantity:</label>
 			<input type="number" id="quantity" name="quantity" min="0" max="100" step="1" value="1">
@@ -43,6 +44,18 @@
 	<div class="container">
 		<h2>Related Products</h2>
 			<div class="row">
+			<div class="col-lg-4 col-md-6 col-sm-8 col-xm-12">
+				<div class="thumbnail">
+				<img class="card-img-top" src="images/soap-1.jpg" alt="...">
+					<div class="caption">
+					<h3>Deep Clean Charcoal Soap</h3>
+					<p>Charcoal detoxifies skin by absorbing oil and impurities that cause acne and blackheads. Shea butter, castor oil & wheat germ oil help to soothen skin and promote scar healing especially for acne.</p>
+					<p class="price">RM15.00</p>
+					<p><a href="#" class="btn btn-primary" role="button">Add to Basket</a></p>
+					</div>
+				</div>
+			</div>
+			
 			<div class="col-lg-4 col-md-6 col-sm-8 col-xm-12">
 				<div class="thumbnail">
 				<img class="card-img-top" src="images/soap-2.jpg" alt="...">
@@ -62,18 +75,6 @@
 					<h3>Chamomile Soap</h3>
 					<p>Chamomile is traditionally used to relieve skin irritations such as acne, insect bites and itching. Suitable for sensitive dry skin. Infused chamomile flowers in olive oil for 2 months before soap making.</p>
 					<p class="price">RM22.00</p>
-					<p><a href="#" class="btn btn-primary" role="button">Add to Basket</a></p>
-					</div>
-				</div>
-			</div>
-			
-			<div class="col-lg-4 col-md-6 col-sm-8 col-xm-12">
-				<div class="thumbnail">
-				<img src="images/soap-4.jpg" alt="...">
-					<div class="caption">
-					<h3>Lavender Oil Soap</h3>
-					<p>This soap is also superfatted with evening primrose oil to help with skin inflammations, acne and itching.This soap is suitable for normal, sentisive and dry skin types.</p>
-					<p class="price">RM20.00</p>
 					<p><a href="#" class="btn btn-primary" role="button">Add to Basket</a></p>
 					</div>
 				</div>
