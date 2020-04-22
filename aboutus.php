@@ -9,7 +9,7 @@
 	<meta name="author" content="Ricky Su"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link href="styles/homepagestyle.css" rel="stylesheet" type="text/css">
+	<link href="AboutUs.css" rel="stylesheet" type="text/css">
 	
 	<!--Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -22,17 +22,20 @@
     <script src="js/respons.min.js"></script>
     <![endif]-->
 </head>
-<body>
+<body >
 
 	<?php
 		include "includes/nav_header.php";
 	?>
+	<img src="images/Team.jpg" alt="Team"/>
+	<div class="about">
+	<h1 style="font-family: fantasy">About Us</h1>
+	<p style="font-size:16px">Craft Pop House is a local boutique shop selling the best homemade crafts and arts in Kuching. This boutique shop is selling local homemade products such as clothing, jewellery, soft toys, handmade items, room décor, vintage goods and craft supplies. They partner with creative local entrepreneurs who use Craft Pop House as a platform to sell what they make or curate. In Craft Pop House, creative entrepreneurs can find meaningful work selling their goods in the local markets. It has become a marketplace which helps the local entrepreneurs to grow.</p>
+	</div>
 	
-	
-	
+	</body>
 	<?php
 		include "includes/footer.php";
 	?>
-</body>
 
 </html>
