@@ -5,10 +5,16 @@
 <head> 
 	<title>Craft Pop House</title>
 	<meta charset="utf-8"/>
+<<<<<<< HEAD
 	<link rel="stylesheet" type="text/css" href="styles/register.css">
 	<meta name="description" content="Web Development">
 	<meta name="keywords" content="HTML, CSS, JavaScript">
 	<meta name="author" content="Eric Kong">
+=======
+	<title> Welcome To Craft Pop House</title>
+	 <link rel="stylesheet" type="text/css" href="register.css">
+	 
+>>>>>>> 4b0490ea74c02cc0994e2fbf4939a2d9b93409bc
 	 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
