@@ -3,7 +3,7 @@
 <head> 
 	<meta charset="utf-8"/>
 	<title> Welcome To Craft Pop House</title>
-	 <link rel="stylesheet" type="text/css" href="styles/register.css">
+	 <link rel="stylesheet" type="text/css" href="register.css">
 	 
 	 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
