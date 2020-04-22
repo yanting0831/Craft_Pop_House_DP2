@@ -1,3 +1,7 @@
+<?php 
+	include('functions.php');
+?>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -23,6 +27,18 @@
 		include "includes/nav_header.php";
 	?>
 	
+	<!-- notification message -->
+	<?php if (isset($_SESSION['success'])) : ?>
+		<div class="error success" >
+			<h3>
+				<?php 
+					echo $_SESSION['success']; 
+					unset($_SESSION['success']);
+				?>
+			</h3>
+		</div>
+	<?php endif ?>
+		
 	<div class="slide_container">
 		<slider>
 			<slide><p>HERITAGE FROM MALAYSIA</p></slide>
