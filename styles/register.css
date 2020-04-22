@@ -1,4 +1,4 @@
-h1{
+/*h1{
 	padding:10px;
 	text-align:center;
 }
@@ -50,4 +50,84 @@ div{
 {
 	margin-bottom:20px;
 	
+}*/
+
+body{
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: black;
+}
+
+*{
+	box-sizing: border-box;
+}
+
+.container{
+	margin-top: 1%;
+	padding: 16px;
+	background-color: white;
+}
+
+
+.container input[type=text], input[type=register], input[type=email], input[type=password]{
+	width: 100%;
+	padding: 15px;
+	margin: 5px 0 22px 0;
+	display: inline-block;
+	border: none;
+	background: #f1f1f1;
+}
+
+.container input[type=text]:focus, input[type=register]:focus, input[type=email]:focus
+{
+	background-color: #ddd;
+	outline: none;
+}
+
+hr
+{
+	border: 1px solid #f1f1f1;
+	margin-bottom: 25px;
+}
+
+.registerbtn
+{
+	background-color: green;
+	color: white;
+	padding: 16px 20px;
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 2%;
+	border: none;
+	cursor: pointer;
+	opacity: 0.8;
+	width: 40%;
+}
+
+.registerbtn:hover
+{
+	opacity:1;
+}
+
+.resetbtn
+{
+	background-color: green;
+	color: white;
+	padding: 16px 20px;
+	
+	border: none;
+	cursor: pointer;
+	opacity: 0.8;
+	width: 40%;
+}
+
+.resetbtn:hover
+{
+	opacity:1;
+}
+
+footer
+{
+	margin-top: 5%;
+	background-color:#252525;
+	color: white;
 }
