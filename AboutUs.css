@@ -1,0 +1,35 @@
+
+
+img {
+	height:500px;
+	width:700px;
+	margin-top:30px;
+	overflow:hidden; 
+	float:right;
+	position:relative;
+}
+footer
+{
+	margin-top: 12%;
+	background-color:#252525;
+	color: white;
+}
+
+h1{
+	text-align:center;
+	top:100%;
+}
+
+p
+{
+	text-align:justify;
+	text-justify:inter-word;
+	font-family: cursive;
+}
+
+.about
+{
+	text-align:center;
+	margin-top:170px;
+	
+}
