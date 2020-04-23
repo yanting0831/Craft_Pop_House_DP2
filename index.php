@@ -41,7 +41,7 @@
 		
 	<div class="slide_container">
 		<slider>
-			<slide><p>HERITAGE FROM MALAYSIA</p></slide>
+			<slide><p>Heritage From Malaysia</p></slide>
 			<slide><p>Traditional Carves</p></slide>
 			<slide><p>Original Accessories</p></slide>
 			<slide><p>Handmade Candles</p></slide>
@@ -49,15 +49,15 @@
 	</div>
 	
 	<div class="body_container">
-		<hr class="line1">
-		<h2> Welcome <h3>
-		<p>This is the online shop for handicrafts from all over Malaysia.</p>
+		<!--hr class="line1">
+		<!--h2>Welcome <h3>
+		<p>This is the online shop for handicrafts from all over Malaysia.</p-->
 		
-		<hr class="line2">
+		<!--hr class="line2"-->
 		<h3>Featured Products</h3>
 		<div class="container">
 			<div id="firstcol" class="row">
-				<div class="col-md-3">
+				<div class="col-lg-3 col-md-6 col-sm-8 col-xm-12">
 					
 					<div class="card-body">
 						<div class="item">
@@ -70,8 +70,7 @@
 					
 				</div>
 				
-				<div class="col-md-3">
-					
+				<div class="col-lg-3 col-md-6 col-sm-8 col-xm-12">					
 					<div class="card-body">
 						<div class="item">
 						<img class="card-img" src="images/bag2.jpg" style="width: 100%">
@@ -83,7 +82,7 @@
 					
 				</div>
 				
-				<div class="col-md-3">
+				<div class="col-lg-3 col-md-6 col-sm-8 col-xm-12">
 					<div class="card-body">
 						<div class="item">
 						<img class="card-img" src="images/candle3.jpg" style="width: 100%">
@@ -95,7 +94,7 @@
 					
 				</div>
 				
-				<div class="col-md-3">
+				<div class="col-lg-3 col-md-6 col-sm-8 col-xm-12">
 					<div class="card-body">
 						<div class="item">
 						<img class="card-img" src="images/candle4.jpg" style="width: 100%">
@@ -110,7 +109,7 @@
 			</div>
 			
 			<div id="secondcol" class="row">
-				<div class="col-md-3">
+				<div class="col-lg-3 col-md-6 col-sm-8 col-xm-12">
 					<div class="card-body">
 						<div class="item">
 						<img class="card-img" src="images/soap1.jpg" style="width: 100%">
@@ -122,7 +121,7 @@
 					
 				</div>
 				
-				<div class="col-md-3">
+				<div class="col-lg-3 col-md-6 col-sm-8 col-xm-12">
 					<div class="card-body">
 						<div class="item">
 						<img class="card-img" src="images/soap4.jpg" style="width: 100%">
@@ -134,7 +133,7 @@
 					
 				</div>
 				
-				<div class="col-md-3">
+				<div class="col-lg-3 col-md-6 col-sm-8 col-xm-12">
 					<div class="card-body">
 						<div class="item">
 						<img class="card-img" src="images/wood3.jpg" style="width: 100%">
@@ -146,7 +145,7 @@
 					
 				</div>
 				
-				<div class="col-md-3">
+				<div class="col-lg-3 col-md-6 col-sm-8 col-xm-12">
 					<div class="card-body">
 						<div class="item">
 						<img class="card-img" src="images/wood4.jpg" style="width: 100%">
