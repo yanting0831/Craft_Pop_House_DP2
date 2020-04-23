@@ -18,7 +18,11 @@
 				if(isset($_SESSION['user']))
 				{
 					echo '<ul class="nav navbar-nav navbar-right">
-							  <li><a href="accountsettings.php"><span class="glyphicon glyphicon-user"></span> Update Account</a></li>
+							  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">'; echo $_SESSION["user"]["username"]; echo' <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+								  <li><a href="#">Update Account</a></li>
+								</ul>
+							  </li>
 							  <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Sign Out</a></li>
 						</ul>';
 				}
