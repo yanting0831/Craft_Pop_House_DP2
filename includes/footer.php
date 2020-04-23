@@ -13,16 +13,13 @@
 		<div class="row">
 
 			<!-- Grid column -->
-			<div class="col-md-4 mt-md-0 mt-3">
+			<div class="col-md-4 mt-md-0 mt-3" id="about">
 
 			<!-- Content -->
 			<h5 class="text-uppercase">About Craft Pop House</h5>
 			<p>Craft Pop House is an affordable marketplace for purchasing handicraft items such as bags, candles, soaps and others.</p>
 
 			</div>
-			<!-- Grid column -->
-
-			<hr class="clearfix w-100 d-md-none pb-3">
 	
 			<!-- Grid column -->
 			<div class="col-md-3">
@@ -72,12 +69,12 @@
 			<!-- Links -->
 			<h5 class="text-uppercase">Email NewsLetters</h5>
 
-			<p>Subscribe to receive latest updates and news.</p>
+			<p class="subscribe">Subscribe to receive latest updates and news.</p>
 			
 			
 			<input type="text" class="form-control" placeholder="Your email"
 			aria-label="Your email" aria-describedby="basic-addon2">
-			<button class="btn btn-primary" type="submit">Submit</button>
+			<button class="btn btn-primary" id="submit-footer" type="submit">Submit</button>
 			
 
 		  </div>
