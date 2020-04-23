@@ -32,7 +32,9 @@
 		<div class="col-md-4 col-sm-4 col-xs-12">
 		
 		<form class="form-container" method="POST" action="login.php">
-		<h1> Login </h1>
+			<h1> Login </h1>
+			
+			<?php echo display_error(); ?>
 			<div class="form-group">
 				<label for="exampleInputEmail1">Email address</label>
 				<input type="email" name="email"  class="form-control" required="required" id="exampleInputEmail1" placeholder="Email">
@@ -42,6 +44,8 @@
 				<input type="password" name="password" required="required" class="form-control" id="exampleInputPassword1" placeholder="Password">
 			</div>
 			<button type="submit" name="login_button" class="btn btn-success btn-block">Submit</button>
+			
+			
 		</form>
 		
 	</div>
