@@ -102,12 +102,12 @@ html, body
 	100% { left: 100%; width: 0%; }
 }
 
-<<<<<<< HEAD
 .body_container
 {
 	position: relative;
 	z-index: 1;
-=======
+}
+
 .line1
 {
 	
@@ -127,8 +127,6 @@ html, body
 .body_container
 {
 	position: relative;
-	z-index = -1;
->>>>>>> f5ee8638f33078fcd778cf4e713422e11a5361d1
 }
 
 .body_container h2
@@ -203,10 +201,9 @@ h5{
 }
 
 .slide_container{
-	margin-top: 1.5%;
 	margin-bottom: 37%;
 }
- /* YT edit ends */
+/* YT edit ends */
 
 footer
 {
