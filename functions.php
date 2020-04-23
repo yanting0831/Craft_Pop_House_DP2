@@ -39,29 +39,56 @@ function register(){
 	if ($password_1 != $password_2) {
 		array_push($errors, "The two passwords do not match");
 	}
-
+	
+	
 	// register user if there are no errors in the form
 	if (count($errors) == 0) {
-		$password = md5($password_1);//encrypt the password before saving in the database
-
-		if (isset($_POST['user_type'])) {
-			$user_type = e($_POST['user_type']);
-			$query = "INSERT INTO users (username, email, user_type, password) 
-					  VALUES('$username', '$email', '$user_type', '$password')";
-			mysqli_query($db, $query);
-			$_SESSION['success']  = "New user successfully created!!";
+		
+		
+		//select email from database
+		$query = "SELECT * FROM users WHERE email='$email' LIMIT 1";
+		$res = mysqli_query($db, $query);
+		//check if there is any email, if there is existed email run the if statement
+		if( mysqli_num_rows($res) > 0)
+		{
+			$row = mysqli_fetch_assoc($res);
+			//if email is found in database
+			if($email == $row['email'])
+			{
+				array_push($errors, "Email already exist");
+			}
+		}
+		else
+		{
+			//salt the password
+			$salted_password = "456y45rghtrhfgrhywsetr".$password_1."fdgfdsgsfgd";
 			
-		}else{
-			$query = "INSERT INTO users (username, email, user_type, password) 
-					  VALUES('$username', '$email', 'user', '$password')";
-			mysqli_query($db, $query);
+			//hash password
+			$hash_password = hash('sha256', $salted_password);
+			
+			$hash_password = md5($password_1);//encrypt the password before saving in the database
+			
+			//admin create user
+			if (isset($_POST['user_type'])) {
+				$user_type = e($_POST['user_type']);
+				$query = "INSERT INTO users (username, email, user_type, password) 
+						  VALUES('$username', '$email', '$user_type', '$hash_password')";
+				mysqli_query($db, $query);
+				$_SESSION['success']  = "New user successfully created!!";
+				
+				
+			}else{
+				$query = "INSERT INTO users (username, email, user_type, password) 
+						  VALUES('$username', '$email', 'user', '$hash_password')";
+				mysqli_query($db, $query);
 
-			/*// get id of the created user
-			$logged_in_user_id = mysqli_insert_id($db);
+				/*// get id of the created user
+				$logged_in_user_id = mysqli_insert_id($db);
 
-			$_SESSION['user'] = getUserById($logged_in_user_id); // put logged in user in session
-			$_SESSION['success']  = "You are now logged in";*/
-						
+				$_SESSION['user'] = getUserById($logged_in_user_id); // put logged in user in session
+				$_SESSION['success']  = "You are now logged in";*/
+							
+			}
 		}
 	}
 }
