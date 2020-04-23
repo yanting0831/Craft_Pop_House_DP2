@@ -1,7 +1,7 @@
 <?php
 	
 	
-	echo '<nav class="navbar navbar-inverse">
+	echo '<nav class="navbar navbar-fixed-top navbar-inverse">
 			<div class="container-fluid">
 				<div class="navbar-header">
 				<a class="navbar-brand" href="index.php">CraftPopHouse</a>
