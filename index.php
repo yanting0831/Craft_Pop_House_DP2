@@ -29,7 +29,11 @@
 	
 	<!-- notification message -->
 	<?php if (isset($_SESSION['success'])) : ?>
+		<br/>
+		<br/>
+		<br/>
 		<div class="error success" >
+			
 			<h3>
 				<?php 
 					echo $_SESSION['success']; 
