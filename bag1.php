@@ -28,7 +28,7 @@
 	</nav>
 	
 	<div class="soap">
-		<img src="images/bag-1.jpg" alt="handicraft soap" class="charcoal">
+		<img src="images/bag-1.jpg" alt="rattan bag" class="bag">
 		<h2>Handmade Rattan Handbag</h2>
 		<p>This gorgeous hand crafted rattan handbag allows you to bring everything with you whenever you need to, but fashionably of course! Grab this gorgeous and beautiful hand crafted rattan made for yourself or your loved ones before its too late!</p>
 		<p><b>Dimension(s):</b> 33.5cm × 11cm × 29 cm</p>
@@ -60,7 +60,7 @@
 				<div class="thumbnail">
 				<img src="images/bag-3.jpg" alt="...">
 					<div class="caption">
-					<h3>Handmade Rattan Crossbody Bag</h3>
+					<h3>Handmade Top-Handle Handbag</h3>
 					<p>This traditional rattan made handbag allows you to bring everything in this simplistic and fashion design bag. This bag is designed by our top seller Sofia. Get compliments from your friend and family on this gorgeous gold hardware on this stunning bag.</p>
 					<p><b>Dimension(s):</b> 30.5cm × 10cm × 29 cm</p>
 					<p class="price">RM40.00</p>
@@ -73,7 +73,7 @@
 				<div class="thumbnail">
 				<img src="images/bag-4.jpg" alt="...">
 					<div class="caption">
-					<h3>Handmade Woven Shoulder/Sling Bag</h3>
+					<h3>Handmade Woven Sling Bag</h3>
 					<p>This bag designed by Craft Pop House allows you to bring everything with you whenever you need to. Bring this back home, bring it for travelling, shopping or any leisure activities to inspire your friends and family with this casual and nice bag.</p>
 					<p><b>Dimension(s):</b> 15.5cm × 14cm × 3cm</p>
 					<p class="price">RM35.00</p>
@@ -83,5 +83,9 @@
 			</div>
 		</div>
 	</div>
+	
+	<?php
+		include "includes/footer.php";
+	?>
 </body>
 </html>
