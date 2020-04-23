@@ -73,7 +73,7 @@
 				<div class="thumbnail">
 				<img src="images/bag-4.jpg" alt="...">
 					<div class="caption">
-					<h3>Handmade Woven Shoulder/Sling Bag</h3>
+					<h3>Handmade Woven Sling Bag</h3>
 					<p>This bag designed by Craft Pop House allows you to bring everything with you whenever you need to. Bring this back home, bring it for travelling, shopping or any leisure activities to inspire your friends and family with this casual and nice bag.</p>
 					<p><b>Dimension(s):</b> 15.5cm × 14cm × 3cm</p>
 					<p class="price">RM35.00</p>
@@ -83,5 +83,9 @@
 			</div>
 		</div>
 	</div>
+	
+	<?php
+		include "includes/footer.php";
+	?>
 </body>
 </html>
