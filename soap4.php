@@ -27,6 +27,7 @@
 	  </ol>
 	</nav>
 	
+	<article>
 	<div class="soap">
 		<img src="images/soap-4.jpg" alt="handicraft soap" class="lavender">
 		<h2>Lavender Olive Soap</h2>
@@ -81,5 +82,9 @@
 			</div>
 		</div>
 	</div>
+	</article>
+	<?php
+		include "includes/footer.php";
+	?>
 </body>
 </html>
