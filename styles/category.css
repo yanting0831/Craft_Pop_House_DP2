@@ -1,3 +1,11 @@
+body{
+	background: #fff;
+}
+
+article{
+	background-color: #000;
+}
+
 .soap{
 	width: 90%;
 	margin: 2% auto;
