@@ -16,6 +16,7 @@ html, body
 	border-radius: 5px; 
 	text-align: left;
 }
+
 .success {
 	color: #3c763d; 
 	background: #dff0d8; 
@@ -25,7 +26,7 @@ html, body
 
 .slide_container slider
 {
-	margin-top: -21px;
+	margin-top: 2%;
 	display:block;
 	width: 100%;
 	height: 70%;
@@ -101,10 +102,33 @@ html, body
 	100% { left: 100%; width: 0%; }
 }
 
+<<<<<<< HEAD
 .body_container
 {
 	position: relative;
 	z-index: 1;
+=======
+.line1
+{
+	
+	border: 1px solid black;
+}
+
+.line2
+{
+	border: 1px solid black;
+}
+
+.sec{
+    height: 100%;
+    padding: 14%;
+}
+
+.body_container
+{
+	position: relative;
+	z-index = -1;
+>>>>>>> f5ee8638f33078fcd778cf4e713422e11a5361d1
 }
 
 .body_container h2
@@ -147,7 +171,7 @@ html, body
 	margin-top: 30px;
 }
 
-/* YT edited */
+/* YT edited 
 #about{
 	top: 2vw;
 }
@@ -182,7 +206,7 @@ h5{
 	margin-top: 1.5%;
 	margin-bottom: 37%;
 }
-/* YT edit ends */
+ YT edit ends */
 
 footer
 {
