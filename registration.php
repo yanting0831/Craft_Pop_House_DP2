@@ -34,8 +34,8 @@
 		<div class="col-md-4 col-sm-4 col-xs-12"></div>
 		<div class="col-md-4 col-sm-4 col-xs-12">
 		
-		<form class="form-container">
-		<h1> Login </h1>
+		<form class="form-container" method="POST" action="registration.php">
+		<h1> Registration Page </h1>
 		<div class="form-group">
 			<label for="exampleInputUsername">Username</label>
 			<input type="text" name="username" required="required" class="form-control" id="exampleInputUsername" placeholder="Username">
@@ -52,8 +52,12 @@
 			<label for="exampleInputReconfirm">Password</label>
 			<input type="password" name="confirm_password" required="required" class="form-control" id="exampleInputPassword1" placeholder="Confirm_Password">
 		  </div>
-			<button type="submit" name="login_button" class="btn btn-success btn-block">Submit</button>
+			<button type="submit" name="register_button" class="btn btn-success btn-block">Submit</button>
+			
+			
 		</form>
+		
+		<?php echo display_error(); ?>
 		
 	</div>
 	<div class="col-md-4 col-sm-4 col-xs-12"></div>
