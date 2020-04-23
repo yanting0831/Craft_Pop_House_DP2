@@ -47,6 +47,20 @@
 			<slide><p>Handmade Candles</p></slide>
 		</slider>
 	</div>
+
+	<!-- This is a seperator -->
+	<div class="seperator">
+		<section class="sec">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<!-- End of seperator -->
 	
 	<div class="body_container">
 		<hr class="line1">
