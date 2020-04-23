@@ -52,7 +52,7 @@
 		</slider>
 	</div>
 
-	<!-- This is a seperator -->
+	<!-- This is a seperator 
 	<div class="seperator">
 		<section class="sec">
 			<div class="container">
@@ -64,7 +64,7 @@
 			</div>
 		</section>
 	</div>
-	<!-- End of seperator -->
+	End of seperator -->
 	
 	<div class="body_container">
 		<!--hr class="line1">
