@@ -43,13 +43,15 @@ function register(){
 	// register user if there are no errors in the form
 	if (count($errors) == 0) {
 		$password = md5($password_1);//encrypt the password before saving in the database
-
+		
+		//admin create user
 		if (isset($_POST['user_type'])) {
 			$user_type = e($_POST['user_type']);
 			$query = "INSERT INTO users (username, email, user_type, password) 
 					  VALUES('$username', '$email', '$user_type', '$password')";
 			mysqli_query($db, $query);
 			$_SESSION['success']  = "New user successfully created!!";
+			
 			
 		}else{
 			$query = "INSERT INTO users (username, email, user_type, password) 
@@ -61,6 +63,8 @@ function register(){
 
 			$_SESSION['user'] = getUserById($logged_in_user_id); // put logged in user in session
 			$_SESSION['success']  = "You are now logged in";*/
+			
+			header('location: registration.php');
 						
 		}
 	}
