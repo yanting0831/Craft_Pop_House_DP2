@@ -1,4 +1,23 @@
+<<<<<<< HEAD
 
+=======
+*
+{
+	font-family: Quicksand;
+}
+
+body{
+	background: #fff;
+}
+
+article{
+	background-color: #000;
+}
+.breadcrumb
+{
+	margin-top: 4%;
+}
+>>>>>>> f406f884f0749db4bf74411c07e4bd120fe91aef
 
 .soap{
 	width: 90%;
@@ -41,4 +60,13 @@ input[type="submit"]{
 	border: 1px solid transparent;
 }
 
+<<<<<<< HEAD
 			
+=======
+footer
+{
+	margin-top: 5%;
+	background-color:#252525;
+	color: white;
+}
+>>>>>>> f406f884f0749db4bf74411c07e4bd120fe91aef
