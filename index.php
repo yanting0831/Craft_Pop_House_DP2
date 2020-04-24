@@ -52,7 +52,7 @@
 		</slider>
 	</div>
 
-	<!-- This is a seperator 
+	<!-- This is a seperator-->
 	<div class="seperator">
 		<section class="sec">
 			<div class="container">
@@ -64,14 +64,14 @@
 			</div>
 		</section>
 	</div>
-	End of seperator -->
+	<!--End of seperator -->
 	
 	<div class="body_container">
-		<!--hr class="line1">
-		<!--h2>Welcome <h3>
-		<p>This is the online shop for handicrafts from all over Malaysia.</p-->
+		<hr class="line1">
+		<h2>Welcome <h3>
+		<p>This is the online shop for handicrafts from all over Malaysia.</p>
 		
-		<!--hr class="line2"-->
+		<hr class="line2">
 		<h3>Featured Products</h3>
 		<div class="container">
 			<div id="firstcol" class="row">
@@ -131,7 +131,7 @@
 					<div class="card-body">
 						<div class="item">
 						<img class="card-img" src="images/soap1.jpg" style="width: 100%">
-							<h4 class="card title">Deep Clean Charcoal Soap</h4>
+							<h4 class="card title">Deep Charcoal Soap</h4>
 							<p> RM15.00 </p>
 							<a href="soap1.php" class="btn btn-primary">See Details</a>
 						</div>
