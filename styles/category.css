@@ -1,10 +1,4 @@
-body{
-	background: #fff;
-}
 
-article{
-	background-color: #000;
-}
 
 .soap{
 	width: 90%;
@@ -46,6 +40,5 @@ input[type="submit"]{
 	border-radius: 4px;
 	border: 1px solid transparent;
 }
-
 
 			
