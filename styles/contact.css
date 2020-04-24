@@ -1,4 +1,9 @@
 /* contact.php page css styling*/
+*
+{
+	font-family: Quicksand;
+}
+
 .box
 {
 	position: relative;
@@ -24,7 +29,6 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	font-family: Comfortaa;
 	font-size: 70px;
 	text-align: center;
 	display: infinite-block;
@@ -34,6 +38,7 @@
 .content
 {
 	text-align: center;
+	font-size: 1vw;
 }
 
 hr
