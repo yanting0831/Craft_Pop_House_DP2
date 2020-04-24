@@ -8,7 +8,7 @@
 				</div>
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="index.php">Home</a></li>
-					<li><a href="#">Products</a></li>
+					<li><a href="products.php">Products</a></li>
 					<li><a href="aboutus.php">About Us</a></li>
 					<li><a href="contacts.php">Contacts</a></li>
 					<li><a href="events.php">Events</a></li>
