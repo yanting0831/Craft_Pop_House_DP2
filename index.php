@@ -131,7 +131,7 @@
 					<div class="card-body">
 						<div class="item">
 						<img class="card-img" src="images/soap1.jpg" style="width: 100%">
-							<h4 class="card title">Deep Clean Charcoal Soap</h4>
+							<h4 class="card title">Deep Charcoal Soap</h4>
 							<p> RM15.00 </p>
 							<a href="soap1.php" class="btn btn-primary">See Details</a>
 						</div>
