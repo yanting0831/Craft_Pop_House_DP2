@@ -1,3 +1,6 @@
+*{
+	font-family: Quicksand;
+}
 html, body
 {
 	width: 100%;
@@ -29,7 +32,7 @@ html, body
 	margin-top: 2%;
 	display:block;
 	width: 100%;
-	height: 70%;
+	height: 50%;
 	background-color: #1f1f1f;
 	overflow: hidden;
 	position: absolute;
@@ -83,11 +86,11 @@ html, body
 
 .slide_container slide p {
 	/*font-family: Comfortaa;*/
-	font-family: Quicksand;
-	font-size: 6vw;
+	/*font-family: Quicksand;*/
+	font-size: 3vw;
 	font-weight: bold;
 	text-align: center;
-	/*display: infinite-block;*/
+	display: infinite-block;
 	width: 100%;
 	margin-top: 20vw;
 	color: #fff;
@@ -164,12 +167,9 @@ html, body
 	margin-top: 30px;
 }
 
-.blog
-{
-	margin-top: 30px;
-}
 
-/* YT edited */
+
+/* YT edited 
 #about{
 	top: 2vw;
 }
@@ -203,7 +203,7 @@ h5{
 .slide_container{
 	margin-bottom: 37%;
 }
-/* YT edit ends */
+YT edit ends */
 
 footer
 {
