@@ -47,5 +47,9 @@ input[type="submit"]{
 	border: 1px solid transparent;
 }
 
-
-			
+footer
+{
+	margin-top: 5%;
+	background-color:#252525;
+	color: white;
+}
