@@ -1,8 +1,8 @@
-.bg
+ .bg
 { 
 	background: url("../images/1.jpg") no-repeat;
 	width:100%;
-	height:120vh;
+	height:100vh;
 	background-size:cover;
 	margin-top:-1.7%;
 }
@@ -11,7 +11,7 @@
 {
 	border:1px solid  #fff;
 	padding:50px 60px;
-	margin-top:10vh;
+	margin-top:20vh;
 	-webkit-box-shadow: 6px 6px 26px 8px rgba(0,0,0,0.75);
 	-moz-box-shadow: 6px 6px 26px 8px rgba(0,0,0,0.75);
 	box-shadow: 6px 6px 26px 8px rgba(0,0,0,0.75);
@@ -24,6 +24,7 @@
 {
 	color:#fff;
 }
+
 .error {
 	width: 92%; 
 	margin: 0px auto; 
@@ -40,6 +41,7 @@
 	border: 1px solid #3c763d;
 	margin-bottom: 20px;
 }
+
 h1
 {
 	text-align:center;
