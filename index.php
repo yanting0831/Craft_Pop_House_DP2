@@ -52,7 +52,7 @@
 		</slider>
 	</div>
 
-	<!-- This is a seperator 
+	<!-- This is a seperator-->
 	<div class="seperator">
 		<section class="sec">
 			<div class="container">
@@ -64,14 +64,14 @@
 			</div>
 		</section>
 	</div>
-	End of seperator -->
+	<!--End of seperator -->
 	
 	<div class="body_container">
-		<!--hr class="line1">
-		<!--h2>Welcome <h3>
-		<p>This is the online shop for handicrafts from all over Malaysia.</p-->
+		<hr class="line1">
+		<h2>Welcome <h3>
+		<p>This is the online shop for handicrafts from all over Malaysia.</p>
 		
-		<!--hr class="line2"-->
+		<hr class="line2">
 		<h3>Featured Products</h3>
 		<div class="container">
 			<div id="firstcol" class="row">
