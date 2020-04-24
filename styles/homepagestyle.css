@@ -1,3 +1,6 @@
+*{
+	font-family: Quicksand;
+}
 html, body
 {
 	width: 100%;
@@ -83,7 +86,7 @@ html, body
 
 .slide_container slide p {
 	/*font-family: Comfortaa;*/
-	font-family: Quicksand;
+	/*font-family: Quicksand;*/
 	font-size: 3vw;
 	font-weight: bold;
 	text-align: center;
