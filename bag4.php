@@ -18,7 +18,9 @@
 	<?php
 		include "includes/nav_header.php";
 	?>
-	
+	<br>
+	<br>
+	<br>
 	<nav aria-label="breadcrumb">
 	  <ol class="breadcrumb">
 		<li class="breadcrumb-item"><a href="#">Home</a></li>
