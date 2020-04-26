@@ -3,6 +3,6 @@
 	session_start();
 
 	//destroy the session and revert back to the main page(products.php)
-	session_destroy();
+	unset($_SESSION['user']);
 	header('location:index.php');
 ?>
