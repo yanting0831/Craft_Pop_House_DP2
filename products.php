@@ -1,3 +1,50 @@
+<?php
+	//start session
+	session_start();
+
+	require_once("includes/productDB.php");
+	require_once("includes/component.php");
+	
+	//create instance of productDB class
+	$database = new productDB("Productdb", "Producttb");
+	
+	if(isset($_POST['add']))
+	{
+		//print_r($_POST['product_id']);
+		if(isset($_SESSION['cart']))
+		{
+			//print_r($_SESSION['cart']);
+			$item_array_id = array_column($_SESSION['cart'], "product_id");
+			
+			if(in_array($_POST['product_id'], $item_array_id)){
+				echo "<script>alert('Product is already added in the cart..!')</script>";
+				echo "<script>window.location = 'products.php'</script>";
+			}
+			else{
+
+				$count = count($_SESSION['cart']);
+				$item_array = array(
+					'product_id' => $_POST['product_id']
+				);
+
+				$_SESSION['cart'][$count] = $item_array;
+			}
+		}
+		else
+		{
+			$item_array = array(
+				//pass the product id
+                'product_id' => $_POST['product_id']
+			);
+
+			// Create new session variable
+			$_SESSION['cart'][0] = $item_array;
+			print_r($_SESSION['cart']);
+		}
+	}
+	
+?>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -10,8 +57,14 @@
 	<meta name="description" content="category page">
 	<meta name="keywords" content="handicrafts">
 	<link rel="stylesheet" type="text/css" href="styles/category.css">
-	<link rel="stylesheet" href="
-	https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	
+	<!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	
+	<!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
 </head>
 
 <body>
@@ -21,26 +74,36 @@
 	
 	<nav aria-label="breadcrumb">
 	  <ol class="breadcrumb">
-		<li class="breadcrumb-item"><a href="#">Home</a></li>
+		<li class="breadcrumb-item"><a href="index.php">Home</a></li>
 		<li class="breadcrumb-item active" aria-current="page">Our products</li>
 	  </ol>
 	</nav>
 	
 	<div class="container">
 		<h2>Our Products</h2>
-			<div class="row">
-			<div class="col-lg-3 col-md-5 col-sm-7 col-xm-11">
-				<div class="thumbnail">
-				<a href="bag1.php"  data-toggle="tooltip" title="Click to see details">
-				<img class="card-img-top" src="images/bag-1.jpg" alt="rattan bag"></a>
-					<div class="caption">
-					<a href="bag1.php" <h4 data-toggle="tooltip" title="Click to see details">Handmade Rattan Handbag</h4></a>
-					<p class="price">RM50.00</p>
-					<p><a href="#" class="btn btn-primary" role="button">Add to Basket</a></p>
-					</div>
-				</div>
+			<div class="row text-center py-5">
+				<?php
+					$result = $database->getData();
+					while ($row = mysqli_fetch_assoc($result)){
+						component($row['product_name'], $row['product_price'], $row['product_image'], $row['id']);
+					}
+
+				?>
 			</div>
 			
+			
+		<!--	<div class="col-lg-3 col-md-5 col-sm-7 col-xm-11">
+				<form action="products.php" method="post">
+					<div class="thumbnail">
+					<a href="bag1.php"  data-toggle="tooltip" title="Click to see details">
+					<img class="card-img-top" src="images/bag-1.jpg" alt="rattan bag"></a>
+						<div class="caption">
+							<a href="bag1.php" <h4 data-toggle="tooltip" title="Click to see details">Handmade Rattan Handbag</h4></a>
+							<p class="price">RM50.00</p>
+							<button type="submit" class="btn btn-primary my-3" name="add">Add to Cart</button>
+						</div>
+				</form>
+			</div>
 			<div class="col-lg-3 col-md-5 col-sm-7 col-xm-11">
 				<div class="thumbnail">
 				<a href="bag2.php"  data-toggle="tooltip" title="Click to see details">
@@ -221,11 +284,12 @@
 					</div>
 				</div>
 			</div>			
-		</div>
+		</div> -->
 	</div>
 	
 	<?php
 		include "includes/footer.php";
 	?>
+
 </body>
 </html>
