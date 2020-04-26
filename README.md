@@ -13,6 +13,7 @@ to our lecturer: mercy plz , tqs
 
 For product database, it will automatically create the database
 Therefore, you just have to insert the data into the table
+Use the producttb.sql file to copy the insert into table 
 ```sql
 "INSERT INTO Producttb (product_name, product_price, product_image)
         VALUES ('Apple MacBook Pro',1799,'./upload/product1.png'),
