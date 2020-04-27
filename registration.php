@@ -1,5 +1,4 @@
 <?php include('functions.php') ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head> 
@@ -21,9 +20,6 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     </head>
-
-<body>
-
 	<body>
 		<?php
 			include "includes/nav_header.php";
@@ -57,9 +53,6 @@
 		<button type="submit" name="register_button" class="btn btn-success btn-block">Submit</button>
 			
 		</form>
-		
-		
-		
 	</div>
 	<div class="col-md-4 col-sm-4 col-xs-12"></div>
 	</div>
@@ -68,10 +61,5 @@
 	<?php
 		include "includes/footer.php";
 	?>
-	
-	
 </body>
 </html>
-	
-	
-	
