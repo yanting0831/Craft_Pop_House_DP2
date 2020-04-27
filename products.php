@@ -87,7 +87,6 @@
 					while ($row = mysqli_fetch_assoc($result)){
 						component($row['product_name'], $row['product_price'], $row['product_image'], $row['id']);
 					}
-
 				?>
 			</div>
 			
