@@ -79,7 +79,7 @@
 	  </ol>
 	</nav>
 	
-	<div class="container">
+	<div class="container"> 
 		<h2>Our Products</h2>
 			<div class="row text-center py-5">
 				<?php
