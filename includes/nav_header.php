@@ -13,7 +13,7 @@
 					<li><a href="contacts.php">Contacts</a></li>
 					<li><a href="events.php">Events</a></li>
 				</ul>';
-		
+				
 				//fetch session for login_id
 				if(isset($_SESSION['user']))
 				{
@@ -34,7 +34,23 @@
 						</ul>';
 				}
 				
-				
+				echo '<ul class="nav navbar-nav navbar-right">
+						<li>
+							<a href="cart.php" class="nav-item nav-link active">
+							<i class="fas fa-shopping-cart"></i> Cart';
+							
+							if (isset($_SESSION['cart'])){
+								$count = count($_SESSION['cart']);
+								echo "<span id=\"cart_count\" class=\"text-white\">$count</span>";
+							}
+							else
+							{
+								echo "<span id=\"cart_count\" class=\"text-white\">0</span>";
+							}
+							
+					echo '</a>
+						</li>
+					</ul>';
 				
 				echo '<form class="navbar-form navbar-right" action="/action_page.php">
 						  <div class="form-group">
