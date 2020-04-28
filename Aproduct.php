@@ -2,6 +2,7 @@
 	session_start();
 ?>
 <?php include('AdminInterface.php') ?>
+
 	<div class="modal fade" id="addadminprofile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -11,31 +12,6 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-	  <form action="register_edit.php" method="POST">
-		<div class="modal-body">
-		  <div class="form-group">
-			<label>Username</label>
-			<input type="text" name="username" placeholder="Enter Username" class="form-control">
-		  </div>
-		  <div class="form-group">
-			<label>Email address</label>
-			<input type="email" name="email" placeholder="Enter Email-Address" class="form-control">
-		  </div>
-		  <div class="form-group">
-			<label>Password</label>
-			<input type="password" name="password" placeholder="Enter Password" class="form-control">
-		  </div>
-		  <div class="form-group">
-			<label>Confirm_Password</label>
-			<input type="password" name="confirmpassword" placeholder="Enter Confirm Password" class="form-control">
-		  </div>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit"  name="registerbtn" class="btn btn-primary">Save</button>
-      </div>
-	  </form>
     </div>
   </div>
 </div> 
@@ -67,7 +43,7 @@
 							
 							$connection = mysqli_connect('localhost','root','','cph');
 							
-							$query="SELECT * FROM users";
+							$query="SELECT * FROM products";
 							$query_run=mysqli_query($connection,$query);
 						
 						?>
@@ -75,9 +51,11 @@
 							  <thead>
 								<tr>
 									<th>ID</th>
-									<th>Username</th>
-									<th>Email-Address</th>
-									<th>Password</th>
+									<th>Product Name</th>
+									<th>Product Category</th>
+									<th>Product Image</th>
+									<th>Product Price</th>
+									<th>Product Description</th>
 									<th>Edit</th>
 									<th>Delete</th>
 								</tr>
@@ -91,19 +69,21 @@
 									?>
 									
 								<tr>
-									<td><?php echo $row['id']; ?></td>
-									<td><?php echo $row['username']; ?></td>
-									<td><?php echo $row['email']; ?></td>
-									<td><?php echo $row['password']; ?></td>
+									<td><?php echo $row['product_id']; ?></td>
+									<td><?php echo $row['product_title']; ?></td>
+									<td><?php echo $row['product_category_id']; ?></td>		
+									<td><?php echo $row['product_img']; ?></td>
+									<td><?php echo $row['product_price']; ?></td>
+									<td><?php echo $row['product_description']; ?></td>
 									<td>
-										<form action="register_edit.php" method="post">
-											<input type="hidden" name="edit_id" value="<?php echo $row['id'];?>">
+										<form action="Aedit.php" method="post">
+											<input type="hidden" name="edit_id" value="<?php echo $row['product_id'];?>">
 											<button type="submit" name="edit_btn" class="btn btn-success">EDIT</button>
 										</form>
 									</td>
 									<td>
-										<form action="code.php" method="post">
-											<input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>">
+										<form action="AProductCode.php" method="post">
+											<input type="hidden" name="delete_id" value="<?php echo $row['product_id']; ?>">
 											<button type="submit" name="delete_btn" class="btn btn-danger">DELETE</button>
 										</form>
 									</td>

@@ -20,7 +20,6 @@
 			}
 		}
 	}
-
 ?>
 
 <!DOCTYPE html>
@@ -54,11 +53,10 @@
 		<div class="row px-5">
 			<div class="col-md-7">
 				<div class="shopping-cart">
-					<h3>My Cart</h3>
+					<h3>My Item Basket</h3>
 					<hr>
 
 					<?php
-
 					$total = 0;
 					if (isset($_SESSION['cart'])){
 						$product_id = array_column($_SESSION['cart'], 'product_id');
@@ -76,7 +74,6 @@
 					else{
 						echo "<h5>Cart is Empty</h5>";
 					}
-
 					?>
 
 				</div>
@@ -100,6 +97,8 @@
 							<h6>Delivery Charges</h6>
 							<hr>
 							<h6>Amount Payable</h6>
+							<hr>
+							<a href="checkout-form.php" class="btn btn-info <?=($total>1)?"":"disabled"; ?>"><i class="far fa-credit-card"></i>Check Out</a>
 						</div>
 						
 						<div class="col-md-6">
