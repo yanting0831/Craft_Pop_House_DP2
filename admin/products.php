@@ -8,7 +8,7 @@
 <head>
 	<title> Product Category </title>
 	<meta charset="utf-8">
-	<meta name="author" content="Eric Kong ">
+	<meta name="author" content="Eric Kong, Yan Ting">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width = device-width, initial-scale = 1">
 	<meta name="description" content="category page">
@@ -17,6 +17,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
+	<br>
 	<?php
 		include "includes/nav_header.php";
 	?>
@@ -46,8 +47,7 @@
 					echo "
 					
 					<div class='box'>
-						<h1>Shop</h1>
-						<p>Hello World!!!!!!!1<p>
+						<h1>Our Products</h1>
 					</div>
 					";
 					}
