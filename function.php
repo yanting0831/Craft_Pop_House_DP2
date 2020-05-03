@@ -21,7 +21,7 @@
 			
 			<div class='col-md-4 col-sm-6 center-responsive'>
 				<div class='product'>
-					<a href = '#'>
+					<a href = 'details.php'>
 					
 						<img class='img-responsive' src='images/$product_image'>
 						
@@ -29,7 +29,7 @@
 					<div class='text'>
 						
 						<h3> 
-							<a href='#'>
+							<a href='details.php'>
 							
 								$product_title
 						
@@ -42,7 +42,7 @@
 						</p>
 						
 						<p class='button'>
-							<a class='btn btn-default' href=''>
+							<a class='btn btn-default' href='details.php'>
 							
 							View Details
 							</a>
@@ -127,7 +127,7 @@
 				echo " 
 						<div class='col-md-4 col-sm-6 center-responsive'>
 						<div class='product'>
-							<a href = '#'>
+							<a href = 'details.php'>
 							
 								<img class='img-responsive' src='images/$product_image'>
 								
@@ -137,7 +137,7 @@
 								
 								<h3> 
 								
-									<a href='#'>
+									<a href='details.php'>
 									
 										$product_title
 								
@@ -151,7 +151,7 @@
 								</p>
 								
 								<p class='button'>
-									<a class='btn btn-default' href=''>
+									<a class='btn btn-default' href='details.php'>
 									
 									View Details
 									</a>
