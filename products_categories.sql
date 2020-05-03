@@ -40,7 +40,7 @@ CREATE TABLE `products_categories` (
 
 INSERT INTO `products_categories` (`product_category_id`, `product_category_title`, `product_category_desc`) VALUES
 (1, 'Hand Crafted Bag', ''),
-(2, 'Hand Crafted Saop', 'This gorgeous hand crafted rattan handbag allows you to bring everything with you whenever you need to, but fashionably of course! Grab this gorgeous and beautiful hand crafted rattan made for yourself or your loved ones before its too late!'),
+(2, 'Hand Crafted Soap', 'This gorgeous hand crafted rattan handbag allows you to bring everything with you whenever you need to, but fashionably of course! Grab this gorgeous and beautiful hand crafted rattan made for yourself or your loved ones before its too late!'),
 (3, 'Homemade Jar Candle ', 'This gorgeous hand crafted rattan handbag allows you to bring everything with you whenever you need to, but fashionably of course! Grab this gorgeous and beautiful hand crafted rattan made for yourself or your loved ones before its too late!'),
 (4, 'Wood Crafting', 'This gorgeous hand crafted rattan handbag allows you to bring everything with you whenever you need to, but fashionably of course! Grab this gorgeous and beautiful hand crafted rattan made for yourself or your loved ones before its too late!');
 
