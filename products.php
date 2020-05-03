@@ -23,8 +23,8 @@
 	?>
 	<div id="content">
 		<div class='container'>
-			<div class="col-md-12">
 			
+			<div class="col-md-12">
 				<ul class="breadcrumb">
 					<li><a href="code.php">Home</a></li>
 					<li>Product</li>
@@ -32,14 +32,14 @@
 			</div>
 			
 			<div class="col-md-3">
-			<?php 
-			
-			include("includes/sidebar.php");
-			
-			?>
-				</div>
-				<div class="col-md-9">
+				<?php 
 				
+				include("includes/sidebar.php");
+				
+				?>
+			</div>
+			
+			<div class="col-md-9">
 				<?php
 					
 					if(!isset($_GET['category'])){
@@ -78,12 +78,12 @@
 										 echo "
 										<div class='col-md-4 col-sm-6 center-responsive'>
 											<div class='product'>
-												<a href = '#'>
+												<a href = 'details.php?id=<?php echo $product_id ?>'>
 													<img class='img-responsive' src='images/$product_image'>
 												</a>
 												<div class='text'>
 													<h3> 
-														<a href='#'>
+														<a href='details.php?id=<?php echo $product_id ?>'>
 															$product_title
 														</a>
 													<h3>
@@ -91,7 +91,7 @@
 														$product_price
 													</p>
 													<p class='button'>
-														<a class='btn btn-default' href=''>
+														<a class='btn btn-default' href='details.php?id=<?php echo $product_id ?>'>
 														View Details
 														</a>
 														<a class='btn btn-primary' href='#'>
@@ -111,9 +111,7 @@
 					</div>	
 						<?php getCategoryCO();?>
 					</div>
-			
-				</div>
-				
+				</div>	
 			</div>
 	<?php
 		include "includes/footer.php";
