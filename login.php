@@ -22,16 +22,17 @@
 </head>
 
 <body>
-<?php
+	<?php
 		include "includes/nav_header.php";
 	?>	
+	
 <div class="container-fluid bg" >
 
 	<div class="row">
 		<div class="col-md-4 col-sm-4 col-xs-12"></div>
 		<div class="col-md-4 col-sm-4 col-xs-12">
 		
-		<form class="form-container">
+		<form method="post" class="form-container">
 		<h1> Login </h1>
 		  <div class="form-group">
 			<label for="exampleInputEmail1">Email address</label>
@@ -45,6 +46,7 @@
 		</form>
 		
 	</div>
+	
 	<div class="col-md-4 col-sm-4 col-xs-12"></div>
 	</div>
 	</div>

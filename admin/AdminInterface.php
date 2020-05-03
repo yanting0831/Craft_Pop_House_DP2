@@ -7,7 +7,7 @@
 	<meta name="description" content="Web Development">
 	<meta name="keywords" content="HTML, CSS, JavaScript">
 	<meta name="author" content="Eric Kong">
-	<link rel="stylesheet" type="text/css" href="styles/insert.css">
+	<link rel="stylesheet" type="text/css" href="../styles/insert.css">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -35,9 +35,9 @@
 						</div>
 					<ul class="navbar-nav flex-column mt-4">
 						<li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 current"><i class="fa fa-home text-light fa-lg mr-3"></i>Home</a></li>
-						<li class="nav-item"><a href="http://localhost/Craft_Pop_House_DP2/Category.php" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-book text-light fa-lg mr-3"></i>Category</a></li>
-						<li class="nav-item"><a href="http://localhost/Craft_Pop_House_DP2/Aproduct.php" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-gift text-light fa-lg mr-3"></i>Product</a></li>
-						<li class="nav-item"><a href="http://localhost/Craft_Pop_House_DP2/users.php" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-child text-light fa-lg mr-3"></i>Buyer</a></li>
+						<li class="nav-item"><a href="http://localhost/Craft_Pop_House_DP2/admin/Category.php" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-book text-light fa-lg mr-3"></i>Category</a></li>
+						<li class="nav-item"><a href="http://localhost/Craft_Pop_House_DP2/admin/Aproduct.php" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-gift text-light fa-lg mr-3"></i>Product</a></li>
+						<li class="nav-item"><a href="http://localhost/Craft_Pop_House_DP2/admin/users.php" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-child text-light fa-lg mr-3"></i>Buyer</a></li>
 						<li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-child text-light fa-lg mr-3"></i>Seller</a></li>						
 						<li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-institution text-light fa-lg mr-3"></i>Transcation List</a></li>						
 						<li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-bell text-light fa-lg mr-3"></i>Announcement</a></li>
