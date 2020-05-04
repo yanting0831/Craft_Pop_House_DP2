@@ -32,7 +32,7 @@
 	<meta name="viewport" content="width = device-width, initial-scale = 1">
 	<meta name="description" content="category page">
 	<meta name="keywords" content="handicrafts">
-	<link rel="stylesheet" type="text/css" href="styles/category.css">
+	<link rel="stylesheet" type="text/css" href="styles/cart.css">
 	
 	<!--Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -59,7 +59,8 @@
 					$total = 0;
 					if (isset($_SESSION['cart'])){
 						$product_id = array_column($_SESSION['cart'], 'product_id');
-
+						$item_quantity = array_column($_SESSION['cart'], 'item_quantity');
+						$product_price = array_column($_SESSION['cart'], 'product_price');
 
 						$get_product= "select * from products";
 						$run_products= mysqli_query($connection,$get_product);
@@ -69,9 +70,19 @@
 							foreach ($product_id as $id){
 								if ($row_products['product_id'] == $id){
 									cartElement($row_products['product_img'], $row_products['product_title'],$row_products['product_price'], $row_products['product_id']);
-									$total = $total + (int)$row_products['product_price'];
+									
 								}
 							}
+						}
+						//print_r ($item_quantity[0]);
+						//print_r ($item_quantity[1]);
+						//print_r ($item_quantity[2]);
+						
+						foreach($_SESSION["cart"] as $key => $value)
+						{
+							$total = $total + ($value["item_quantity"] * $value["product_price"]);
+							//echo $value['item_quantity'];
+							
 						}
 						
 					}
@@ -92,6 +103,7 @@
 						<div class="col-md-6">
 							<?php
 								if (isset($_SESSION['cart'])){
+									//keep track of how many products in the shopping cart
 									$count  = count($_SESSION['cart']);
 									echo "<h6>Price ($count items)</h6>";
 								}else{
@@ -110,6 +122,7 @@
 							<h6 class="text-success">FREE</h6>
 							<hr>
 							<h6>$<?php echo $total;?></h6>
+							<hr>
 						</div>
 					</div>
 				</div>
