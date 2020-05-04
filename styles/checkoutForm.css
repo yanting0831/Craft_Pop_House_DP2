@@ -1,0 +1,59 @@
+*
+{
+	font-family: Quicksand;
+}
+
+.bg
+{ 
+	background: url("../images/slide4.jpg") no-repeat;
+	width:100%;
+	height:100vh;
+	background-size:cover;
+	margin-top:-1.7%;
+}
+
+.form-container
+{
+	border:1px solid  #fff;
+	padding:50px 60px;
+	margin-top:20vh;
+	-webkit-box-shadow: 6px 6px 26px 8px rgba(0,0,0,0.75);
+	-moz-box-shadow: 6px 6px 26px 8px rgba(0,0,0,0.75);
+	box-shadow: 6px 6px 26px 8px rgba(0,0,0,0.75);
+}
+
+.btn-block{
+	margin-top:10%;
+}
+
+*{
+	color:#fff;
+}
+
+.error {
+	width: 92%; 
+	margin: 0px auto; 
+	padding: 10px; 
+	border: 1px solid #a94442; 
+	color: #a94442; 
+	background: #f2dede; 
+	border-radius: 5px; 
+	text-align: left;
+}
+
+.success {
+	color: #3c763d; 
+	background: #dff0d8; 
+	border: 1px solid #3c763d;
+	margin-bottom: 20px;
+}
+
+h1{
+	text-align:center;
+}
+
+footer
+{
+	background-color:#252525;
+	color: white;
+}
