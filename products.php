@@ -23,6 +23,7 @@
 				$count = count($_SESSION['cart']);
 				$item_array = array(
 					'product_id' => $_POST['product_id'],
+					'item_name' => $_POST["hidden_name"],
 					'item_quantity' => $_POST['quantity'],
 					'product_price' => $_POST['hidden_price']
 				);
@@ -34,6 +35,7 @@
 
         $item_array = array(
 			'product_id' => $_POST['product_id'],
+			'item_name' => $_POST["hidden_name"],
 			'item_quantity' => $_POST['quantity'],
 			'product_price' => $_POST['hidden_price']
         );
