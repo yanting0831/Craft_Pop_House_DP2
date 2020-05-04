@@ -15,14 +15,16 @@
 								</a>
 							<h3>
 							<p class='price'>
-								$product_price
+								$$product_price
 							</p>
 							<p class='button'>
+								<input name=\"quantity\" type=\"text\" value=\"1\" class=\"form-control w-25 d-inline\">
 								<a class='btn btn-default' href='details.php?id=<?php echo $product_id ?>'>
 								View Details
 								</a>
 								<button type='submit' class='btn btn-primary' name='add'>Add to Cart <i class='fas fa-shopping-cart'></i></button>
 								<input type='hidden' name='product_id' value='$product_id'>
+								<input type='hidden' name='hidden_price' value='$product_price'>
 							</p>
 							
 						</div>
@@ -54,13 +56,13 @@
                                 <button type=\"submit\" class=\"btn btn-danger \" name=\"remove\">Remove</button>
                             </div>
 							
-                            <div class=\"col-md-3\">
+                            <!--<div class=\"col-md-3\">
                                 <div>
                                     <button type=\"button\" class=\"btn bg-light border rounded-circle\"><i class=\"fas fa-minus\"></i></button>
                                     <input type=\"text\" value=\"1\" class=\"form-control w-25 d-inline\">
                                     <button type=\"button\" class=\"btn bg-light border rounded-circle\"><i class=\"fas fa-plus\"></i></button>
                                 </div>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                 </form>
