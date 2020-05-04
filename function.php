@@ -24,6 +24,7 @@
 					<a href = '#'>
 						<img class='img-responsive' src='images/$product_image'>
 					</a>
+					
 					<div class='text'>
 						
 						<h3> 
@@ -142,7 +143,7 @@
 								<h3>
 								
 								<p class='price'>
-									$product_price
+									$$product_price
 									
 								</p>
 								

@@ -29,11 +29,15 @@
 											<input type="email" name="edit_email" value="<?php echo $row['email']?>" placeholder="Enter Email-Address" class="form-control">
 										  </div>
 										  <div class="form-group">
+											<label>User_type</label>
+											<input type="text" name="edit_user_type" value="<?php echo $row['user_type']?>" placeholder="Enter User_Type" class="form-control">
+										  </div>
+										  <div class="form-group">
 											<label>Password</label>
 											<input type="password" name="edit_password" value="<?php echo $row['password']?>" placeholder="Enter Password" class="form-control">
 										  </div>
 											<div class="modal-footer">
-													<a href="users.php" class="btn btn-secondary">Cancel</button></a>
+													<a href="Admin.php" class="btn btn-secondary">Cancel</button></a>
 													<button type="submit"  name="updatebtn" class="btn btn-primary">Update</button>
 											</div>
 											

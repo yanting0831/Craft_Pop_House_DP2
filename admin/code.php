@@ -8,32 +8,33 @@
 		$username = $_POST['username'];
 		$email = $_POST['email'];
 		$password = $_POST['password'];
+		$user_type = $_POST['user_type'];
 		$cpassword = $_POST['confirmpassword'];
 		
 		if($password == $cpassword)
 		{
 		
-			$query = "INSERT INTO users (username,email,password) VALUES ('$username','$email','$password')";
+			$query = "INSERT INTO users (username,email,password,user_type) VALUES ('$username','$email','$password','$user_type')";
 			$query_run=mysqli_query($connection,$query);
 			
 			
 			if($query_run)
 			{
 				$_SESSION['success'] = "Admin Profile Added";
-				header('Location:users.php');
+				header('Location:Admin.php');
 				
 			}
 			else
 			{
 				$_SESSION['status'] = "Admin Profile NOT Added";
-				header('Location:users.php');
+				header('Location:Admin.php');
 				
 			}
 		}
 		else
 		{
 			$_SESSION['status'] = "Password and Confirm Password Does Not Match";
-			header('Location:users.php');
+			header('Location:Admin.php');
 		}
 	
 	
@@ -45,20 +46,21 @@
 		$id=$_POST['edit_id'];
 		$username= $_POST['edit_username'];
 		$email= $_POST['edit_email'];
+		$user_type = $_POST['edit_user_type'];
 		$password= $_POST['edit_password'];
 		
-		$query="UPDATE users SET username='$username', email='$email', password='$password' WHERE id='$id'";
+		$query="UPDATE users SET username='$username', email='$email', password='$password', user_type='$user_type' WHERE id='$id'";
 		$query_run=mysqli_query($connection,$query);
 		
 		if($query_run)
 		{
 			$_SESSION['success']="Your Data is Updated";
-			header('Location: users.php');
+			header('Location: Admin.php');
 		}
 		else
 		{
 			$_SESSION['status']="Your Data is Not Updated";
-			header('Location: users.php');
+			header('Location: Admin.php');
 		}
 	}
 	
@@ -73,11 +75,11 @@
 			if($query_run)
 			{
 				$_SESSION['success']="Your Data is Deleted";
-				header('Location:users.php');
+				header('Location:Admin.php');
 			}
 			else{
 				$_SESSION['status']="Your Data is Not Deleted";
-				header('Location:users.php');
+				header('Location:Admin.php');
 			}
 		}
 

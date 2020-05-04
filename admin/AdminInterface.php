@@ -37,7 +37,7 @@
 						<li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 current"><i class="fa fa-home text-light fa-lg mr-3"></i>Home</a></li>
 						<li class="nav-item"><a href="http://localhost/Craft_Pop_House_DP2/admin/Category.php" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-book text-light fa-lg mr-3"></i>Category</a></li>
 						<li class="nav-item"><a href="http://localhost/Craft_Pop_House_DP2/admin/Aproduct.php" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-gift text-light fa-lg mr-3"></i>Product</a></li>
-						<li class="nav-item"><a href="http://localhost/Craft_Pop_House_DP2/admin/users.php" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-child text-light fa-lg mr-3"></i>Buyer</a></li>
+						<li class="nav-item"><a href="http://localhost/Craft_Pop_House_DP2/admin/Admin.php" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-child text-light fa-lg mr-3"></i>Buyer</a></li>
 						<li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-child text-light fa-lg mr-3"></i>Seller</a></li>						
 						<li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-institution text-light fa-lg mr-3"></i>Transcation List</a></li>						
 						<li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-bell text-light fa-lg mr-3"></i>Announcement</a></li>
@@ -57,7 +57,7 @@
 								</div>
 								<div class="col-md-3">
 									<ul class="navbar-nav">
-										<li class="nav-item ml-auto"><a href="#" class="nav-link"><i class="fa fa-sign-out text-danger fa-lg"></i></a></li>
+										<li class="nav-item ml-auto"><a href="../logout.php" class="nav-link"><i class="fa fa-sign-out text-danger fa-lg"></i></a></li>
 									</ul>
 								</div>
 							</div>
