@@ -29,6 +29,10 @@
 											<input type="email" name="edit_email" value="<?php echo $row['email']?>" placeholder="Enter Email-Address" class="form-control">
 										  </div>
 										  <div class="form-group">
+											<label>User_type</label>
+											<input type="text" name="edit_user_type" value="<?php echo $row['user_type']?>" placeholder="Enter User_Type" class="form-control">
+										  </div>
+										  <div class="form-group">
 											<label>Password</label>
 											<input type="password" name="edit_password" value="<?php echo $row['password']?>" placeholder="Enter Password" class="form-control">
 										  </div>
