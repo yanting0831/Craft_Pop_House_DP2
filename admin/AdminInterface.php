@@ -57,7 +57,7 @@
 								</div>
 								<div class="col-md-3">
 									<ul class="navbar-nav">
-										<li class="nav-item ml-auto"><a href="#" class="nav-link"><i class="fa fa-sign-out text-danger fa-lg"></i></a></li>
+										<li class="nav-item ml-auto"><a href="../logout.php" class="nav-link"><i class="fa fa-sign-out text-danger fa-lg"></i></a></li>
 									</ul>
 								</div>
 							</div>
