@@ -20,20 +20,20 @@
 			if($query_run)
 			{
 				$_SESSION['success'] = "Admin Profile Added";
-				header('Location:users.php');
+				header('Location:Admin.php');
 				
 			}
 			else
 			{
 				$_SESSION['status'] = "Admin Profile NOT Added";
-				header('Location:users.php');
+				header('Location:Admin.php');
 				
 			}
 		}
 		else
 		{
 			$_SESSION['status'] = "Password and Confirm Password Does Not Match";
-			header('Location:users.php');
+			header('Location:Admin.php');
 		}
 	
 	
