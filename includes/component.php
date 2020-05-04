@@ -48,7 +48,7 @@
                             </div>
 							
                             <div class=\"col-md-6\">
-                                <h2 class=\"pt-2\">$product_image</h2>
+                                <h2 class=\"pt-2\">$product_title</h2>
                                 <small class=\"text-secondary\">Seller: dailytuition</small>
                                 <h3 class=\"pt-2\">$$product_price</h3>
                                 <button type=\"submit\" class=\"btn btn-danger \" name=\"remove\">Remove</button>
