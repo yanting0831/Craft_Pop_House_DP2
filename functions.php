@@ -130,12 +130,12 @@ function isLoggedIn()
 	}
 }
 
-// log user out if logout button clicked
+/*// log user out if logout button clicked
 if (isset($_GET['logout'])) {
 	session_destroy();
 	unset($_SESSION['user']);
 	header("location: login.php");
-}
+}*/
 
 
 // call the login() function if register_btn is clicked
@@ -167,7 +167,7 @@ function login(){
 		$results = mysqli_query($db, $query);
 
 		if (mysqli_num_rows($results) == 1) { // user found
-			// check if user is admin or user
+			// check if user is admin,seller or user
 			$logged_in_user = mysqli_fetch_assoc($results);
 			if ($logged_in_user['user_type'] == 'admin') {
 
@@ -175,7 +175,15 @@ function login(){
 				$_SESSION['success']  = "You are now logged in";
 				header('location: admin/users.php');
 					  
-			}else{
+			}
+			
+			else if($logged_in_user['user_type'] == 'seller')
+			{
+				$_SESSION['user'] = $logged_in_user;
+				$_SESSION['success'] = "You are now logged in";
+			}
+			
+			else{
 				$_SESSION['user'] = $logged_in_user;
 				$_SESSION['success']  = "You are now logged in";
 				
@@ -184,15 +192,5 @@ function login(){
 		}else {
 			array_push($errors, "Wrong email/password combination");
 		}
-	}
-}
-
-
-function isAdmin()
-{
-	if (isset($_SESSION['user']) && $_SESSION['user']['user_type'] == 'admin' ) {
-		return true;
-	}else{
-		return false;
 	}
 }
