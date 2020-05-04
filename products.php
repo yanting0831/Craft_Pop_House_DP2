@@ -118,7 +118,9 @@
 									$product_price = $row_products['product_price'];
 									$product_image = $row_products['product_img'];
 									
-									component($row_products['product_title'], $row_products['product_price'], $row_products['product_img'], $row_products['product_id']);
+									component($row_products['product_title'], 	$row_products['product_price'], 
+										$row_products['product_img'], 
+										$row_products['product_id']);
 										
 								}
 							}
