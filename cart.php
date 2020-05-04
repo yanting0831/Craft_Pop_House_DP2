@@ -3,10 +3,9 @@
 	//start session
 	session_start();
 
-	require_once("includes/productDB.php");
+	
 	require_once("includes/component.php");
-
-	$db = new productDB("Productdb", "Producttb");
+	require_once("function.php");
 
 	if (isset($_POST['remove'])){
 		if ($_GET['action'] == 'remove'){
@@ -46,7 +45,7 @@
 
 <body class="bg-light">
 	<?php
-		include "includes/nav_header.php";
+		//include "includes/nav_header.php";
 	?>
 	
 	<div class="container-fluid">
@@ -61,15 +60,20 @@
 					if (isset($_SESSION['cart'])){
 						$product_id = array_column($_SESSION['cart'], 'product_id');
 
-						$result = $db->getData();
-						while ($row = mysqli_fetch_assoc($result)){
+
+						$get_product= "select * from products";
+						$run_products= mysqli_query($connection,$get_product);
+						
+						while($row_products = mysqli_fetch_assoc($run_products))
+						{
 							foreach ($product_id as $id){
-								if ($row['id'] == $id){
-									cartElement($row['product_image'], $row['product_name'],$row['product_price'], $row['id']);
-									$total = $total + (int)$row['product_price'];
+								if ($row_products['product_id'] == $id){
+									cartElement($row_products['product_img'], $row_products['product_title'],$row_products['product_price'], $row_products['product_id']);
+									$total = $total + (int)$row_products['product_price'];
 								}
 							}
 						}
+						
 					}
 					else{
 						echo "<h5>Cart is Empty</h5>";
