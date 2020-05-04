@@ -25,6 +25,7 @@
 								<button type='submit' class='btn btn-primary' name='add'>Add to Cart <i class='fas fa-shopping-cart'></i></button>
 								<input type='hidden' name='product_id' value='$product_id'>
 								<input type='hidden' name='hidden_price' value='$product_price'>
+								<input type='hidden' name='hidden_name' value='$product_title'>
 							</p>
 							
 						</div>
