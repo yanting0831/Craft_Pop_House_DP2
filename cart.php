@@ -61,6 +61,7 @@
 						$product_id = array_column($_SESSION['cart'], 'product_id');
 						$item_quantity = array_column($_SESSION['cart'], 'item_quantity');
 						$product_price = array_column($_SESSION['cart'], 'product_price');
+						$product_name = array_column($_SESSION['cart'], 'item_name');
 
 						$get_product= "select * from products";
 						$run_products= mysqli_query($connection,$get_product);
@@ -74,9 +75,8 @@
 								}
 							}
 						}
-						//print_r ($item_quantity[0]);
-						//print_r ($item_quantity[1]);
-						//print_r ($item_quantity[2]);
+						
+						
 						
 						foreach($_SESSION["cart"] as $key => $value)
 						{
@@ -114,6 +114,14 @@
 							<hr>
 							<h6>Amount Payable</h6>
 							<hr>
+							<?php
+							foreach($item_quantity as $qty)
+							{
+								echo "Quantity per item respectively: $qty<br>";
+							}
+							
+							?>
+							<br>
 							<a href="checkout-form.php" class="btn btn-info <?=($total>1)?"":"disabled"; ?>"><i class="far fa-credit-card"></i>Check Out</a>
 						</div>
 						
