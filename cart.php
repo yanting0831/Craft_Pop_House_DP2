@@ -45,7 +45,7 @@
 
 <body class="bg-light">
 	<?php
-		//include "includes/nav_header.php";
+		include "includes/nav_header.php";
 	?>
 	
 	<div class="container-fluid">
