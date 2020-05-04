@@ -22,6 +22,10 @@
 			<input type="email" name="email" placeholder="Enter Email-Address" class="form-control">
 		  </div>
 		  <div class="form-group">
+			<label>User_type</label>
+			<input type="text" name="user_type" placeholder="Enter user_type" class="form-control">
+		  </div>
+		  <div class="form-group">
 			<label>Password</label>
 			<input type="password" name="password" placeholder="Enter Password" class="form-control">
 		  </div>
@@ -80,6 +84,7 @@
 									<th>Username</th>
 									<th>Email-Address</th>
 									<th>Password</th>
+									<th>User_type</th>
 									<th>Edit</th>
 									<th>Delete</th>
 								</tr>
@@ -89,7 +94,7 @@
 							  if(mysqli_num_rows($query_run)>0)
 							  {
 								  while($row = mysqli_fetch_assoc($query_run))
-									  if($row['user_type']=='user')
+									  if($row['user_type']=='user' || $row['user_type']=='seller')
 								  {
 									?>
 									
@@ -98,6 +103,7 @@
 									<td><?php echo $row['username']; ?></td>
 									<td><?php echo $row['email']; ?></td>
 									<td><?php echo $row['password']; ?></td>
+									<td><?php echo $row['user_type']; ?></td>
 									<td>
 										<form action="register_edit.php" method="post">
 											<input type="hidden" name="edit_id" value="<?php echo $row['id'];?>">
