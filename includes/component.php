@@ -1,50 +1,56 @@
 <?php
-	function component($productname, $productprice, $productimg, $productid)
+	function component($product_title, $product_price, $product_image, $product_id)
 	{
 		$element = "
-			<div class=\"col-lg-3 col-md-5 col-sm-7 col-xm-11\">
-					<form action=\"products.php\" method=\"POST\">
-						<div class=\"panel panel-default\">
-							<div>
-								<img src=\"$productimg\" alt=\"rattan bag\" class=\"img-fluid card-img-top\">
-							</div>
-							<div class=\"card-body\">
-								<h5 class=\"card-title\">$productname</h5>
-								<p class=\"card-text\">
-									
-								</p>
-								<h5>
-									<span class=\"price\">RM $productprice</span>
-								</h5>
-								
-								<button type=\"submit\" class=\"btn btn-warning my-3\" name=\"add\">Add to Cart <i class=\"fas fa-shopping-cart\"></i></button>
-								<input type='hidden' name='product_id' value='$productid'>
-							</div>
+			<div class='col-md-4 col-sm-6 center-responsive'>
+				<form action='products.php' method='post'>
+					<div class='product'>
+						<a href = 'details.php?id=<?php echo $product_id ?>'>
+							<img class='img-responsive' src='images/$product_image'>
+						</a>
+						<div class='text'>
+							<h3> 
+								<a href='details.php?id=<?php echo $product_id ?>'>
+									$product_title
+								</a>
+							<h3>
+							<p class='price'>
+								$product_price
+							</p>
+							<p class='button'>
+								<a class='btn btn-default' href='details.php?id=<?php echo $product_id ?>'>
+								View Details
+								</a>
+								<button type='submit' class='btn btn-primary' name='add'>Add to Cart <i class='fas fa-shopping-cart'></i></button>
+								<input type='hidden' name='product_id' value='$product_id'>
+							</p>
+							
 						</div>
-					</form>
-				</div>
+					</div>
+				</form>
+			
+		</div>
 		
 		";
 		echo $element;
 	}
 	
-	function cartElement($productimg, $productname, $productprice, $productid)
+	function cartElement($product_image, $product_title, $product_price, $product_id)
 	{
 		$element = "
     
-				<form action=\"cart.php?action=remove&id=$productid\" method=\"post\" class=\"cart-items\">
+				<form action=\"cart.php?action=remove&id=$product_id\" method=\"post\" class=\"cart-items\">
                     <div class=\"table-bordered\">
                         <div class=\"row\">
 						
                             <div class=\"col-md-3\">
-                                <img src=$productimg alt=\"Image1\" class=\"img-fluid\">
+                                <img src=\"images/$product_image\" alt=\"Image1\" class=\"img-fluid\">
                             </div>
 							
                             <div class=\"col-md-6\">
-                                <h2 class=\"pt-2\">$productname</h2>
+                                <h2 class=\"pt-2\">$product_title</h2>
                                 <small class=\"text-secondary\">Seller: dailytuition</small>
-                                <h3 class=\"pt-2\">$$productprice</h3>
-                                <button type=\"submit\" class=\"btn btn-warning\">Save for Later</button>
+                                <h3 class=\"pt-2\">$$product_price</h3>
                                 <button type=\"submit\" class=\"btn btn-danger \" name=\"remove\">Remove</button>
                             </div>
 							

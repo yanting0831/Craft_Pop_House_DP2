@@ -59,6 +59,7 @@
 		";
 		}
 	}
+	
 	function getCategory()
 	{
 		global $connection;
@@ -82,6 +83,7 @@
 			";
 		}
 	}
+	
 	function getCategoryCO()
 	{
 		global $connection;
@@ -168,8 +170,10 @@
 				";
 			
 			}
+		}
 	}
-	}
-	?>	
+	
+	
+?>	
 	
 	
