@@ -94,7 +94,7 @@
 							  if(mysqli_num_rows($query_run)>0)
 							  {
 								  while($row = mysqli_fetch_assoc($query_run))
-									  if($row['user_type']=='user' || $row['user_type']=='seller')
+									  if($row['user_type']=='user' )
 								  {
 									?>
 									
