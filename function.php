@@ -153,6 +153,8 @@
 									
 								</p>
 								
+								<input name=\"quantity\" type=\"text\" value=\"1\" class=\"form-control w-25 d-inline\">
+								
 								<p class='button'>
 									<a class='btn btn-default' href='details.php'>
 									
