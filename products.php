@@ -60,6 +60,7 @@
 	<meta name="description" content="category page">
 	<meta name="keywords" content="handicrafts">
 	<link rel="stylesheet" type="text/css" href="styles/category.css">
+	<link href="styles/cart.css" rel="stylesheet" type="text/css">
 	<!--Bootstrap CDN-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<!-- Font Awesome -->
