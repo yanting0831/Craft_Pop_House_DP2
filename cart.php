@@ -122,7 +122,46 @@
 							
 							?>
 							<br>
-							<a href="checkout-form.php" class="btn btn-info <?=($total>1)?"":"disabled"; ?>"><i class="far fa-credit-card"></i>Check Out</a>
+
+						<!-- Payment -->
+						<div id="paypal-button-container"></div>
+
+    					<!-- Include the PayPal JavaScript SDK -->
+					    <script src="https://www.paypal.com/sdk/js?client-id=AVJ4ZM21sgUqwIJ75Dc8t1-9RBATky7G59n_XlBKu_vJAtYM9lZNYIN2kajResP-8Hf7fJDZLJ7D_OuC&currency=MYR"></script>
+
+					    <script type="text/javascript">
+					    	var total = <?php echo json_encode($total); ?>;					    		
+					    </script>
+
+					    <script>
+					        // Render the PayPal button into #paypal-button-container
+					        paypal.Buttons({
+					            style: {
+					                layout: 'horizontal'
+					            },
+					            
+					            // Set up the transaction
+					            createOrder: function(data, actions) {
+					                return actions.order.create({
+					                    purchase_units: [{
+					                        amount: {
+					                            value: total
+					                        }
+					                    }]
+					                });
+					            },
+
+					            // Finalize the transaction
+					            onApprove: function(data, actions) {
+					                return actions.order.capture().then(function(details) {
+					                    // Show a success message to the buyer
+					                    alert('Transaction completed by ' + details.payer.name.given_name + '!');
+					                });
+					            }
+					            
+					        }).render('#paypal-button-container');
+					    </script>
+
 						</div>
 						
 						<div class="col-md-6">
