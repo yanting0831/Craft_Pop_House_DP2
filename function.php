@@ -21,19 +21,15 @@
 			
 			<div class='col-md-4 col-sm-6 center-responsive'>
 				<div class='product'>
-					<a href = 'details.php'>
-					
+					<a href = '#'>
 						<img class='img-responsive' src='images/$product_image'>
-						
 					</a>
 					
 					<div class='text'>
 						
 						<h3> 
-							<a href='details.php'>
-							
+							<a href='#'>
 								$product_title
-						
 							</a>
 						
 						<h3>
@@ -43,13 +39,11 @@
 						</p>
 						
 						<p class='button'>
-							<a class='btn btn-default' href='details.php'>
-							
-							View Details
+							<a class='btn btn-default' href='#'>
+								View Details
 							</a>
 							
 							<a class='btn btn-primary' href='#'>
-							
 								<i class='fa fa-shopping-cart'></i>Add to Cart
 							</a>
 						</p>
@@ -130,7 +124,7 @@
 				echo " 
 						<div class='col-md-4 col-sm-6 center-responsive'>
 						<div class='product'>
-							<a href = 'details.php'>
+							<a href = 'bag-1.php'>
 							
 								<img class='img-responsive' src='images/$product_image'>
 								
@@ -140,7 +134,7 @@
 								
 								<h3> 
 								
-									<a href='details.php'>
+									<a href='bag-1.php'>
 									
 										$product_title
 								
@@ -156,13 +150,11 @@
 								<input name=\"quantity\" type=\"text\" value=\"1\" class=\"form-control w-25 d-inline\">
 								
 								<p class='button'>
-									<a class='btn btn-default' href='details.php'>
-									
-									View Details
+									<a class='btn btn-default' href='#'>
+										View Details
 									</a>
 									
 									<a class='btn btn-primary' href='#'>
-									
 										<i class='fa fa-shopping-cart'></i>Add to Cart
 									</a>
 								</p>
