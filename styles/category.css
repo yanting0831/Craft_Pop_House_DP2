@@ -10,9 +10,16 @@ body{
 article{
 	background-color: #000;
 }
+
 .breadcrumb
 {
 	margin-top: 4%;
+}
+
+/*input for quantity*/
+input
+{
+	margin-bottom: 10px;
 }
 
 .soap{

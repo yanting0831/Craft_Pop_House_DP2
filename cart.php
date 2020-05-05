@@ -32,7 +32,7 @@
 	<meta name="viewport" content="width = device-width, initial-scale = 1">
 	<meta name="description" content="category page">
 	<meta name="keywords" content="handicrafts">
-	<link rel="stylesheet" type="text/css" href="styles/category.css">
+	<link rel="stylesheet" type="text/css" href="styles/cart.css">
 	
 	<!--Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -59,7 +59,9 @@
 					$total = 0;
 					if (isset($_SESSION['cart'])){
 						$product_id = array_column($_SESSION['cart'], 'product_id');
-
+						$item_quantity = array_column($_SESSION['cart'], 'item_quantity');
+						$product_price = array_column($_SESSION['cart'], 'product_price');
+						$product_name = array_column($_SESSION['cart'], 'item_name');
 
 						$get_product= "select * from products";
 						$run_products= mysqli_query($connection,$get_product);
@@ -69,9 +71,18 @@
 							foreach ($product_id as $id){
 								if ($row_products['product_id'] == $id){
 									cartElement($row_products['product_img'], $row_products['product_title'],$row_products['product_price'], $row_products['product_id']);
-									$total = $total + (int)$row_products['product_price'];
+									
 								}
 							}
+						}
+						
+						
+						
+						foreach($_SESSION["cart"] as $key => $value)
+						{
+							$total = $total + ($value["item_quantity"] * $value["product_price"]);
+							//echo $value['item_quantity'];
+							
 						}
 						
 					}
@@ -92,6 +103,7 @@
 						<div class="col-md-6">
 							<?php
 								if (isset($_SESSION['cart'])){
+									//keep track of how many products in the shopping cart
 									$count  = count($_SESSION['cart']);
 									echo "<h6>Price ($count items)</h6>";
 								}else{
@@ -102,7 +114,54 @@
 							<hr>
 							<h6>Amount Payable</h6>
 							<hr>
-							<a href="checkout-form.php" class="btn btn-info <?=($total>1)?"":"disabled"; ?>"><i class="far fa-credit-card"></i>Check Out</a>
+							<?php
+							foreach($item_quantity as $qty)
+							{
+								echo "Quantity per item respectively: $qty<br>";
+							}
+							
+							?>
+							<br>
+
+						<!-- Payment -->
+						<div id="paypal-button-container"></div>
+
+    					<!-- Include the PayPal JavaScript SDK -->
+					    <script src="https://www.paypal.com/sdk/js?client-id=AVJ4ZM21sgUqwIJ75Dc8t1-9RBATky7G59n_XlBKu_vJAtYM9lZNYIN2kajResP-8Hf7fJDZLJ7D_OuC&currency=MYR"></script>
+
+					    <script type="text/javascript">
+					    	var total = <?php echo json_encode($total); ?>;					    		
+					    </script>
+
+					    <script>
+					        // Render the PayPal button into #paypal-button-container
+					        paypal.Buttons({
+					            style: {
+					                layout: 'horizontal'
+					            },
+					            
+					            // Set up the transaction
+					            createOrder: function(data, actions) {
+					                return actions.order.create({
+					                    purchase_units: [{
+					                        amount: {
+					                            value: total
+					                        }
+					                    }]
+					                });
+					            },
+
+					            // Finalize the transaction
+					            onApprove: function(data, actions) {
+					                return actions.order.capture().then(function(details) {
+					                    // Show a success message to the buyer
+					                    alert('Transaction completed by ' + details.payer.name.given_name + '!');
+					                });
+					            }
+					            
+					        }).render('#paypal-button-container');
+					    </script>
+
 						</div>
 						
 						<div class="col-md-6">
@@ -110,6 +169,7 @@
 							<h6 class="text-success">FREE</h6>
 							<hr>
 							<h6>$<?php echo $total;?></h6>
+							<hr>
 						</div>
 					</div>
 				</div>

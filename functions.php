@@ -130,14 +130,6 @@ function isLoggedIn()
 	}
 }
 
-/*// log user out if logout button clicked
-if (isset($_GET['logout'])) {
-	session_destroy();
-	unset($_SESSION['user']);
-	header("location: login.php");
-}*/
-
-
 // call the login() function if register_btn is clicked
 if (isset($_POST['login_button'])) {
 	login();

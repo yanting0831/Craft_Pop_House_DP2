@@ -8,6 +8,8 @@
 	if (isset($_POST['add']))
 	{
 		//print_r($_POST['product_id']);
+		//print_r($_POST['quantity']);
+		
 		if(isset($_SESSION['cart'])){
 
 			$item_array_id = array_column($_SESSION['cart'], "product_id");
@@ -20,7 +22,10 @@
 
 				$count = count($_SESSION['cart']);
 				$item_array = array(
-					'product_id' => $_POST['product_id']
+					'product_id' => $_POST['product_id'],
+					'item_name' => $_POST["hidden_name"],
+					'item_quantity' => $_POST['quantity'],
+					'product_price' => $_POST['hidden_price']
 				);
 
 				$_SESSION['cart'][$count] = $item_array;
@@ -29,7 +34,10 @@
 	else{
 
         $item_array = array(
-			'product_id' => $_POST['product_id']
+			'product_id' => $_POST['product_id'],
+			'item_name' => $_POST["hidden_name"],
+			'item_quantity' => $_POST['quantity'],
+			'product_price' => $_POST['hidden_price']
         );
 
         // Create new session variable
@@ -52,6 +60,7 @@
 	<meta name="description" content="category page">
 	<meta name="keywords" content="handicrafts">
 	<link rel="stylesheet" type="text/css" href="styles/category.css">
+	<link href="styles/cart.css" rel="stylesheet" type="text/css">
 	<!--Bootstrap CDN-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<!-- Font Awesome -->
@@ -112,7 +121,6 @@
 								while($row_products = mysqli_fetch_assoc($run_products))
 									
 								{
-									
 									$product_id = $row_products['product_id'];
 									$product_title = $row_products['product_title'];
 									$product_price = $row_products['product_price'];
