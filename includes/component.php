@@ -18,11 +18,8 @@
 								$$product_price
 							</p>
 							<p class='button'>
-
-								<a class='btn btn-default' href='#?id=<?php echo $product_id ?>'>
-
 								<input name=\"quantity\" type=\"text\" value=\"1\" class=\"form-control w-25 d-inline\">
-								<a class='btn btn-default' href='details.php?id=<?php echo $product_id ?>
+								<a class='btn btn-default' href='#'>
 								View Details
 								</a>
 								<button type='submit' class='btn btn-primary' name='add'>Add to Cart <i class='fas fa-shopping-cart'></i></button>
