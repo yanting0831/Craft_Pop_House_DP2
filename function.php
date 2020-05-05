@@ -121,48 +121,9 @@
 				$product_price = $row_products['product_price'];
 				$product_image = $row_products['product_img'];
 			
-				echo " 
-						<div class='col-md-4 col-sm-6 center-responsive'>
-						<div class='product'>
-							<a href = 'bag-1.php'>
-							
-								<img class='img-responsive' src='images/$product_image'>
-								
-							</a>
-							
-							<div class='text'>
-								
-								<h3> 
-								
-									<a href='bag-1.php'>
-									
-										$product_title
-								
-									</a>
-								
-								<h3>
-								
-								<p class='price'>
-									$$product_price
-									
-								</p>
-								
-								<input name=\"quantity\" type=\"text\" value=\"1\" class=\"form-control w-25 d-inline\">
-								
-								<p class='button'>
-									<a class='btn btn-default' href='#'>
-										View Details
-									</a>
-									
-									<a class='btn btn-primary' href='#'>
-										<i class='fa fa-shopping-cart'></i>Add to Cart
-									</a>
-								</p>
-								
-							</div>
-						</div>
-					</div>
-				";
+				component($row_products['product_title'], 	$row_products['product_price'], 
+										$row_products['product_img'], 
+										$row_products['product_id']);
 			
 			}
 		}
