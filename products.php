@@ -140,16 +140,8 @@
 					
 					<?php
 						if(!isset($_GET['category'])){
-							$per_page=6;
 							
-							if(isset($_GET['page']))
-							{
-								$page = $_GET['page'];
-							}
-								else{
-									$page=1;
-								$start_form =($page-1) * $per_page;
-								$get_product= "select * from products order by 1 DESC LIMIT $start_form,$per_page";
+								$get_product= "select * from products ";
 								$run_products= mysqli_query($connection,$get_product);
 								
 								while($row_products = mysqli_fetch_assoc($run_products))
@@ -198,7 +190,8 @@
 										
 								}
 							}
-						}
+						
+						
 					?>
 					</div>	
 					<?php getCategoryCO();?>
