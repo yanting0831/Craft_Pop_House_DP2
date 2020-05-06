@@ -5,6 +5,8 @@
 				<div class="col-md-8 bg">
 					<div class="mb-4">
 						<h6>Edit Category</h6>
+						
+						<!--When admin press the edit button, will come to this page to edit the category-->
 		
 							<?php
 							$connection= mysqli_connect('localhost','root','','cph');
