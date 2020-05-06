@@ -76,7 +76,7 @@
 	
         // Create new session variable
         $_SESSION['cart'][0] = $item_array;
-        //print_r($_SESSION['cart']);
+        print_r($_SESSION['cart']);
     }
 }
 
