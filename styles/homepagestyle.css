@@ -1,6 +1,16 @@
 *{
 	font-family: Quicksand;
 }
+.carousel .carousel-inner{
+					height:400px;
+}
+.bg
+{
+	margin-top:70px;
+	width:90%;
+	margin-left:auto;
+	margin-right:auto;
+}
 html, body
 {
 	width: 100%;
@@ -27,83 +37,7 @@ html, body
 	margin-bottom: 40px;
 }
 
-.slide_container slider
-{
-	margin-top: 2%;
-	display:block;
-	width: 100%;
-	height: 50%;
-	background-color: #1f1f1f;
-	overflow: hidden;
-	position: absolute;
-}
 
-.slide_container slider > *{
-	position: absolute;
-	display: block;
-	width: 100%;
-	height: 100%;
-	background: #1f1f1f;
-	animation: slide 12s infinite;
-	overflow: hidden;
-}
-
-.slide_container slide:nth-child(1)
-{
-	left: 0%; 
-	animation-delay: -1s;
-	background-image: url("../images/slide3.jpg");
-	background-size: cover;
-	background-position: center;
-}
-
-.slide_container slide:nth-child(2)
-{
-	left: 100%; 
-	animation-delay: 2s;
-	background-image: url("../images/slide2.jpg");
-	background-size: cover;
-	background-position: center;
-}
-
-.slide_container slide:nth-child(3)
-{
-	left: 100%; 
-	animation-delay: 5s;
-	background-image: url("../images/slide1.jpg");
-	background-size: cover;
-	background-position: center;
-}
-
-.slide_container slide:nth-child(4)
-{
-	left: 100%; 
-	animation-delay: 8s;
-	background-image: url("../images/slide4.jpg");
-	background-size: cover;
-	background-position: center;
-}
-
-.slide_container slide p {
-	/*font-family: Comfortaa;*/
-	/*font-family: Quicksand;*/
-	font-size: 3vw;
-	font-weight: bold;
-	text-align: center;
-	display: infinite-block;
-	width: 100%;
-	margin-top: 20vw;
-	color: #fff;
-}
-
-@keyframes slide{
-	0% { left: 100%; width: 100%; }
-	5% { left: 0%; }
-	25% { left: 0%; }
-	30% { left: -100%; width: 100%; }
-	30.0001% { left: -100%; width: 0%; }
-	100% { left: 100%; width: 0%; }
-}
 
 .body_container
 {
@@ -204,10 +138,10 @@ h5{
 	margin-bottom: 37%;
 }
 YT edit ends */
-
 footer
 {
 	margin-top: 5%;
 	background-color:#252525;
 	color: white;
 }
+
