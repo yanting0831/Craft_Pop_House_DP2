@@ -3,55 +3,42 @@
 ?>
 <?php include('AdminInterface.php') ?>
 	<div class="row">
-    
     <div class="col-md-4"></div>
 	<div class="col-md-8 bg">
         
         <div class="panel panel-default">
             
            <div class="panel-heading">
-               
                <h3 class="panel-title"><i class="fa fa-money fa-fw"></i> Insert Product </h3>
            </div>
-           
+		   
+          <!--Seller write the deatil about the product they wish to add in--> 
+		  
            <div class="panel-body">
-               
                <form method="post" class="form-horizontal" enctype="multipart/form-data">
-                   
                    <div class="form-group">
-                       
                       <label class="col-md-3 control-label"> Product Title </label> 
-                      
-                      <div class="col-md-6">
-                          
-                          <input name="product_title" type="text" class="form-control" required>
-                          
-                      </div>
-                       
+                      <div class="col-md-6">  
+                          <input name="product_title" type="text" class="form-control" required>  
+                      </div> 
                    </div>
                    
                    <div class="form-group">
-                       
-                      <label class="col-md-3 control-label"> Product Category </label> 
-                      
-                      <div class="col-md-6">
-                          
-                          <select name="product_category" class="form-control"><!-- form-control Begin -->
-                              
-                              <option> Select a Category Product </option>
-                              
+                      <label class="col-md-3 control-label"> Product Category </label>                      
+                      <div class="col-md-6">                         
+                          <select name="product_category" class="form-control"><!-- form-control Begin -->                           
+                              <option> Select a Category Product </option>    
+							<!--The system will direct drop down the list of category to the seller-->			
+							<!--The category list create by admin in the database-->
                               <?php 
-                              
                               $get_p_cats = "select * FROM products_categories";
                               $run_p_cats = mysqli_query($connection,$get_p_cats);
                               
-                              while ($row_p_cats=mysqli_fetch_array($run_p_cats)){
-                                  
+                              while ($row_p_cats=mysqli_fetch_array($run_p_cats)){ 
                                   $product_category_id = $row_p_cats['product_category_id'];
                                   $product_category_title = $row_p_cats['product_category_title'];
                                   
                                   echo "<option value='$product_category_id'> $product_category_title </option>";
-                                  
                               }
                               ?>
                               
@@ -59,28 +46,18 @@
                       </div>
                    </div>
                    <div class="form-group">
-                       
                       <label class="col-md-3 control-label"> Product Image </label> 
-                      
                       <div class="col-md-6">
-                          
                           <input name="product_image" type="file" class="form-control" required>
-                          
                       </div>
-                       
                    </div>
                                     
                    
                    <div class="form-group">
-                       
                       <label class="col-md-3 control-label"> Product Price </label> 
-                      
                       <div class="col-md-6">
-                          
                           <input name="product_price" type="text" class="form-control" required>
-                          
                       </div>
-                       
                    </div>
                                      
                    <div class="form-group">
@@ -103,7 +80,7 @@
     </div>
 	</div>
 
-
+<!--When the seller press the submit button, the product will add in to the database and display at the buyer side-->
 <?php
 	if(isset($_POST['submit']))
 	{
