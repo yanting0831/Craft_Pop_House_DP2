@@ -5,6 +5,9 @@
 				<div class="col-md-8 bg">
 					<div class="mb-4">
 						<h6>Edit User Profile</h6>
+						
+					<!--When the admin press edit button will direct come to this page to edit the profile -->	
+					
 					<?php
 					$connection= mysqli_connect('localhost','root','','cph');
 						if(isset($_POST['edit_btn']))
