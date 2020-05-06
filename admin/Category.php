@@ -24,21 +24,10 @@
 					
 					<div class="card-body">
 					
-					<?php
-					if(isset($_SESSION['success']) && $_SESSION['success']!='')
-					{
-						echo '<h2 class="bg-primary text-white"> '.$_SESSION['success'].' </h2>';
-						unset($_SESSION['success']);
-					}
-					if(isset($_SESSION['status']) && $_SESSION['status']!='')
-					{
-						echo '<h2 class="bg-danger text-white">'.$_SESSION['status'].' </h2>';
-						unset($_SESSION['status']);
-					}
-					?>
 					
 						<div class="table-responsive">
 						
+						<!--Retrive data from database -->
 						<?php
 							
 							$connection = mysqli_connect('localhost','root','','cph');
@@ -58,6 +47,8 @@
 								</tr>
 							  </thead>
 							  <tbody>
+							  
+							  <!--See whether got data inside the database and display to the table  -->
 							  <?php
 							  if(mysqli_num_rows($query_run)>0)
 							  {
