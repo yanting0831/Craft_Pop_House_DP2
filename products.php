@@ -5,21 +5,56 @@
 	
 	require_once('includes/component.php');
 	
-	if (isset($_POST['add']))
+	$conn = new mysqli('localhost','root','','cph');
+	
+	if($conn === false)
 	{
-		//print_r($_POST['product_id']);
-		//print_r($_POST['quantity']);
+		die ("Error: Could not connect. " . mysqli_connect_error());
+	}
+	
+	//select database
+	mysqli_select_db ($conn , 'cph') or die (mysqli_connect_error);
+	
+	$status_msg="";
+	$input_valid_flag = true;
+	//when add button is pressed
+	if (isset($_POST['add']))
+	{	
+		if($input_valid_flag == true)
+		{
+			//sanitize the input data
+			$quantity = mysqli_escape_string($conn, $_POST["quantity"]);
+			$product_id = mysqli_escape_string($conn, $_POST['product_id']);
+
+			//update the database table content
+			$sql = "UPDATE products SET product_quantity='$quantity' WHERE product_id='$product_id'";
+			
+			$result = mysqli_query($conn, $sql);
+			
+			if($result)
+			{
+				$status_msg = '<h3 style="color:green">Quantity Added!.</h3>';
+			}
+			else
+			{
+				$status_msg = "Error: " . mysql_error();
+			}
+		
+		}
 		
 		if(isset($_SESSION['cart'])){
 
 			$item_array_id = array_column($_SESSION['cart'], "product_id");
 
-			if(in_array($_POST['product_id'], $item_array_id)){
+			//check if product_id is already in the array
+			if(in_array($_POST['product_id'], $item_array_id))
+			{
 				echo "<script>alert('Product is already added in the cart..!')</script>";
 				echo "<script>window.location = 'products.php'</script>";
+				
 			}
-			else{
-
+			else
+			{
 				$count = count($_SESSION['cart']);
 				$item_array = array(
 					'product_id' => $_POST['product_id'],
@@ -27,22 +62,21 @@
 					'item_quantity' => $_POST['quantity'],
 					'product_price' => $_POST['hidden_price']
 				);
-
+					
 				$_SESSION['cart'][$count] = $item_array;
 			}
     }
-	else{
-
-        $item_array = array(
+	else{		
+       $item_array = array(
 			'product_id' => $_POST['product_id'],
 			'item_name' => $_POST["hidden_name"],
 			'item_quantity' => $_POST['quantity'],
 			'product_price' => $_POST['hidden_price']
         );
-
+	
         // Create new session variable
         $_SESSION['cart'][0] = $item_array;
-        print_r($_SESSION['cart']);
+        //print_r($_SESSION['cart']);
     }
 }
 
@@ -126,7 +160,41 @@
 									$product_price = $row_products['product_price'];
 									$product_image = $row_products['product_img'];
 									
-									component($row_products['product_title'], $row_products['product_price'], $row_products['product_img'], $row_products['product_id']);
+									echo "
+										<div class='col-md-4 col-sm-6 center-responsive'>
+											<form action='products.php' method='post'>
+												<div class='product'>
+													<a href = '#?id=<?php echo $product_id ?>'>
+														<img class='img-responsive' src='images/$product_image'>
+													</a>
+													<div class='text'>
+														<h3> 
+															<a href='#?id=<?php echo $product_id ?>'>
+																$product_title
+															</a>
+														<h3>
+														<p class='price'>
+															$$product_price
+														</p>
+														<p class='button'>
+															<input name=\"quantity\" type=\"text\" value=\"1\" class=\"form-control w-25 d-inline\">
+
+															<!--a class='btn btn-default' href='details.php?id=<?php echo $product_id ?-->
+
+															<a class='btn btn-default' href='#'>
+															View Details
+															</a>
+															<button type='submit' class='btn btn-primary' name='add'>Add to Cart <i class='fas fa-shopping-cart'></i></button>
+															<input type='hidden' name='product_id' value='$product_id'>
+															<input type='hidden' name='hidden_price' value='$product_price'>
+															<input type='hidden' name='hidden_name' value='$product_title'>
+														</p>
+														
+													</div>
+												</div>
+											</form>
+										
+									</div>";
 										
 								}
 							}
@@ -138,7 +206,7 @@
 					
 		</div>	
 	</div>
-	
+	<p><?php echo $status_msg; ?></p>
 	<?php
 		include "includes/footer.php";
 	?>
