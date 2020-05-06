@@ -31,7 +31,7 @@
 					<!--Title of the sidebar-->
 						<a href="#" class="navbar-brand text-white d-block mx-auto text-center py-3 mb-4 bottom-border">Craft Pop Houses</a>
 					<div class="bottom-border pb-3">
-						<img src="images/admin.jpg" width="50" class="rounded-circle mr-3">
+						<img src="../images/admin.jpg" width="50" class="rounded-circle mr-3">
 						
 						<a href="#" class="text-white">Admin</a>
 						</div>

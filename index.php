@@ -53,7 +53,7 @@
        
        <div class="col-md-12"><!-- col-md-12 Begin -->
            
-           <div class="carousel slide" id="myCarousel" data-ride="carousel"><!-- carousel slide Begin -->
+           <div class="carousel slide bg" id="myCarousel" data-ride="carousel"><!-- carousel slide Begin -->
                
                <ol class="carousel-indicators"><!-- carousel-indicators Begin -->
                    

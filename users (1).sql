@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 22, 2020 at 09:39 AM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.3.9
+-- Generation Time: May 06, 2020 at 04:34 PM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.1.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -41,8 +41,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `user_type`, `password`) VALUES
-(1, 'aaaa', 'rickysu98@hotmail.com', 'user', '202cb962ac59075b964b07152d234b70'),
-(2, 'cb', 'admin@admin.com', 'user', '202cb962ac59075b964b07152d234b70');
+(1, 'Eric', 'eric_kong11@hotmail.com', 'admin', '877a038ed0cb94b0a2d4672c9639ce2a'),
+(2, 'YanTing', 'tanYT@hotmail.com', 'seller', 'a026d1b4a4464a3b94f0ae9193bbab48'),
+(3, 'Ricky', 'rickysu98@hotmail.com', 'user', 'e9fa126bf7032a6b4811112450fbee07');
 
 --
 -- Indexes for dumped tables
@@ -62,7 +63,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
