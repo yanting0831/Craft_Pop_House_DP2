@@ -140,7 +140,7 @@
 					<?php
 					$total = 0;
 					if (isset($_SESSION['cart'])){
-						
+						//Return the values from a single column in the input array
 						$product_id = array_column($_SESSION['cart'], 'product_id');
 						$item_quantity = array_column($_SESSION['cart'], 'item_quantity');
 						$product_price = array_column($_SESSION['cart'], 'product_price');
