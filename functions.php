@@ -121,6 +121,7 @@ function display_error() {
 	}
 }	
 
+/*
 function isLoggedIn()
 {
 	if (isset($_SESSION['user'])) {
@@ -128,7 +129,7 @@ function isLoggedIn()
 	}else{
 		return false;
 	}
-}
+}*/
 
 // call the login() function if register_btn is clicked
 if (isset($_POST['login_button'])) {
@@ -159,6 +160,7 @@ function login(){
 		$results = mysqli_query($db, $query);
 
 		if (mysqli_num_rows($results) == 1) { // user found
+		
 			// check if user is admin,seller or user
 			$logged_in_user = mysqli_fetch_assoc($results);
 			if ($logged_in_user['user_type'] == 'admin') {
