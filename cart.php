@@ -62,16 +62,21 @@
 			
 			//select data from database
 			$get_product= "select * from products";
-			$run_products= mysqli_query($connection,$get_product);
+			$run_products= mysqli_query($conn,$get_product);
 			
 			if($row_products = mysqli_fetch_assoc($run_products))
 			{
-				foreach ($product_id as $id){
+				foreach ($product_id as $id)
+				{
 					//echo $id."<br>";
-					if ($row_products['product_id'] == $id){
+					echo ($row_products['product_id']."<br>");
+					
+					if ($row_products['product_id'] == $id)
+					{
 						//echo $id."<br>";
-						//echo $row_products['product_id']."<br>";
+						//echo $row_products['product_id'];
 						//echo $product_id;
+						
 						//update the database table content
 						$sql = "UPDATE products SET product_quantity='$updateQty' WHERE product_id='$id'";
 						
@@ -79,7 +84,7 @@
 			
 						if($result)
 						{
-							$status_msg = '<h3 style="color:green">Quantity Added!.</h3>';
+							$status_msg = '<h3 style="color:green">Quantity Updated!.</h3>';
 						}
 						else
 						{
@@ -87,8 +92,6 @@
 						}	
 					}
 				}
-				
-				
 			}
 			//update the database table content
 			//$sql = "UPDATE products SET product_quantity='$quantity' WHERE product_id='$string_id'";
@@ -255,7 +258,7 @@
 						<?php
 							$connection = mysqli_connect('localhost','root','','cph');
 							
-							$get_products = "select * from products order by 1 DESC LIMIT 0,8";
+							$get_products = "select * from products";
 		
 							$run_products = mysqli_query($connection,$get_products);
 							
