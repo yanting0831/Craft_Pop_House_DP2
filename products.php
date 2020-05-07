@@ -1,6 +1,6 @@
 <?php
 	include("function.php");
-	
+	//start the session
 	session_start();
 	
 	require_once('includes/component.php');
@@ -42,8 +42,10 @@
 		
 		}
 		
+		//check if the session is available
 		if(isset($_SESSION['cart'])){
-
+			
+			//Return the values from a single column in the input array
 			$item_array_id = array_column($_SESSION['cart'], "product_id");
 
 			//check if product_id is already in the array
@@ -55,14 +57,16 @@
 			}
 			else
 			{
+				//count the number in the cart
 				$count = count($_SESSION['cart']);
+				//store items in the array
 				$item_array = array(
 					'product_id' => $_POST['product_id'],
 					'item_name' => $_POST["hidden_name"],
 					'item_quantity' => $_POST['quantity'],
 					'product_price' => $_POST['hidden_price']
 				);
-					
+				
 				$_SESSION['cart'][$count] = $item_array;
 			}
     }
@@ -140,7 +144,7 @@
 					
 					<?php
 						if(!isset($_GET['category'])){
-							
+								//select all from products database
 								$get_product= "select * from products ";
 								$run_products= mysqli_query($connection,$get_product);
 								
