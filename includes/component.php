@@ -19,7 +19,6 @@
 							</p>
 							<p class='button'>
 								<input name=\"quantity\" type=\"text\" value=\"1\" class=\"form-control w-25 d-inline\">
-
 								<!--a class='btn btn-default' href='details.php?id=<?php echo $product_id ?-->
 
 								<a class='btn btn-default' href='#'>
