@@ -38,6 +38,7 @@
 		
 		<form method="post" class="form-container">
 		<h1> Login </h1>
+			<?php echo display_error(); ?>
 		  <div class="form-group">
 			<label for="exampleInputEmail1">Email address</label>
 			<input type="email" name="email"  class="form-control" required="required" id="exampleInputEmail1" placeholder="Email">
