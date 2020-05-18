@@ -81,7 +81,8 @@ function register(){
 				$query = "INSERT INTO users (username, email, user_type, password) 
 						  VALUES('$username', '$email', 'user', '$hash_password')";
 				mysqli_query($db, $query);
-
+				
+				$_SESSION['success']  = "User Successfully Created!!";
 				/*// get id of the created user
 				$logged_in_user_id = mysqli_insert_id($db);
 
@@ -115,7 +116,7 @@ function display_error() {
 	if (count($errors) > 0){
 		echo '<div class="error">';
 			foreach ($errors as $error){
-				echo $error .'<br>';
+				echo '<script type="text/javascript">alert("INFO:  '.$error.'");</script>';
 			}
 		echo '</div>';
 	}
