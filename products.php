@@ -1,89 +1,11 @@
 <?php
 	include("function.php");
-	//start the session
-	session_start();
+	include("functions.php");
+	error_reporting(0);
+	ini_set('display_errors', 0);
 	
 	require_once('includes/component.php');
 	
-	$conn = new mysqli('localhost','root','','cph');
-	
-	if($conn === false)
-	{
-		die ("Error: Could not connect. " . mysqli_connect_error());
-	}
-	
-	//select database
-	mysqli_select_db ($conn , 'cph') or die (mysqli_connect_error);
-	
-	$status_msg="";
-	$input_valid_flag = true;
-	//when add button is pressed
-	if (isset($_POST['add']))
-	{	
-		if($input_valid_flag == true)
-		{
-			//sanitize the input data
-			$quantity = mysqli_escape_string($conn, $_POST["quantity"]);
-			$product_id = mysqli_escape_string($conn, $_POST['product_id']);
-
-			//update the database table content
-			$sql = "UPDATE products SET product_quantity='$quantity' WHERE product_id='$product_id'";
-			
-			$result = mysqli_query($conn, $sql);
-			
-			if($result)
-			{
-				$status_msg = '<h3 style="color:green">Quantity Added!.</h3>';
-			}
-			else
-			{
-				$status_msg = "Error: " . mysql_error();
-			}
-		
-		}
-		
-		//check if the session is available
-		if(isset($_SESSION['cart'])){
-			
-			//Return the values from a single column in the input array
-			$item_array_id = array_column($_SESSION['cart'], "product_id");
-
-			//check if product_id is already in the array
-			if(in_array($_POST['product_id'], $item_array_id))
-			{
-				echo "<script>alert('Product is already added in the cart..!')</script>";
-				echo "<script>window.location = 'products.php'</script>";
-				
-			}
-			else
-			{
-				//count the number in the cart
-				$count = count($_SESSION['cart']);
-				//store items in the array
-				$item_array = array(
-					'product_id' => $_POST['product_id'],
-					'item_name' => $_POST["hidden_name"],
-					'item_quantity' => $_POST['quantity'],
-					'product_price' => $_POST['hidden_price']
-				);
-				
-				$_SESSION['cart'][$count] = $item_array;
-			}
-    }
-	else{		
-       $item_array = array(
-			'product_id' => $_POST['product_id'],
-			'item_name' => $_POST["hidden_name"],
-			'item_quantity' => $_POST['quantity'],
-			'product_price' => $_POST['hidden_price']
-        );
-	
-        // Create new session variable
-        $_SESSION['cart'][0] = $item_array;
-        print_r($_SESSION['cart']);
-    }
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -95,83 +17,170 @@
 	<meta name="author" content="Eric Kong, Yan Ting">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width = device-width, initial-scale = 1">
-	<meta name="description" content="category page">
-	<meta name="keywords" content="handicrafts">
+		<meta name="description" content="category page">
+		<meta name="keywords" content="handicrafts">
 	<link rel="stylesheet" type="text/css" href="styles/category.css">
 	<link href="styles/cart.css" rel="stylesheet" type="text/css">
 	<!--Bootstrap CDN-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+    <script src="includes/jquery-3.2.1.min.js"></script>
+    <style type="text/css">
+    	.alert, #loader {
+    	display: none;
+		}
+		.glyphicon, #itemCount {
+    	font-size: 18px;
+		}
+    }
+    </style>
 </head>
 <body>
 	<br>
+	<br><br><br><br>
 	<?php
 		include "includes/nav_header.php";
 	?>
-	<div id="content">
-		<div class='container'>
+
+	<div class="container">
+		<?php 
+			require_once('includes/DbConnect.php');
+            $db   = new DbConnect();
+            $conn = $db->connect();
+
+			require 'classes/users.class.php';
+	    	$objUser = new user($conn);
+	    	$objUser->setEmail($_SESSION['user']['email']);
+	    	$user = $objUser->getUserByEmailId();
+	    	$_SESSION['cid'] = $user['id'];
 			
-			<div class="col-md-12">
-				<ul class="breadcrumb">
-					<li><a href="code.php">Home</a></li>
-					<li>Product</li>
-				</ul>
-			</div>
-			
-			<div class="col-md-3">
-				<?php 
-				
-				include("includes/sidebar.php");
-				
-				?>
-			</div>
-			
-			<div class="col-md-9">
-				<?php
-					
-					if(!isset($_GET['category'])){
-					
-					echo "
-					
-					<div class='box'>
-						<h1>Our Products</h1>
+			//print_r($cartItems);
+		?>
+		
+		<div id="content">
+			<div class='container'>
+				<div class="row">
+					<div class="col-md-10 col-md-offset-1">
+						<div class="alert alert-dismissible" role="alert">
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+							<div id="result"></div>
+						</div>
+						<center><img src="images/loader.gif" id="loader"></center>
 					</div>
-					";
-					}
-				?>
-					<div class="row">
+				<div class="col-md-12">
+					<ul class="breadcrumb">
+						<li><a href="code.php">Home</a></li>
+						<li>Products</li>
+					</ul>
+				</div>
+				
+				<div class="col-md-3">
+					<?php 
 					
-					<?php
-						if(!isset($_GET['category'])){
-								//select all from products database
-								$get_product= "select * from products ";
-								$run_products= mysqli_query($connection,$get_product);
-								
-								while($row_products = mysqli_fetch_assoc($run_products))
-									
-								{
-									$product_id = $row_products['product_id'];
-									$product_title = $row_products['product_title'];
-									$product_price = $row_products['product_price'];
-									$product_image = $row_products['product_img'];
-									
-									component($row_products['product_title'], $row_products['product_price'],$row_products['product_img'], $row_products['product_id']);
-										
-								}
-							}
-						
-						
+					include("includes/sidebar.php");
+					
 					?>
-					</div>	
-					<?php getCategoryCO();?>
-			</div>
-					
-		</div>	
+				</div>
+				
+				<div class="col-md-9">
+					<?php
+						
+						if(!isset($_GET['category'])){
+						
+						echo "
+						
+						<div class='box'>
+							<h1>Our Products</h1>
+						</div>
+						";
+						}
+					?>
+						<div class="row">
+						
+						<?php
+							require 'classes/products.class.php';
+							$objProduct = new product($conn);
+							$products = $objProduct->getAllProducts();
+							foreach ($products as $key => $product){
+								if(!isset($_GET['category'])){
+							?>
+							<div class="col-sm-6 col-md-4">
+								<div class="thumbnail">
+								  <img src="images/<?= $product['product_img']; ?>" alt="" style="width: 200px; height: 200px;">
+								  <div class="caption">
+									<h3><?= $product['product_title']; ?></h3>
+									<!-- <p><?= substr($products['description'], 0, 60) . '...'; ?></p> -->
+									<p>
+										<div class="row">
+											<div class="col-sm-6 col-md-6">
+												<strong> <span style="font-size: 18px;">RM</span><?= number_format( $product['product_price'], 2 ); ?></strong>
+											</div>
+											<div class="col-sm-6 col-md-6">
+												<?php
+													$disButton = "";
+													if( array_search($product['product_id'], array_column($cartItems, 'pid')) !==false ) {
+														$disButton = "disabled";
+													}
+												 ?>
+
+												<button id="cartBtn_<?=$product['product_id'];?>" <?php echo $disButton; ?> class="btn btn-success" onclick="addToCart(<?=$product['product_id'];?>, this.id); check_login(); " role="button">Book Seat</button>
+											</div>
+										</div>
+									</p>
+								  </div>
+								</div>
+							  </div>
+							<?php }} ?>
+						
+						</div>	
+						<?php getCategoryCO();?>
+				</div>
+				</div>		
+			</div>	
+		</div>
 	</div>
-	<p><?php echo $status_msg; ?></p>
+
+
 	<?php
 		include "includes/footer.php";
 	?>
 </body>
+
+<script type="text/javascript">
+	function addToCart(pId, btnId) {
+		
+		$('#loader').show();
+		$.ajax({
+			url: "action.php",
+			data: "pId=" + pId + "&action=add",
+			method: "post"
+		}).done(function(response) {
+			var data = JSON.parse(response);
+			$('#loader').hide();
+			$('.alert').show();
+			if(data.status == 0) {
+				$('.alert').addClass('alert-danger');
+				$('#result').html(data.msg);
+			} else {
+				$('.alert').addClass('alert-success');
+				$('#result').html(data.msg);
+				$('#'+btnId).prop('disabled',true);
+				$('#itemCount').text( parseInt( $('#itemCount').text() ) + 1);
+			}
+			
+		})
+	}
+	
+	function check_login()
+	{
+		var result ="<?php isLoggedIn();?>";
+		if(result)
+		{
+			alert(result);
+			window.location.href="login.php";
+		}
+	}
+	
+</script>
 </html>
