@@ -39,14 +39,23 @@
 							<a href="cart.php" class="nav-item nav-link active">
 							<i class="fas fa-shopping-cart"></i> Cart';
 							
-							if (isset($_SESSION['cart'])){
-								$count = count($_SESSION['cart']);
-								echo "<span id=\"cart_count\" class=\"text-white\">$count</span>";
-							}
-							else
+							
+								require_once('includes/DbConnect.php');
+								$db   = new DbConnect();
+								$conn = $db->connect();
+									
+								require 'classes/cart.class.php';
+								$objCart = new cart($conn);
+								$objCart->setCid($_SESSION['cid']);
+								$cartItems = $objCart->getAllCartItems();
+								//$count = count($_SESSION['cart']);
+								$count = count($cartItems);
+								echo "<span id=\"itemCount\" class=\"text-white\">$count</span>";
+							
+							/*else
 							{
 								echo "<span id=\"cart_count\" class=\"text-white\">0</span>";
-							}
+							}*/
 							
 					echo '</a>
 						</li>
