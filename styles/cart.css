@@ -1,5 +1,5 @@
 *{
-	font-family: Quicksand;
+    font-family: Quicksand;
 }
 
 img{
@@ -23,11 +23,11 @@ img{
 
 .shopping-cart{
     padding: 3% 0;
-	margin-top: 3%;
+    margin-top: 3%;
 }
 .details
 {
-	margin-top: 8%;
+    margin-top: 8%;
 }
 
 .cart-items + .cart-items{
@@ -40,7 +40,21 @@ img{
 
 footer
 {
-	margin-top: 5%;
-	background-color:#252525;
-	color: white;
+    margin-top: 5%;
+    background-color:#252525;
+    color: white;
+}
+
+html, body {
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+.content {
+    flex: 1 0 auto;
+}
+.footer {
+    flex-shrink: 0;
 }
