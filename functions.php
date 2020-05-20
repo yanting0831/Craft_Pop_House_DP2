@@ -116,21 +116,40 @@ function display_error() {
 	if (count($errors) > 0){
 		echo '<div class="error">';
 			foreach ($errors as $error){
-				echo '<script type="text/javascript">alert("INFO:  '.$error.'");</script>';
+				echo '<script type="text/javascript">
+					alert("INFO:  '.$error.'");
+					window.location.href="login.php";
+				</script>';
 			}
 		echo '</div>';
 	}
+	
 }	
 
-/*
+function display_err() {
+	global $errors;
+
+	if (count($errors) > 0){
+		
+		foreach ($errors as $error){
+			echo $error;
+		}
+		
+	}
+	
+}
+
 function isLoggedIn()
 {
+	global $errors;
 	if (isset($_SESSION['user'])) {
 		return true;
 	}else{
+		array_push($errors, "Please log in first to proceed.");
+		display_err();
 		return false;
 	}
-}*/
+}
 
 // call the login() function if register_btn is clicked
 if (isset($_POST['login_button'])) {
