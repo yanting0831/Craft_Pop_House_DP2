@@ -1,10 +1,12 @@
 <?php
 
-	//start session
-	session_start();
-	
 	require_once("includes/component.php");
 	require_once("function.php");
+	require_once("functions.php");
+	if(!isLoggedIn())
+	{
+		display_error();
+	}
 
 	if (isset($_POST['remove'])){
 		if ($_GET['action'] == 'remove'){
