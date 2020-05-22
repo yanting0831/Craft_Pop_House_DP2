@@ -33,7 +33,10 @@
 										  </div>
 										  <div class="form-group">
 											<label>User_type</label>
-											<input type="text" name="edit_user_type" value="<?php echo $row['user_type']?>" placeholder="Enter User_Type" class="form-control">
+											<select class="form-control" type="text" name="edit_user_type" value="<?php echo $row['user_type']?>">
+											<option>user</option>
+											<option>seller</option>
+											</select>
 										  </div>
 										  <div class="form-group">
 											<label>Password</label>
