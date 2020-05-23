@@ -26,11 +26,28 @@
         }
 
 		public function getAllProducts() {
-			$sql  = "SELECT * FROM products";
+			if(!isset($_GET['category'])){
+							$per_page=6;
+							
+							if(isset($_GET['page']))
+							{
+								$page = $_GET['page'];
+							}
+								else{
+								$page=1;
+								$start_form =($page-1) * $per_page;
+			$sql  = "SELECT * FROM products order by 1 DESC LIMIT $start_form,$per_page";
+
 			$stmt = $this->dbConn->prepare($sql);
 			$stmt->execute();
 			$products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+			
 			return $products;	
+								}
+			}
+			
+			
+								
 		}
 
 		public function getProductById() {

@@ -99,11 +99,15 @@
 						<div class="row">
 						
 						<?php
+						
 							require 'classes/products.class.php';
+							
 							$objProduct = new product($conn);
 							$products = $objProduct->getAllProducts();
 							foreach ($products as $key => $product){
 								if(!isset($_GET['category'])){
+									$per_page=6;
+									
 							?>
 							<div class="col-sm-6 col-md-4">
 								<div class="thumbnail">
@@ -129,16 +133,66 @@
 										</div>
 									</p>
 								  </div>
+								  
 								</div>
+					
 							  </div>
+							  
+							  
 							<?php }} ?>
 						
-						</div>	
+							
+						</div>
+						<center>
+							<ul class="pagination">
+							<?php 
+							
+								$conn = mysqli_connect('localhost','root','','cph');
+								$query = "SELECT * FROM products";
+								$result = mysqli_query($conn,$query);
+								$total = mysqli_num_rows($result);
+								$pages = ceil($total / $per_page);
+								
+								echo " 
+								<li>
+									<a href='products.php?page=1'>".'First Page'."</a>
+									
+								</li>
+								";
+								
+								for ($i=1; $i<=$pages; $i++){
+									echo " 
+								<li>
+									<a href='products.php?page=".$i."'>".$i."</a>
+									
+								</li>
+								";
+								};
+								
+								echo " 
+								<li>
+									<a href='products.php?page=$pages'>".'Last Page'."</a>
+									
+								</li>
+								";
+								
+								
+								?>
+								</ul>
+						</center>
+						
 						<?php getCategoryCO();?>
+						
+						
 				</div>
+				
+				
 				</div>		
+				
 			</div>	
+			
 		</div>
+		
 	</div>
 
 
