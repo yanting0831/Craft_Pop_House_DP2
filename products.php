@@ -177,14 +177,7 @@
 								
 								//retrieve selected results from database and display them on page
 								
-								
-								echo " 
-								<li>
-									<a href='products.php?page=1'>".'First Page'."</a>
-									
-								</li>
-								";
-								
+			
 								//display the links to the pages
 								for ($page=1; $page<=$num_pages; $page++){
 									echo " 
@@ -194,15 +187,6 @@
 								</li>
 								";
 								};
-								
-								echo " 
-								<li>
-									<a href='products.php?page=$num_pages'>".'Last Page'."</a>
-									
-								</li>
-								";
-								
-								
 								?>
 								</ul>
 						</center>
