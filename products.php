@@ -1,8 +1,8 @@
 <?php
 	include("function.php");
 	include("functions.php");
-	error_reporting(0);
-	ini_set('display_errors', 0);
+	//error_reporting(0);
+	//ini_set('display_errors', 0);
 	
 	require_once('includes/component.php');
 	
@@ -106,6 +106,11 @@
 							$products = $objProduct->getAllProducts();
 							foreach ($products as $key => $product){
 								if(!isset($_GET['category'])){
+									$test = $product['seller_id'];
+									$db = mysqli_connect('localhost', 'root', '', 'cph');
+									$query = "SELECT * FROM users where id='$test'";
+									$results = mysqli_query($db, $query);
+									//define how many results you want per page
 									$per_page=6;
 									
 							?>
@@ -114,7 +119,11 @@
 								  <img src="images/<?= $product['product_img']; ?>" alt="" style="width: 200px; height: 200px;">
 								  <div class="caption">
 									<h3><?= $product['product_title']; ?></h3>
-									<!-- <p><?= substr($products['description'], 0, 60) . '...'; ?></p> -->
+									<?php 
+										while ($rows=mysqli_fetch_array($results)){
+											$a = $rows['username'];
+											echo "<p>Seller UserName: $a</p>";
+										} ?>
 									<p>
 										<div class="row">
 											<div class="col-sm-6 col-md-6">
@@ -146,12 +155,28 @@
 						<center>
 							<ul class="pagination">
 							<?php 
-							
+							$per_page=6;
 								$conn = mysqli_connect('localhost','root','','cph');
 								$query = "SELECT * FROM products";
 								$result = mysqli_query($conn,$query);
 								$total = mysqli_num_rows($result);
-								$pages = ceil($total / $per_page);
+								$num_pages = ceil($total / $per_page);
+								
+								//determine which page number visitor is currently on
+								if(!isset($_GET['page']))
+								{
+									$page = 1;
+								}
+								else
+								{
+									$page = $_GET['page'];
+								}
+								
+								//determine the sql limit starting number for the results on the displaying page
+								$this_page_first_result = ($page-1)*$per_page;
+								
+								//retrieve selected results from database and display them on page
+								
 								
 								echo " 
 								<li>
@@ -160,10 +185,11 @@
 								</li>
 								";
 								
-								for ($i=1; $i<=$pages; $i++){
+								//display the links to the pages
+								for ($page=1; $page<=$num_pages; $page++){
 									echo " 
 								<li>
-									<a href='products.php?page=".$i."'>".$i."</a>
+									<a href='products.php?page=" . $page . "'>" . $page . "</a>
 									
 								</li>
 								";
@@ -171,7 +197,7 @@
 								
 								echo " 
 								<li>
-									<a href='products.php?page=$pages'>".'Last Page'."</a>
+									<a href='products.php?page=$num_pages'>".'Last Page'."</a>
 									
 								</li>
 								";
