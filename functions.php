@@ -82,13 +82,10 @@ function register(){
 						  VALUES('$username', '$email', 'user', '$hash_password')";
 				mysqli_query($db, $query);
 				
-				$_SESSION['success']  = "User Successfully Created!!";
-				/*// get id of the created user
-				$logged_in_user_id = mysqli_insert_id($db);
-
-				$_SESSION['user'] = getUserById($logged_in_user_id); // put logged in user in session
-				$_SESSION['success']  = "You are now logged in";
-				header('location: index.php');*/
+				echo '<script type="text/javascript">
+					alert("INFO:  User Account made. Please login.");
+					
+				</script>';
 			}
 		}
 	}
