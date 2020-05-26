@@ -151,8 +151,8 @@
 					</tr>
 					<tr>
 						<td colspan="4" align="right">
-							<a href="index.php" class="btn btn-default">
-								<span class="glyphicon glyphicon-shopping-cart"></span> Book workshop
+							<a href="products.php" class="btn btn-default">
+								<span class="glyphicon glyphicon-shopping-cart"></span> Buy Products
 							</a>
 						</td>
 						<td >
