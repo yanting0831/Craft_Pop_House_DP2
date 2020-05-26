@@ -4,8 +4,6 @@
 	//error_reporting(0);
 	//ini_set('display_errors', 0);
 	
-	require_once('includes/component.php');
-	
 	$conn = new mysqli('localhost', 'root', '', 'cph');
 	
 	function createCommentRow($data) {
