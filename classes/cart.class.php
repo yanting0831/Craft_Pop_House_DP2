@@ -113,7 +113,7 @@
             }
 
             $subTotal   = 0;
-            $tax        = 10;
+            $tax        = 0;
             $quantity   = 0;
             foreach ($cartItems as $key => $cartItem) {
                 $subTotal += $cartItem['totalAmount'];
