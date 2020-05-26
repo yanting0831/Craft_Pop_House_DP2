@@ -82,10 +82,13 @@
 	function getCategoryCO()
 	{
 		global $connection;
+		require_once('includes/DbConnect.php');
+		$db   = new DbConnect();
+		$conn = $db->connect();
 		
 		if(isset($_GET['category']))
 		{
-			$category_id=$_GET['category'];
+			$category_id = $_GET['category'];
 			$get_category_id ="select * from products_categories where product_category_id='$category_id'";
 			$run_category=mysqli_query($connection,$get_category_id);
 			$row_category=mysqli_fetch_array($run_category);
@@ -120,16 +123,46 @@
 				$product_title = $row_products['product_title'];
 				$product_price = $row_products['product_price'];
 				$product_image = $row_products['product_img'];
-			
-				component($row_products['product_title'], 	$row_products['product_price'], 
-										$row_products['product_img'], 
-										$row_products['product_id']);
-			
-			}
+				
+			?>
+				
+					<div class="col-sm-6 col-md-4">
+						<div class="thumbnail">
+						  <img src="images/<?= $row_products['product_img']; ?>" alt="" style="width: 200px; height: 200px;">
+						  <div class="caption">
+							<h3><?= $row_products['product_title']; ?></h3>
+							
+							<?php
+							$db = mysqli_connect('localhost', 'root', '', 'cph');
+							$test = $row_products['seller_id'];
+							$query = "SELECT * FROM users where id='$test'";
+							$results = mysqli_query($db, $query);
+							while ($rows=mysqli_fetch_array($results)){
+								$a = $rows['username'];
+								echo "<p>Seller UserName: $a</p>";
+							} ?>
+							
+							<p>
+								<div class="row">
+									<div class="col-sm-6 col-md-6">
+										<strong> <span style="font-size: 18px;">RM</span><?= number_format( $row_products['product_price'], 2 ); ?></strong>
+									</div>
+									<div class="col-sm-6 col-md-6">
+										<?php	
+										
+											$disButton = "";
+											
+										 ?>
+
+										<button id="cartBtn_<?=$row_products['product_id'];?>" <?php echo $disButton; ?> class="btn btn-success" onclick="addToCart(<?=$row_products['product_id'];?>, this.id); check_login(); " role="button">Add To Cart</button>
+									</div>
+								</div>
+							</p>
+						  </div>
+						</div>
+					</div>
+		<?php	}
 		}
-	}
-	
-	
+	}	
 ?>	
-	
 	
