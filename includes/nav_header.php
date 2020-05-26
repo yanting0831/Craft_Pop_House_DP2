@@ -11,7 +11,7 @@
 					<li><a href="products.php">Products</a></li>
 					<li><a href="aboutus.php">About Us</a></li>
 					<li><a href="contacts.php">Contacts</a></li>
-					<li><a href="events.php">Events</a></li>
+					<li><a href="events.php">Forum</a></li>
 				</ul>';
 				
 				//fetch session for login_id
