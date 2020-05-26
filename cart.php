@@ -85,7 +85,7 @@
 						<?php 
 							$subTotal   = 0;
 							$quantity   = 0;
-							$tax        = 10;
+							$tax        = 0;
 							foreach ($cartItems as $key => $cartItem) {
 							  $subTotal += $cartItem['totalAmount'];
 							  $quantity += $cartItem['quantity'];
@@ -224,6 +224,8 @@
                 $('#result').html(data.msg);
                 $('#item_'+cartId).remove();
                 $('#itemCount').text( data.data.itemCount);
+				
+				alert("INFO:  Cart Item Removed");	
 
                 if (data.data.itemCount == 0.00) {
                     $('#fullCart').hide();
@@ -254,6 +256,8 @@
             } else {
                 $('.alert').addClass('alert-success');
                 $('#result').html(data.msg);
+				
+				alert("INFO:  Cart Items Cleared");	
 
                 $('#itemCount').text( 0 );
                 $('#fullCart').hide();
