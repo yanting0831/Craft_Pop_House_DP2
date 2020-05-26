@@ -217,7 +217,7 @@ $numComments = $sqlNumComments->num_rows;
 													}
 												 ?>
 
-												<button id="cartBtn_<?=$product['product_id'];?>" <?php echo $disButton; ?> class="btn btn-success" onclick="addToCart(<?=$product['product_id'];?>, this.id); check_login(); " role="button">Book Seat</button>
+												<button id="cartBtn_<?=$product['product_id'];?>" <?php echo $disButton; ?> class="btn btn-success" onclick="addToCart(<?=$product['product_id'];?>, this.id); check_login(); " role="button">Add To Cart</button>
 											</div>
 										</div>
 									</p>
