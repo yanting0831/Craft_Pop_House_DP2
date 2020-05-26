@@ -116,7 +116,7 @@ $numComments = $sqlNumComments->num_rows;
 </head>
 <body>
 	<br>
-	<br><br><br><br>
+	<br>
 	<?php
 		include "includes/nav_header.php";
 	?>
