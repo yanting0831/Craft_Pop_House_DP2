@@ -201,7 +201,8 @@ $numComments = $sqlNumComments->num_rows;
 										while ($rows=mysqli_fetch_array($results)){
 											$a = $rows['username'];
 											echo "<p>Seller UserName: $a</p>";
-										} ?>
+										} 
+									?>
 									<p>
 										<div class="row">
 											<div class="col-sm-6 col-md-6">
