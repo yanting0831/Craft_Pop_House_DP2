@@ -1,7 +1,8 @@
 <?php
-  include("function.php");
-  include "includes/nav_header.php";
- 
+	include("function.php");
+	include "includes/nav_header.php";
+	error_reporting(0);
+	ini_set('display_errors', 0);
 ?>
 
 <!DOCTYPE html>
@@ -82,7 +83,7 @@
                                
                                <p class="price">$ <?php echo $product_price; ?></p>
                                
-                               <p class="text-center buttons"><button class="btn btn-primary i fa fa-shopping-cart"> Add to cart</button></p>
+                               <p class="text-center buttons"><button onclick="check_login();" class="btn btn-primary i fa fa-shopping-cart"> Add to cart</button></p>
 
                                                            
                            </form><!-- form-horizontal Finish -->
@@ -154,4 +155,18 @@
     include "includes/footer.php";
   ?>
 </body>
+
+<script type="text/javascript">
+	
+	
+	function check_login()
+	{
+		var result ="<?php isLoggedIn();?>";
+		if(result)
+		{
+			alert(result);
+			window.location.href="login.php";
+		}
+	}
+</script>
 </html>
