@@ -201,6 +201,7 @@ $numComments = $sqlNumComments->num_rows;
 														<a href='details.php?product_id=$product_id'> $product_title
 															
 														</a>
+
 													<h3>";
 													while ($rows=mysqli_fetch_array($results)){
 														$a = $rows['username'];
@@ -209,6 +210,14 @@ $numComments = $sqlNumComments->num_rows;
 													
 													echo "<p>
 														RM$product_price
+
+													<h3>
+													<p>Seller id :
+													$seller_id
+													<p>
+													<p >
+														RM $product_price
+
 													</p>
 													<p class='button'>
 														<a class='btn btn-default' href='details.php?product_id=$product_id'>
