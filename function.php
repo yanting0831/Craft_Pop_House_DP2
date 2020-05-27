@@ -171,42 +171,42 @@ function add_cart(){
 			while($row_products=mysqli_fetch_array($run_products))
 			{
 				$product_id = $row_products['product_id'];
-										$product_title = $row_products['product_title'];
-										$product_price = $row_products['product_price'];
-										$seller_id= $row_products['seller_id'];
-										$product_image = $row_products['product_img'];
-										
-										 echo "
-										<div class='col-md-4 col-sm-6 center-responsive'>
-											<div class='product'>
-												<a href='details.php?product_id=$product_id'>
-													<img class='img-responsive' src='images/$product_image'>
-												</a>
-												<div class='text'>
-													<h3> 
-														<a href='details.php?product_id=$product_id'> $product_title
-															
-														</a>
-													<h3>
-													<p>Seller id :
-													$seller_id
-													<p>
-													<p >
-														RM$product_price
-													</p>
-													<p class='button'>
-														<a class='btn btn-default' href='details.php?product_id=$product_id'>
-														View Details
-														</a>
-														<a class='btn btn-primary' href='details.php?product_id=$product_id'>
-															<i class='fa fa-shopping-cart'></i>Add to Cart
-														</a>
-													</p>
-													
-												</div>
-											</div>
-										</div>
-									";
+				$product_title = $row_products['product_title'];
+				$product_price = $row_products['product_price'];
+				$seller_id= $row_products['seller_id'];
+				$product_image = $row_products['product_img'];
+				
+				 echo "
+				<div class='col-md-4 col-sm-6 center-responsive'>
+					<div class='product'>
+						<a href='details.php?product_id=$product_id'>
+							<img class='img-responsive' src='images/$product_image'>
+						</a>
+						<div class='text'>
+							<h3> 
+								<a href='details.php?product_id=$product_id'> $product_title
+									
+								</a>
+							<h3>
+							<p>Seller id :
+							$seller_id
+							<p>
+							<p >
+								RM$product_price
+							</p>
+							<p class='button'>
+								<a class='btn btn-default' href='details.php?product_id=$product_id'>
+								View Details
+								</a>
+								<a class='btn btn-primary' href='details.php?product_id=$product_id'>
+									<i class='fa fa-shopping-cart'></i>Add to Cart
+								</a>
+							</p>
+							
+						</div>
+					</div>
+				</div>
+			";
 			
 			
 			}
