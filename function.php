@@ -212,6 +212,7 @@ function add_cart(){
 			}
 		}
 	}
+	
 	function subscribe(){
 
 	global $connection;
