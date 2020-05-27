@@ -169,14 +169,20 @@ function add_cart(){
 					";
 			}
 			while($row_products=mysqli_fetch_array($run_products))
-			{
-				$product_id = $row_products['product_id'];
+									
+									{
+										$product_id = $row_products['product_id'];
+										$seller_id= $row_products['seller_id'];
 										$product_title = $row_products['product_title'];
 										$product_price = $row_products['product_price'];
-										$seller_id= $row_products['seller_id'];
 										$product_image = $row_products['product_img'];
 										
-										 echo "
+										$db = mysqli_connect('localhost', 'root', '', 'cph');
+										$query = "SELECT * FROM users where id='$seller_id'";
+										$results = mysqli_query($db, $query);
+										
+										
+										echo "
 										<div class='col-md-4 col-sm-6 center-responsive'>
 											<div class='product'>
 												<a href='details.php?product_id=$product_id'>
@@ -187,13 +193,15 @@ function add_cart(){
 														<a href='details.php?product_id=$product_id'> $product_title
 															
 														</a>
-													<h3>
-													<p>Seller id :
-													$seller_id
-													<p>
-													<p >
+													<h3>";
+													while ($rows=mysqli_fetch_array($results)){
+														$a = $rows['username'];
+														echo "<h4>Seller UserName: $a</h4>";
+													}
+													
+													echo "<h4>
 														RM$product_price
-													</p>
+													</h4>
 													<p class='button'>
 														<a class='btn btn-default' href='details.php?product_id=$product_id'>
 														View Details
@@ -207,9 +215,8 @@ function add_cart(){
 											</div>
 										</div>
 									";
-			
-			
-			}
+										
+								}
 		}
 	}
 	function subscribe(){
