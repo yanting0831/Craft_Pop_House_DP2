@@ -1,5 +1,7 @@
 <?php 
 	include('functions.php');
+	include('function.php');
+	include('db.php');
 ?>
 
 <!DOCTYPE html>
@@ -44,24 +46,16 @@
 		<p>Fax: +6082-420253</p>
 		
 		<h4>Email:</h4>
-		<p>INFO (<a href="mailto:info@sarawakhandicraft.com.my">info@sarawakhandicraft.com.my</a>)</p>
-		<p>VENDOR (<a href="mailto:vendor@sarawakhandicraft.com.my">vendor@sarawakhandicraft.com.my</a>)</p>
-		<p>MEDIA (<a href="mailto:media@sarawakhandicraft.com.my">media@sarawakhandicraft.com.my</a>)</p>
-		<p>ACCOUNTS (<a href="mailto:accounts@sarawakhandicraft.com.my">accounts@sarawakhandicraft.com.my</a>)</p>
+		<p>INFO (<a href="mailto:info@craft-pop-house-official.com.my">info@craft-pop-house-official.com.my</a>)</p>
+		<p>VENDOR (<a href="mailto:vendor@craft-pop-house-official.com.my">vendor@craft-pop-house-official.com.my</a>)</p>
+		<p>MEDIA (<a href="mailto:media@craft-pop-house-official.com.my">media@craft-pop-house-official.com.my</a>)</p>
+		<p>ACCOUNTS (<a href="mailto:accounts@craft-pop-house-official.com.my">accounts@craft-pop-house-official.com.my</a>)</p>
 	</div>
 	
 	
 	<?php
 		include "includes/footer.php";
+		subscribe();
 	?>
 </body>
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="/__/firebase/7.14.5/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="/__/firebase/7.14.5/firebase-analytics.js"></script>
-
-<!-- Initialize Firebase -->
-<script src="/__/firebase/init.js"></script>
 </html>
