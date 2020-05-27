@@ -26,36 +26,47 @@ function add_cart(){
 	
     global $connection;
     
-    if(isset($_GET['add_cart'])){
+	if(!isLoggedIn())
+	{
+		echo '<script type="text/javascript">
+			alert("INFO: Please log in first.");
+			window.location.href="login.php";
+		</script>';
+	}
+	else
+	{
+		if(isset($_GET['add_cart'])){
 		// print_r("Hekko");
         
-        $ip_add = getRealIpUser();
-        
-        $p_id = $_GET['add_cart'];
-        
-        $product_quantity = $_POST['product_qty'];
-     
-        
-        $check_product = "select * from carts where ip_add='$ip_add' AND p_id='$p_id'";
-        
-        $run_check = mysqli_query($connection,$check_product);
-        
-        if(mysqli_num_rows($run_check)>0){
-            
-            echo "<script>alert('This product has already added in cart')</script>";
-            echo "<script>window.open('details.php?product_id=$p_id','_self')</script>";
-            
-        }else{
-            
-            $query = "insert into carts (p_id,ip_add,qty) values ('$p_id','$ip_add','$product_quantity')";
-            
-            $run_query = mysqli_query($connection,$query);
-            
-            echo "<script>window.open('details.php?product_id=$p_id','_self')</script>";
-            
-        }
-        
-    }
+			$ip_add = getRealIpUser();
+			
+			$p_id = $_GET['add_cart'];
+			
+			$product_quantity = $_POST['product_qty'];
+		 
+			
+			$check_product = "select * from carts where ip_add='$ip_add' AND p_id='$p_id'";
+			
+			$run_check = mysqli_query($connection,$check_product);
+			
+			if(mysqli_num_rows($run_check)>0){
+				
+				echo "<script>alert('This product has already added in cart')</script>";
+				echo "<script>window.open('details.php?product_id=$p_id','_self')</script>";
+				
+			}else{
+				
+				$query = "insert into carts (p_id,ip_add,qty) values ('$p_id','$ip_add','$product_quantity')";
+				
+				$run_query = mysqli_query($connection,$query);
+				
+				echo "<script>window.open('details.php?product_id=$p_id','_self')</script>";
+				
+			}
+			
+		}
+    
+	}
     
 }
 	
