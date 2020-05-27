@@ -76,6 +76,8 @@ $numComments = $sqlNumComments->num_rows;
 	<meta name="keywords" content="handicrafts">
 	<link rel="stylesheet" type="text/css" href="styles/category.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
 	<style type="text/css">
     	
 		.comment {
@@ -201,24 +203,15 @@ $numComments = $sqlNumComments->num_rows;
 														<a href='details.php?product_id=$product_id'> $product_title
 															
 														</a>
-
 													<h3>";
 													while ($rows=mysqli_fetch_array($results)){
 														$a = $rows['username'];
 														echo "<h4>Seller UserName: $a</h4>";
 													}
 													
-													echo "<p>
+													echo "<h4>
 														RM$product_price
-
-													<h3>
-													<p>Seller id :
-													$seller_id
-													<p>
-													<p >
-														RM $product_price
-
-													</p>
+													</h4>
 													<p class='button'>
 														<a class='btn btn-default' href='details.php?product_id=$product_id'>
 														View Details
