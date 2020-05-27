@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 26, 2020 at 01:58 PM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.3.9
+-- Generation Time: May 27, 2020 at 05:42 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -48,7 +47,8 @@ INSERT INTO `topics` (`topic_id`, `topic_subject`, `topic_date`, `topic_cat`, `t
 (11, '12344', '2020-05-26 17:03:57', 1, 1),
 (12, '12344', '2020-05-26 17:04:18', 1, 1),
 (13, '12344', '2020-05-26 17:04:31', 1, 1),
-(14, 'Hand Crafted Bags', '2020-05-26 19:41:37', 6, 13);
+(14, 'Hand Crafted Bags', '2020-05-26 19:41:37', 6, 13),
+(15, 'nothing', '2020-05-27 10:11:30', 4, 20);
 
 --
 -- Indexes for dumped tables
@@ -70,18 +70,7 @@ ALTER TABLE `topics`
 -- AUTO_INCREMENT for table `topics`
 --
 ALTER TABLE `topics`
-  MODIFY `topic_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `topics`
---
-ALTER TABLE `topics`
-  ADD CONSTRAINT `topics_ibfk_1` FOREIGN KEY (`topic_cat`) REFERENCES `categories` (`cat_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `topics_ibfk_2` FOREIGN KEY (`topic_by`) REFERENCES `users` (`id`) ON UPDATE CASCADE;
+  MODIFY `topic_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
