@@ -1,13 +1,10 @@
 <?php
+	include('functions.php');
 	include("function.php");
-	include("functions.php");
-	//error_reporting(0);
-	//ini_set('display_errors', 0);
-	
-	$conn = new mysqli('localhost', 'root', '', 'cph');
+	include "includes/nav_header.php";
 	
 	function createCommentRow($data) {
-		global $conn;
+		global $connection;
 
 		$response = '
 				<div class="comment">
@@ -16,7 +13,7 @@
 					<div class="reply"><a href="javascript:void(0)" data-commentID="'.$data['id'].'" onclick="reply(this)">REPLY</a></div>
 					<div class="replies">';
 
-		$sql = $conn->query("SELECT replies.id, username, comment, replies.createdOn FROM replies INNER JOIN users ON replies.userID = users.id WHERE replies.commentID = '".$data['id']."' ORDER BY replies.id DESC LIMIT 1");
+		$sql = $connection->query("SELECT replies.id, username, comment, replies.createdOn FROM replies INNER JOIN users ON replies.userID = users.id WHERE replies.commentID = '".$data['id']."' ORDER BY replies.id DESC LIMIT 1");
 		while($dataR = $sql->fetch_assoc())
 			$response .= createCommentRow($dataR);
 
@@ -29,10 +26,10 @@
 	}
 	
 	if (isset($_POST['getAllComments'])) {
-		$start = $conn->real_escape_string($_POST['start']);
+		$start = $connection->real_escape_string($_POST['start']);
 
 		$response = "";
-		$sql = $conn->query("SELECT comments.id, username, comment, comments.createdOn FROM comments INNER JOIN users ON comments.userID = users.id ORDER BY comments.id DESC LIMIT $start, 20");
+		$sql = $connection->query("SELECT comments.id, username, comment, comments.createdOn FROM comments INNER JOIN users ON comments.userID = users.id ORDER BY comments.id DESC LIMIT $start, 20");
 		while($data = $sql->fetch_assoc())
 			$response .= createCommentRow($data);
 
@@ -40,19 +37,19 @@
 	}
 	
 	if (isset($_POST['addComment'])) {
-        $comment = $conn->real_escape_string($_POST['comment']);
-		$isReply = $conn->real_escape_string($_POST['isReply']);
-		$commentID = $conn->real_escape_string($_POST['commentID']);
+        $comment = $connection->real_escape_string($_POST['comment']);
+		$isReply = $connection->real_escape_string($_POST['isReply']);
+		$commentID = $connection->real_escape_string($_POST['commentID']);
 		
 		if($isReply != 'false')
 		{
-			$conn->query("INSERT INTO replies (commentID, comment, createdOn, userID) VALUES ('$commentID', '$comment', NOW(), '".$_SESSION['user']['id']."')");
-			$sql = $conn->query("SELECT replies.id, username, comment, replies.createdOn FROM replies INNER JOIN users ON replies.userID = users.id ORDER BY replies.id DESC LIMIT 1");
+			$connection->query("INSERT INTO replies (commentID, comment, createdOn, userID) VALUES ('$commentID', '$comment', NOW(), '".$_SESSION['user']['id']."')");
+			$sql = $connection->query("SELECT replies.id, username, comment, replies.createdOn FROM replies INNER JOIN users ON replies.userID = users.id ORDER BY replies.id DESC LIMIT 1");
 		}
 		else
 		{
-			$conn->query("INSERT INTO comments (userID, comment, createdOn) VALUES ('".$_SESSION['user']['id']."','$comment',NOW())");
-			$sql = $conn->query("SELECT comments.id, username, comment, comments.createdOn FROM comments INNER JOIN users ON comments.userID = users.id ORDER BY comments.id DESC LIMIT 1");
+			$connection->query("INSERT INTO comments (userID, comment, createdOn) VALUES ('".$_SESSION['user']['id']."','$comment',NOW())");
+			$sql = $connection->query("SELECT comments.id, username, comment, comments.createdOn FROM comments INNER JOIN users ON comments.userID = users.id ORDER BY comments.id DESC LIMIT 1");
 		}
 
         
@@ -60,7 +57,7 @@
 		exit(createCommentRow($data));
     }
 	
-$sqlNumComments = $conn->query("SELECT id FROM comments");
+$sqlNumComments = $connection->query("SELECT id FROM comments");
 $numComments = $sqlNumComments->num_rows;
 ?>
 
@@ -73,55 +70,17 @@ $numComments = $sqlNumComments->num_rows;
 	<meta name="author" content="Eric Kong, Yan Ting">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width = device-width, initial-scale = 1">
-		<meta name="description" content="category page">
-		<meta name="keywords" content="handicrafts">
+	<meta name="description" content="category page">
+	<meta name="keywords" content="handicrafts">
 	<link rel="stylesheet" type="text/css" href="styles/category.css">
-	<link href="styles/cart.css" rel="stylesheet" type="text/css">
-	<!--Bootstrap CDN-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-	<!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
-    <script src="includes/jquery-3.2.1.min.js"></script>
-    <style type="text/css">
-    	.alert, #loader {
-    	display: none;
-		}
-		.comment {
-            margin-bottom: 20px;
-        }
-
-        .user {
-            font-weight: bold;
-            color: black;
-        }
-
-        .time, .reply {
-            color: gray;
-        }
-
-        .userComment {
-            color: #000;
-        }
-
-        .replies .comment {
-            margin-top: 20px;
-
-        }
-
-        .replies {
-            margin-left: 20px;
-        }
-    }
-    </style>
 </head>
 <body>
 	<br>
-	<br><br><br><br>
-	<?php
-		include "includes/nav_header.php";
-	?>
-
-	<div class="container">
+	
+	<div id="content">
+	
+		<div class='container'>
 		<?php 
 			require_once('includes/DbConnect.php');
             $db   = new DbConnect();
@@ -135,155 +94,162 @@ $numComments = $sqlNumComments->num_rows;
 			
 			//print_r($cartItems);
 		?>
-		
-		<div id="content">
-			<div class='container'>
-				<div class="row">
-					<div class="col-md-10 col-md-offset-1">
-						<div class="alert alert-dismissible" role="alert">
-							<button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
-							<div id="result"></div>
-						</div>
-						<center><img src="images/loader.gif" id="loader"></center>
-					</div>
-				<div class="col-md-12">
-					<ul class="breadcrumb">
-						<li><a href="code.php">Home</a></li>
-						<li>Products</li>
-					</ul>
+			<div class="col-md-12">
+				<ul class="breadcrumb">
+					<li><a href="index.php">Home</a></li>
+					<li>Product</li>
+				</ul>
+			</div>
+			
+			<div class="col-md-3">
+			<?php 
+			
+			include("includes/sidebar.php");
+			
+			?>
 				</div>
-				
-				<div class="col-md-3">
-					<?php 
-					
-					include("includes/sidebar.php");
-					
-					?>
-				</div>
-				
 				<div class="col-md-9">
+				
+				<?php
+					
+					if(!isset($_GET['category'])){
+					
+					echo "
+					
+					<div class='box'>
+						<h1>Our Products</h1>
+					</div>
+					";
+					}
+				?>
+				<?php getCategoryCO();?>
+					<div class="row">
+					
+					<!--The user can see the product by using the category-->
+					<!--The product will in their own category to display to the user-->
 					<?php
-						
 						if(!isset($_GET['category'])){
-						
-						echo "
-						
-						<div class='box'>
-							<h1>Our Products</h1>
-						</div>
-						";
-						}
-					?>
-						<div class="row">
-						
-						<?php
-						
-							require 'classes/products.class.php';
+				
 							
-							$objProduct = new product($conn);
-							$products = $objProduct->getAllProducts();
-							foreach ($products as $key => $product){
-								if(!isset($_GET['category'])){
-									$test = $product['seller_id'];
-									$db = mysqli_connect('localhost', 'root', '', 'cph');
-									$query = "SELECT * FROM users where id='$test'";
-									$results = mysqli_query($db, $query);
-									//define how many results you want per page
-									$per_page=6;
+                            $per_page=6; 
+							if(isset($_GET['page'])){
+                                
+                                $page = $_GET['page'];
+                                
+                            }else{
+                                
+                                $page=1;
+                                
+                            }
+								$start_from = ($page-1) * $per_page;
+								$get_product= "select * from products order by 1 DESC LIMIT $start_from,$per_page";
+								$run_products= mysqli_query($connection,$get_product);
+								while($row_products=mysqli_fetch_array($run_products))
 									
-							?>
-							<div class="col-sm-6 col-md-4">
-								<div class="thumbnail">
-								  <img src="images/<?= $product['product_img']; ?>" alt="" style="width: 200px; height: 200px;">
-								  <div class="caption">
-									<h3><?= $product['product_title']; ?></h3>
-									<?php 
-										while ($rows=mysqli_fetch_array($results)){
-											$a = $rows['username'];
-											echo "<p>Seller UserName: $a</p>";
-										} 
-									?>
-									<p>
-										<div class="row">
-											<div class="col-sm-6 col-md-6">
-												<strong> <span style="font-size: 18px;">RM</span><?= number_format( $product['product_price'], 2 ); ?></strong>
-											</div>
-											<div class="col-sm-6 col-md-6">
-												<?php
-													$disButton = "";
-													if( array_search($product['product_id'], array_column($cartItems, 'pid')) !==false ) {
-														$disButton = "disabled";
-													}
-												 ?>
-
-												<button id="cartBtn_<?=$product['product_id'];?>" <?php echo $disButton; ?> class="btn btn-success" onclick="addToCart(<?=$product['product_id'];?>, this.id); check_login(); " role="button">Add To Cart</button>
+									{
+										$product_id = $row_products['product_id'];
+										$seller_id= $row_products['seller_id'];
+										$product_title = $row_products['product_title'];
+										$product_price = $row_products['product_price'];
+										$product_image = $row_products['product_img'];
+										
+										
+										
+										echo "
+										<div class='col-md-4 col-sm-6 center-responsive'>
+											<div class='product'>
+												<a href='details.php?product_id=$product_id'>
+													<img class='img-responsive' src='images/$product_image'>
+												</a>
+												<div class='text'>
+													<h3> 
+														<a href='details.php?product_id=$product_id'> $product_title
+															
+														</a>
+													<h3>
+													<p>Seller id :
+													$seller_id
+													<p>
+													<p >
+														RM$product_price
+													</p>
+													<p class='button'>
+														<a class='btn btn-default' href='details.php?product_id=$product_id'>
+														View Details
+														</a>
+														<a class='btn btn-primary' href='details.php?product_id=$product_id'>
+															<i class='fa fa-shopping-cart'></i>Add to Cart
+														</a>
+													</p>
+													
+												</div>
 											</div>
 										</div>
-									</p>
-								  </div>
-								  
-								</div>
+									";
+										
+								}
+							}
+						
+					?>
+					</div>	
+					<center>
+                   <ul class="pagination"><!-- pagination Begin -->
+					<?php
+                    $per_page=6; 
 					
-							  </div>
-							  
-							  
-							<?php }} ?>
-						
+                    $query = "select * from products";
+                             
+                    $result = mysqli_query($connection,$query);
+                             
+                    $total_records = mysqli_num_rows($result);
+                             
+                    $total_pages = ceil($total_records/$per_page );
+                             
+                        echo "
+                        
+                            <li>
+                            
+                                <a href='products.php?page=1'> ".'First Page'." </a>
+                            
+                            </li>
+                        
+                        ";
+                             
+                        for($i=1; $i<=$total_pages; $i++){
+                            
+                              echo "
+                        
+                            <li>
+                            
+                                <a href='products.php?page=".$i."'> ".$i." </a>
+                            
+                            </li>
+                        
+                        ";  
+                            
+                        };
+                             
+                        echo "
+                        
+                            <li>
+                            
+                                <a href='products.php?page=$total_pages'> ".'Last Page'." </a>
+                            
+                            </li>
+                        
+                        ";
+                            
 							
-						</div>
-						<center>
-							<ul class="pagination">
-							<?php 
-							$per_page=6;
-								$conn = mysqli_connect('localhost','root','','cph');
-								$query = "SELECT * FROM products";
-								$result = mysqli_query($conn,$query);
-								$total = mysqli_num_rows($result);
-								$num_pages = ceil($total / $per_page);
-								
-								//determine which page number visitor is currently on
-								if(!isset($_GET['page']))
-								{
-									$page = 1;
-								}
-								else
-								{
-									$page = $_GET['page'];
-								}
-								
-								//determine the sql limit starting number for the results on the displaying page
-								$this_page_first_result = ($page-1)*$per_page;
-								
-								//retrieve selected results from database and display them on page
-								
-			
-								//display the links to the pages
-								for ($page=1; $page<=$num_pages; $page++){
-									echo " 
-								<li>
-									<a href='products.php?page=" . $page . "'>" . $page . "</a>
-									
-								</li>
-								";
-								};
-								?>
-								</ul>
-						</center>
-						
-						<?php getCategoryCO();?>
 						
 						
-				</div>
-				
-				<!--user comments-->
-				
-				
-				</div>		
-				
-			</div>	
-			
-			<!--user comments-->
-			<div class="container" style="margin-top:50px;">
+					 
+					 ?> 
+                       
+                   </ul><!-- pagination Finish -->
+               </center>
+					
+					</div>
+					<div class="container" style="margin-top:50px;">
 				<div class="row">
 					<h1> Comment Section </h1>
 				</div>
@@ -315,12 +281,9 @@ $numComments = $sqlNumComments->num_rows;
 				</div>
 				
 			</div>
-
-
 	<?php
 		include "includes/footer.php";
 	?>
-	
 	<script src="http://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -444,6 +407,6 @@ $numComments = $sqlNumComments->num_rows;
 			window.location.href="login.php";
 		}
 	}
-	
 </script>
+</body>
 </html>
