@@ -52,7 +52,7 @@
 							<table class="table table-bordered">
 							  <thead>
 								<tr>
-									<th>Buyer ID </th>
+								
 									<th>Seller ID </th>
 									<th>Due_amout </th>
 									<th>Invoice</th>
@@ -74,7 +74,7 @@
 									?>
 									
 								<tr>
-									<td><?php echo $row['buyer_id']; ?></td>
+	
 									<td><?php echo $_SESSION['sid']; ?></td>
 									<td><?php echo $row['due_amount']; ?></td>
 									<td><?php echo $row['invoice_no']; ?></td>
