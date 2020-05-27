@@ -194,6 +194,7 @@
 
 	<?php
 		include "includes/footer.php";
+		subscribe();
 	?>
 	
 	
