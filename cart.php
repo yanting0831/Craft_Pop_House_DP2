@@ -100,6 +100,7 @@
                                            $product_image = $row_products['product_img'];
                                            
                                            $unit_price = $row_products['product_price'];
+
 										   $seller_id = $row_products['seller_id'];
 
                                            $unitPriceToFloat = number_format((float)$unit_price, 2, '.', '');
@@ -120,44 +121,47 @@
 
                                            $_SESSION['total']  = $total_with_tax;
 
-                                      ?>
+                                       ?>
 
                                    <tr><!-- tr Begin -->
-										<td>
-                                           
-                                         <?php echo $product_title; ?>
+                										<td>
+                                                           
+                                      <?php echo $product_title;  $_SESSION['title'] = $product_title; ?>
 
-										</td>
-										<td>
-											<?php echo $seller_id;?>
-										</td>
-                                       
-										<td>
-                                          
-                                           <?php echo $pro_qty; ?>
-                                           
-										</td>
-                                       
-										<td>
-                                           
-                                            RM <?php echo $unitPriceToFloat; ?>
-                                           
-										</td>
 
-										<td>
                                            
-                                           <input type="checkbox" name="remove[]" value="<?php echo $pro_id; ?>">
-                                           
-										</td>
-                                       
-										<td>
-                                           
-                                          RM <?php echo $subTotalToFloat; ?>
-                                           
-										</td>
-                                       
-									</tr><!-- tr Finish -->
-                                   
+
+                										</td>
+                										<td>
+                											<?php echo $seller_id;?>
+                										</td>
+                                                       
+                										<td>
+                                                          
+                                      <?php echo $pro_qty; $_SESSION['quantity'] = $pro_qty;?>
+                                                           
+                										</td>
+                                                       
+                										<td>
+                                                           
+                                      RM <?php echo $unitPriceToFloat; ?>
+                                                           
+                										</td>
+
+                										<td>
+                                                           
+                                      <input type="checkbox" name="remove[]" value="<?php echo $pro_id; ?>">
+                                                           
+                										</td>
+                                                       
+                										<td>
+                                                           
+                                      RM <?php echo $subTotalToFloat; ?>
+                                                           
+                										</td>
+                                                       
+                									</tr><!-- tr Finish -->
+                                                   
                                    <?php } 
 
                                  } ?>
