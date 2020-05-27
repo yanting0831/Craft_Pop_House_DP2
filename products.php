@@ -114,19 +114,7 @@ $numComments = $sqlNumComments->num_rows;
 	<div id="content">
 	
 		<div class='container'>
-		<?php 
-			require_once('includes/DbConnect.php');
-            $db   = new DbConnect();
-            $conn = $db->connect();
-
-			require 'classes/users.class.php';
-	    	$objUser = new user($conn);
-	    	$objUser->setEmail($_SESSION['user']['email']);
-	    	$user = $objUser->getUserByEmailId();
-	    	$_SESSION['cid'] = $user['id'];
-			
-			//print_r($cartItems);
-		?>
+		
 			<div class="col-md-12">
 				<ul class="breadcrumb">
 					<li><a href="index.php">Home</a></li>
@@ -135,9 +123,10 @@ $numComments = $sqlNumComments->num_rows;
 			</div>
 			
 			<div class="col-md-3">
+			
 			<?php 
 			
-			include("includes/sidebar.php");
+				include("includes/sidebar.php");
 			
 			?>
 				</div>
