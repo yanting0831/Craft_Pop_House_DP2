@@ -24,23 +24,7 @@ $connect = mysqli_connect("localhost", "root", "", "test");
 
 <body>
 	<div class="container" style="width: 700px;">
-	  <!--div class="row text-center py-5">
-		<div class="col-md-3 col-sm-6 my-3 my-md-0">
-			<form action="index.php" method="post">
-			<div class="card shadow">
-				<div>
-					<img src="images/bag1.jpg" alt="bag1" class="img-fluid card-img top">
-				</div>
-				<div class="card-body">
-					<h5 class="card-title">Product1</h5>
-					<h6>
-						123123
-					</h6>
-				</div>
-			</div>
-			</form>
-		</div>
-	  </div-->
+	 
 	  <div class="container" style="width:700px;">  
                 <h3 align="center">Simple PHP Mysql Shopping Cart</h3><br />  
                 <?php  
