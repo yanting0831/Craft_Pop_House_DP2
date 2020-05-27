@@ -1,8 +1,6 @@
 <?php 
 	include('functions.php');
-	
-	error_reporting(0);
-	ini_set('display_errors', 0);
+	include('function.php');
 ?>
 <?php
 	$connection = mysqli_connect('localhost','root','','cph');	
@@ -132,23 +130,7 @@
            
        </div><!-- col-md-12 Finish -->
        
-   </div><!-- container Finish -->
-		
-	
-
-	<!-- This is a seperator
-	<div class="seperator">
-		<section class="sec">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						
-					</div>
-				</div>
-			</div>
-		</section>
-	</div>-->
-	
+   </div><!-- container Finish -->	
 	
 	<div class="body_container">
 		<hr class="line1">
@@ -269,6 +251,7 @@
 		include "includes/footer.php";
 		subscribe();
 	?>
+
 </body>
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="/__/firebase/7.14.5/firebase-app.js"></script>
