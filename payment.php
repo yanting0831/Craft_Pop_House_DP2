@@ -25,15 +25,7 @@
 <br><br><br>
 
 <div class="box"><!-- box Begin -->
-   
     
-
-
-
-
-
-
-          
      <!-- Payment -->
      <form method="post" class="form-horizontal">
          <div id="paypal-button-container" class="col-md-6 col-md-offset-6"></div>
