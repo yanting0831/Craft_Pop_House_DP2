@@ -1,5 +1,9 @@
 <?php 
+	error_reporting(0);
+	ini_set('display_errors', 0);
 	include('functions.php');
+	include("function.php");
+	include "includes/nav_header.php";
 ?>
 
 <!DOCTYPE html>
@@ -22,10 +26,6 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
-	
-	<style type="text/css">
-		
-    </style>
 </head>
 <body>
 
@@ -148,7 +148,9 @@
 		
 	<?php
 		include "includes/footer.php";
+		subscribe();
 	?>
+	
 </body>
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="/__/firebase/7.14.5/firebase-app.js"></script>
