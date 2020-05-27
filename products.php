@@ -171,7 +171,7 @@ $numComments = $sqlNumComments->num_rows;
 													$seller_id
 													<p>
 													<p >
-														RM$product_price
+														RM $product_price
 													</p>
 													<p class='button'>
 														<a class='btn btn-default' href='details.php?product_id=$product_id'>
