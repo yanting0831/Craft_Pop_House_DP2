@@ -291,7 +291,7 @@ $numComments = $sqlNumComments->num_rows;
 				<div class="row">
 					<div class="col-md-12">
 						<textarea class="form-control" id="mainComment" placeholder="Add Public Comment" cols="30" rows="2"></textarea><br>
-						<button style="float:right" class="btn-primary btn" onclick="isReply = false;" id="addComment">Add Comment</button>
+						<button style="float:right" class="btn-primary btn" onclick="isReply = false; check_login();" id="addComment">Add Comment</button>
 					</div>
 				</div>
 			
