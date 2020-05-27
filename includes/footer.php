@@ -72,7 +72,6 @@
 			<p class="subscribe">Subscribe to receive latest updates and news.</p>
 			
 			<form action="index.php" method="post">
-
 				<input type="text" name="f_name" class="form-control" placeholder="Your first name" aria-label="Your first name" aria-describedby="basic-addon2"/>
 				<input type="text" name="mail" class="form-control" placeholder="Your email" aria-label="Your email" aria-describedby="basic-addon2"/>
 				
