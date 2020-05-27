@@ -25,10 +25,16 @@
 <br><br><br>
 
 <div class="box"><!-- box Begin -->
-    
+      <div class="container well col-md-4 col-md-offset-4">
+          <div>
+             <b>Item(s) bought:</b> <?php echo $_SESSION['title']; ?>
+          </div>        
+      </div>
+
+
      <!-- Payment -->
      <form method="post" class="form-horizontal">
-         <div id="paypal-button-container" class="col-md-6 col-md-offset-6"></div>
+         <div id="paypal-button-container" class="col-md-4 col-md-offset-4"></div>
      </form>
                       
 
