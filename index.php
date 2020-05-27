@@ -1,9 +1,7 @@
 <?php 
 	include('functions.php');
 	include('function.php');
-?>
-<?php
-	$connection = mysqli_connect('localhost','root','','cph');	
+	include('db.php');
 ?>
 
 <!DOCTYPE html>
