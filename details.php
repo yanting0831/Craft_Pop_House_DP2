@@ -24,6 +24,11 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+	<style type="text/css">
+    	
+		
+    
+    </style>
 </head>
 <body>
   <br>
@@ -46,7 +51,7 @@
         ?>
       </div>
       
-      <div class="col-md-9">
+      <div class="col-md-9 thumbnail">
 
         <div class="col-md-9"><!-- col-md-9 Begin -->
                <div id="productMain" class="row"><!-- row Begin -->
@@ -58,17 +63,15 @@
                        </div><!-- mainImage Finish -->
                    </div><!-- col-sm-6 Finish -->
                    
-                   <div class="col-sm-6"><!-- col-sm-6 Begin -->
+                   <div class="col-sm-6 "><!-- col-sm-6 Begin -->
                        <div class="box" id ="details"><!-- box Begin -->
 
                           <!-- Product Title -->
-                           <h1 class="text-center"> <?php echo $product_title; ?> </h1>
+                           <h1 class=""> <?php echo $product_title; ?> </h1>
                            <?php add_cart(); ?>
                            <form action="details.php?add_cart=<?php echo $product_id; ?>" class="form-horizontal" method="post"><!-- form-horizontal Begin -->
                                <div class="form-group"><!-- form-group Begin -->
-
-
-                                   <label for="" class="col-md-5 control-label">Products Quantity</label>
+                                   <label for="" class="col-md-6 pq">Products Quantity</label>
                                    
                                    <div class="col-md-7"><!-- col-md-7 Begin -->
                                           <select name="product_qty" id="" class="form-control"><!-- select Begin -->
@@ -86,7 +89,7 @@
                                
                                <p class="price">RM <?php echo $product_price; ?></p>
                                
-                               <p class="text-center buttons"><button class="btn btn-primary i fa fa-shopping-cart" onclick="check_login();"> Add to cart</button></p>
+                               <p class=" buttons"><button class="btn btn-primary i fa fa-shopping-cart" onclick="check_login();"> Add to cart</button></p>
 
                                                            
                            </form><!-- form-horizontal Finish -->
