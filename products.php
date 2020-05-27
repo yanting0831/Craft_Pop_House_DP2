@@ -1,4 +1,6 @@
 <?php
+	error_reporting(0);
+	ini_set('display_errors', 0);
 	include('functions.php');
 	include("function.php");
 	include "includes/nav_header.php";
@@ -74,6 +76,37 @@ $numComments = $sqlNumComments->num_rows;
 	<meta name="keywords" content="handicrafts">
 	<link rel="stylesheet" type="text/css" href="styles/category.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+	<style type="text/css">
+    	
+		.comment {
+            margin-bottom: 20px;
+        }
+
+        .user {
+            font-weight: bold;
+            color: black;
+        }
+
+        .time, .reply {
+            color: gray;
+        }
+
+        .userComment {
+            color: #000;
+        }
+
+        .replies .comment {
+            margin-top: 20px;
+
+        }
+
+        .replies {
+            margin-left: 20px;
+        }
+    }
+    </style>
 </head>
 <body>
 	<br>
@@ -142,6 +175,7 @@ $numComments = $sqlNumComments->num_rows;
                                 
                             }
 								$start_from = ($page-1) * $per_page;
+								
 								$get_product= "select * from products order by 1 DESC LIMIT $start_from,$per_page";
 								$run_products= mysqli_query($connection,$get_product);
 								while($row_products=mysqli_fetch_array($run_products))
@@ -153,6 +187,9 @@ $numComments = $sqlNumComments->num_rows;
 										$product_price = $row_products['product_price'];
 										$product_image = $row_products['product_img'];
 										
+										$db = mysqli_connect('localhost', 'root', '', 'cph');
+										$query = "SELECT * FROM users where id='$seller_id'";
+										$results = mysqli_query($db, $query);
 										
 										
 										echo "
@@ -166,13 +203,15 @@ $numComments = $sqlNumComments->num_rows;
 														<a href='details.php?product_id=$product_id'> $product_title
 															
 														</a>
-													<h3>
-													<p>Seller id :
-													$seller_id
-													<p>
-													<p >
-														RM $product_price
-													</p>
+													<h3>";
+													while ($rows=mysqli_fetch_array($results)){
+														$a = $rows['username'];
+														echo "<h4>Seller UserName: $a</h4>";
+													}
+													
+													echo "<h4>
+														RM$product_price
+													</h4>
 													<p class='button'>
 														<a class='btn btn-default' href='details.php?product_id=$product_id'>
 														View Details
@@ -249,7 +288,8 @@ $numComments = $sqlNumComments->num_rows;
                </center>
 					
 					</div>
-					<div class="container" style="margin-top:50px;">
+					
+			<div class="container" style="margin-top:50px;">
 				<div class="row">
 					<h1> Comment Section </h1>
 				</div>
@@ -373,40 +413,5 @@ $numComments = $sqlNumComments->num_rows;
     </script>
 </body>
 
-<script type="text/javascript">
-	function addToCart(pId, btnId) {
-		
-		$('#loader').show();
-		$.ajax({
-			url: "action.php",
-			data: "pId=" + pId + "&action=add",
-			method: "post"
-		}).done(function(response) {
-			var data = JSON.parse(response);
-			$('#loader').hide();
-			$('.alert').show();
-			if(data.status == 0) {
-				$('.alert').addClass('alert-danger');
-				$('#result').html(data.msg);
-			} else {
-				$('.alert').addClass('alert-success');
-				$('#result').html(data.msg);
-				$('#'+btnId).prop('disabled',true);
-				$('#itemCount').text( parseInt( $('#itemCount').text() ) + 1);
-			}
-			
-		})
-	}
-	
-	function check_login()
-	{
-		var result ="<?php isLoggedIn();?>";
-		if(result)
-		{
-			alert(result);
-			window.location.href="login.php";
-		}
-	}
-</script>
 </body>
 </html>

@@ -5,6 +5,10 @@
   include("function.php");
   include "includes/nav_header.php";
   session_start();  
+  
+	if (!isLoggedIn()) {
+		display_error();
+	}
 ?>
 
 <!DOCTYPE html>

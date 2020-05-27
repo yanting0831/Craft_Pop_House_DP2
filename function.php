@@ -26,36 +26,47 @@ function add_cart(){
 	
     global $connection;
     
-    if(isset($_GET['add_cart'])){
+	if(!isLoggedIn())
+	{
+		echo '<script type="text/javascript">
+			alert("INFO: Please log in first.");
+			window.location.href="login.php";
+		</script>';
+	}
+	else
+	{
+		if(isset($_GET['add_cart'])){
 		// print_r("Hekko");
         
-        $ip_add = getRealIpUser();
-        
-        $p_id = $_GET['add_cart'];
-        
-        $product_quantity = $_POST['product_qty'];
-     
-        
-        $check_product = "select * from carts where ip_add='$ip_add' AND p_id='$p_id'";
-        
-        $run_check = mysqli_query($connection,$check_product);
-        
-        if(mysqli_num_rows($run_check)>0){
-            
-            echo "<script>alert('This product has already added in cart')</script>";
-            echo "<script>window.open('details.php?product_id=$p_id','_self')</script>";
-            
-        }else{
-            
-            $query = "insert into carts (p_id,ip_add,qty) values ('$p_id','$ip_add','$product_quantity')";
-            
-            $run_query = mysqli_query($connection,$query);
-            
-            echo "<script>window.open('details.php?product_id=$p_id','_self')</script>";
-            
-        }
-        
-    }
+			$ip_add = getRealIpUser();
+			
+			$p_id = $_GET['add_cart'];
+			
+			$product_quantity = $_POST['product_qty'];
+		 
+			
+			$check_product = "select * from carts where ip_add='$ip_add' AND p_id='$p_id'";
+			
+			$run_check = mysqli_query($connection,$check_product);
+			
+			if(mysqli_num_rows($run_check)>0){
+				
+				echo "<script>alert('This product has already added in cart')</script>";
+				echo "<script>window.open('details.php?product_id=$p_id','_self')</script>";
+				
+			}else{
+				
+				$query = "insert into carts (p_id,ip_add,qty) values ('$p_id','$ip_add','$product_quantity')";
+				
+				$run_query = mysqli_query($connection,$query);
+				
+				echo "<script>window.open('details.php?product_id=$p_id','_self')</script>";
+				
+			}
+			
+		}
+    
+	}
     
 }
 	
@@ -169,6 +180,7 @@ function add_cart(){
 					";
 			}
 			while($row_products=mysqli_fetch_array($run_products))
+
 			{
 				$product_id = $row_products['product_id'];
 				$product_title = $row_products['product_title'];
@@ -210,6 +222,56 @@ function add_cart(){
 			
 			
 			}
+
+									
+									{
+										$product_id = $row_products['product_id'];
+										$seller_id= $row_products['seller_id'];
+										$product_title = $row_products['product_title'];
+										$product_price = $row_products['product_price'];
+										$product_image = $row_products['product_img'];
+										
+										$db = mysqli_connect('localhost', 'root', '', 'cph');
+										$query = "SELECT * FROM users where id='$seller_id'";
+										$results = mysqli_query($db, $query);
+										
+										
+										echo "
+										<div class='col-md-4 col-sm-6 center-responsive'>
+											<div class='product'>
+												<a href='details.php?product_id=$product_id'>
+													<img class='img-responsive' src='images/$product_image'>
+												</a>
+												<div class='text'>
+													<h3> 
+														<a href='details.php?product_id=$product_id'> $product_title
+															
+														</a>
+													<h3>";
+													while ($rows=mysqli_fetch_array($results)){
+														$a = $rows['username'];
+														echo "<h4>Seller UserName: $a</h4>";
+													}
+													
+													echo "<h4>
+														RM$product_price
+													</h4>
+													<p class='button'>
+														<a class='btn btn-default' href='details.php?product_id=$product_id'>
+														View Details
+														</a>
+														<a class='btn btn-primary' href='details.php?product_id=$product_id'>
+															<i class='fa fa-shopping-cart'></i>Add to Cart
+														</a>
+													</p>
+													
+												</div>
+											</div>
+										</div>
+									";
+										
+								}
+
 		}
 	}
 	
