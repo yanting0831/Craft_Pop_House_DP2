@@ -145,10 +145,9 @@
 		</div>
 	</div>
 		
-		
-
 	<?php
 		include "includes/footer.php";
+		subscribe();
 	?>
 	
 	
