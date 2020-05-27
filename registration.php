@@ -65,6 +65,7 @@
 
 	<?php
 		include "includes/footer.php";
+		subscribe();
 	?>
 </body>
 <!-- The core Firebase JS SDK is always required and must be listed first -->
