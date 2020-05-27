@@ -98,15 +98,7 @@ if(isset($_GET['product_id'])){
 							
 					echo '</a>
 						</li>
-					</ul>';
-				
-				echo '<form class="navbar-form navbar-right" action="/action_page.php">
-						  <div class="form-group">
-							<input type="text" class="form-control" placeholder="Search" name="search">
-						  </div>
-						  <button type="submit" class="btn btn-default">Submit</button>
-					</form>';
-				
+					</ul>';		
 				
 			echo '</div>
 		</nav>';
