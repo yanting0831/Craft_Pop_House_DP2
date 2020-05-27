@@ -1,270 +1,303 @@
-<?php
-	require_once("function.php");
-	require_once("functions.php");
-	if (!isLoggedIn()) {
-		display_error();
-	}
-	
+<?php 
+  error_reporting(0);
+  $active='Cart';
+  include('functions.php');
+  include("function.php");
+  include "includes/nav_header.php";
+  session_start();  
 ?>
 
 <!DOCTYPE html>
 
 <html lang="en">
 <head>
-	<title> Product Category </title>
-	<meta charset="utf-8">
-	<meta name="author" content="Eric Kong, Yan Ting">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width = device-width, initial-scale = 1">
-	<meta name="description" content="category page">
-	<meta name="keywords" content="handicrafts">
-	<link rel="stylesheet" type="text/css" href="styles/category.css">
-	<link href="styles/cart.css" rel="stylesheet" type="text/css">
-	<!--Bootstrap CDN-->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-	<!-- Font Awesome -->
+  <title> Product Category </title>
+  <meta charset="utf-8">
+  <meta name="author" content="Eric Kong, Yan Ting">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width = device-width, initial-scale = 1">
+  <meta name="description" content="category page">
+  <meta name="keywords" content="handicrafts">
+  <link rel="stylesheet" type="text/css" href="styles/category.css">
+  <!--Bootstrap CDN-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
-    <script src="includes/jquery-3.2.1.min.js"></script>
-    <style type="text/css">
-    	.alert, #loader {
-    	display: none;
-		}
-    }
-    </style>
 </head>
+   <br><br><br>
 
-<body class="bg-light">
-	<?php
-		include "includes/nav_header.php";
-	?> 
-		
-	<div class="container content">
-		<div class="text-center">
-			<h2 style="margin-top: 0px; padding-top: 0; padding-left: 5px; ">Update your seats</h2>
-		</div>
-		<hr>
-		<?php 
-			require_once('includes/DbConnect.php');
-			$db   = new DbConnect();
-			$conn = $db->connect();
-			
-			$cartCss = 'display: none';
-			$emptyCss = 'display: block';
-			if (count($cartItems) > 0) {
-				$cartCss = 'display: block';
-				$emptyCss = 'display: none';
-			}
-			?>
-		
+ 
 
-		<div class="col-md-10 col-md-offset-1">
-			<div class="alert alert-dismissible" role="alert">
-				<button type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
-				<div id="result"></div>
-			</div>
-			<center><img src="images/loader.gif" id="loader"></center>
-		</div>
+   <div id="content"><!-- #content Begin -->
+       
+            <div id="cart" class="col-md-9"><!-- col-md-9 Begin -->
+               
+               <div class="box"><!-- box Begin -->
+                   
+                   <form action="cart.php" method="post" enctype="multipart/form-data"><!-- form Begin -->
+                       
+                       <h1>Shopping Cart</h1>
+                       
+                       <?php 
+                       
+                         // $ip_add = getRealIpUser();
+                         
+                         $select_cart = "select * from carts";
+                         
+                         $run_cart = mysqli_query($connection, $select_cart);
+                         
+                         $count = mysqli_num_rows($run_cart);
+                       
+                       ?>
+                       
+                       <p class="text-muted">You currently have <?php echo $count; ?> item(s) in your cart</p>
+                       
+                       <div class="table-responsive"><!-- table-responsive Begin -->
+                           
+                           <table class="table"><!-- table Begin -->
+                               
+                               <thead><!-- thead Begin -->
+                                   
+                                   <tr><!-- tr Begin -->
+                                       
+                                       <th>Product Name</th>
+									   <th>Seller ID</th>
+                                       <th>Quantity</th>
+                                       <th>Unit Price</th>
+                                       <th>Delete</th>
+                                       <th>Sub-Total</th>
+                                       
+                                   </tr><!-- tr Finish -->
+                                   
+                               </thead><!-- thead Finish -->
+                               
+                               <tbody><!-- tbody Begin -->
+                                  
+                                  <?php 
+                                   
+                                   $total_with_tax = 0;
+                                   $total_without_tax = 0;
+                                   $tax = 0.05;
+                                   
+                                   while($row_cart = mysqli_fetch_array($run_cart)){
+                                       
+                                     $pro_id = $row_cart['p_id'];
+                                       
+                                     $pro_qty = $row_cart['qty'];
+                                       
+                                       $get_products = "select * from products where product_id='$pro_id'";
+                                       
+                                       $run_products = mysqli_query($connection, $get_products);
+                                       
+                                       while($row_products = mysqli_fetch_array($run_products)){
+                                           
+                                           $product_title = $row_products['product_title'];
+                                           
+                                           $product_image = $row_products['product_img'];
+                                           
+                                           $unit_price = $row_products['product_price'];
+										   $seller_id = $row_products['seller_id'];
 
-		<div id="fullCart" class="row" style="<?=$cartCss?>">
-			<div class="col-sm-12 col-md-10 col-md-offset-1">
-				<table class="table table-hover">
-					<thead>
-					<tr>
-						<th>Workshop</th>
-						<th>Seats</th>
-						<th class="text-center">Price</th>
-						<th class="text-center">Total</th>
-						<td>
-							<button id="clearItems" type="button" class="btn btn-danger">
-								<span class="glyphicon glyphicon-trash"></span> Clear
-							</button>
-						</td>
-					</tr>
-					</thead>
-					<tbody>
-						<?php 
-							$subTotal   = 0;
-							$quantity   = 0;
-							$tax        = 0;
-							foreach ($cartItems as $key => $cartItem) {
-							  $subTotal += $cartItem['totalAmount'];
-							  $quantity += $cartItem['quantity'];
-							?>
-					<tr id="item_<?= $cartItem['id']; ?>">
-						<td class="col-sm-8 col-md-6">
-							<div class="media">
-								<a class="thumbnail pull-left" href="#"> <img class="media-object" src="images/<?= $cartItem['product_img']; ?>" style="width: 72px; height: 72px;"> </a>
-								<div style="padding-left: 10px;" class="media-body">
-									<h4 class="media-heading"><a href="#"><?= $cartItem['title']; ?></a></h4>
-								   <!--  <p><?= substr( $cartItem['description'], 0, 60) . '...'; ?></p> -->
-								</div>
-							</div>
-						</td>
-						<td class="col-sm-1 col-md-1" style="text-align: center">
-							<select onchange="updateCart(<?= $cartItem['pid']; ?>, <?= $cartItem['id']; ?>)" class="form-control" id="seat_<?= $cartItem['id']; ?>">
-								<?php 
-									for ($i=1; $i < 11; $i++) { 
-								?>
-								<option value="<?= $i; ?>" <?php echo ($i == $cartItem['quantity']) ? "selected" : ''; ?>><?= $i; ?></option>
-							<?php } ?>
-							</select>
-							
-						</td>
-						<td class="col-sm-1 col-md-1 text-center">
-							<strong><span style="font-size: 18px;">RM</span><span id="price"><?= number_format( $cartItem['product_price'], 2 ); ?></span>
-							</strong>
-						</td>
-						<td class="col-sm-1 col-md-1 text-center">
-							<strong><span style="font-size: 18px;">RM</span><span id="totalPrice_<?= $cartItem['id']; ?>"><?= number_format( $cartItem['totalAmount'], 2 ); ?></span>
-							</strong>
-						</td>
-						<td class="col-sm-1 col-md-1">
-							<button type="button" class="btn btn-danger" onclick="removeItem(<?= $cartItem['id']; ?>)">
-								<span class="glyphicon glyphicon-remove"></span> Remove
-							</button>
-						</td>
-					</tr>
-				<?php } ?>
-					<tr>
-						<td colspan="4" align="right">	</td>
-						<td class="text-right">
-							<strong><span style="font-size: 18px;">RM</span>
-								<span id="subTotal"><?= number_format( $subTotal, 2 ); ?></span>
-							</strong>
-						</td>
-					</tr>
-					<tr>
-						<td colspan="4" align="right">Taxes</td>
-						<td class="text-right">
-							<strong><span style="font-size: 18px;">RM</span>
-								<span id="taxes"><?= number_format( $tax * $quantity, 2 ); ?></span>
-							</strong>
-						</td>
-					</tr>
-					<tr>
-						<td colspan="4" align="right">Total</td>
-						<td class="text-right">
-							<strong><span style="font-size: 18px;">RM</span>
-								<span id="finalPrice"><?= number_format( $subTotal+($tax * $quantity), 2 ); ?></span>
-							</strong>
-						</td>
-					</tr>
-					<tr>
-						<td colspan="4" align="right">
-							<a href="products.php" class="btn btn-default">
-								<span class="glyphicon glyphicon-shopping-cart"></span> Buy Products
-							</a>
-						</td>
-						<td >
-							<a href="checkout.php" class="btn btn-success">
-								Checkout <span class="glyphicon glyphicon-play"></span>
-							</a>
-						</td>
-					</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
+                                           $unitPriceToFloat = number_format((float)$unit_price, 2, '.', '');
+                                           
+                                           $sub_total = $unitPriceToFloat*$pro_qty;
 
-		<div id="emptyCart" class="row" style="<?=$emptyCss?>">
-			<div class="col-md-12 text-center">
-				<p><strong>Your cart is empty. <a href="products.php">Click here</a> to buy your product.</strong></p>
-			</div>
-		</div>
+                                           $subTotalToFloat = number_format((float)$sub_total, 2, '.', '');
 
-	</div>
+                                           $sub_total_tax = $total_without_tax*$tax;
 
-	<?php
-		include "includes/footer.php";
-	?> 
-</body>
-<script type="text/javascript">
-    function updateCart(pId, cartId) {
-        console.log($('#seat_'+cartId).val())
-        $('#loader').show();
-        $.ajax({
-            url: "action.php",
-            data: "pId=" + pId + "&action=update&quantity="+$('#seat_'+cartId).val(),
-            method: "post"
-        }).done(function(response) {
-            console.log(response)
-            var data = JSON.parse(response);
-            $('#loader').hide();
-            $('.alert').show();
-            if(data.status == 0) {
-                $('.alert').addClass('alert-danger');
-                $('#result').html(data.msg);
-            } else {
-                $('.alert').addClass('alert-success');
-                $('#result').html(data.msg);
-                $('#totalPrice_'+cartId).text( data.data.totalPrice );
-                $('#subTotal').text( data.data.subTotal);
-                $('#taxes').text( data.data.taxes);
-                $('#finalPrice').text( data.data.finalPrice);
-            }
-        })
-    }
+                                           $subTotalTaxToFloat = $subTotalToFloat*$tax;
+                              
+                                           $total_without_tax += $sub_total;
 
-    function removeItem(cartId) {
-        $('#loader').show();
-        $.ajax({
-            url: "action.php",
-            data: "cartId=" + cartId + "&action=remove",
-            method: "post"
-        }).done(function(response) {
-            console.log(response);
-            var data = JSON.parse(response);
-            $('#loader').hide();
-            $('.alert').show();
-            if(data.status == 0) {
-                $('.alert').addClass('alert-danger');
-                $('#result').html(data.msg);
-            } else {
-                $('.alert').addClass('alert-success');
-                $('#result').html(data.msg);
-                $('#item_'+cartId).remove();
-                $('#itemCount').text( data.data.itemCount);
-				
-				alert("INFO:  Cart Item Removed");	
+                                           $totalWithoutTaxToFloat = number_format((float)$total_without_tax, 2, '.', '');
 
-                if (data.data.itemCount == 0.00) {
-                    $('#fullCart').hide();
-                    $('#emptyCart').show();
-                } else {
-                    $('#subTotal').text( data.data.subTotal);
-                    $('#taxes').text( data.data.taxes);
-                    $('#finalPrice').text( data.data.finalPrice);
+                                           $total_with_tax = $total_with_tax + $subTotalTaxToFloat + $subTotalToFloat;
+
+                                           $_SESSION['total']  = $total_with_tax;
+
+                                      ?>
+
+                                   <tr><!-- tr Begin -->
+										<td>
+                                           
+                                         <?php echo $product_title; ?>
+
+										</td>
+										<td>
+											<?php echo $seller_id;?>
+										</td>
+                                       
+										<td>
+                                          
+                                           <?php echo $pro_qty; ?>
+                                           
+										</td>
+                                       
+										<td>
+                                           
+                                            RM <?php echo $unitPriceToFloat; ?>
+                                           
+										</td>
+
+										<td>
+                                           
+                                           <input type="checkbox" name="remove[]" value="<?php echo $pro_id; ?>">
+                                           
+										</td>
+                                       
+										<td>
+                                           
+                                          RM <?php echo $subTotalToFloat; ?>
+                                           
+										</td>
+                                       
+									</tr><!-- tr Finish -->
+                                   
+                                   <?php } 
+
+                                 } ?>
+                                   
+                               </tbody><!-- tbody Finish -->
+                               
+                               <tfoot><!-- tfoot Begin -->
+                                   
+                                   <tr><!-- tr Begin -->
+                                       
+                                       <th colspan="5">Total</th>
+                                       <th colspan="2">RM <?php echo $totalWithoutTaxToFloat; ?></th>
+                                       
+                                   </tr><!-- tr Finish -->
+                                   
+                               </tfoot><!-- tfoot Finish -->
+                               
+                           </table><!-- table Finish -->
+                           
+                       </div><!-- table-responsive Finish -->
+                       
+                       <div class="box-footer"><!-- box-footer Begin -->
+                           
+                           <div class="pull-left"><!-- pull-left Begin -->
+                               
+                               <a href="products.php" class="btn btn-default"><!-- btn btn-default Begin -->
+                                   
+                                   <i class="fa fa-chevron-left"></i> Continue Shopping
+                                   
+                               </a><!-- btn btn-default Finish -->
+                               
+                           </div><!-- pull-left Finish -->
+                           
+                           <div class="pull-right"><!-- pull-right Begin -->
+                               
+                               <button type="submit" name="update" value="Update Cart" class="btn btn-default"><!-- btn btn-default Begin -->
+                                   
+                                   <i class="fa fa-refresh"></i> Update Cart
+                                   
+                               </button><!-- btn btn-default Finish -->
+                                   
+                               <a href="order.php" class="btn btn-primary">
+                                   
+                                   Proceed Checkout <i class="fa fa-chevron-right"></i>
+                                   
+                               </a>
+                               
+                           </div><!-- pull-right Finish -->
+                           
+                       </div><!-- box-footer Finish -->
+                       
+                   </form><!-- form Finish -->
+                   
+               </div><!-- box Finish -->
+               
+               <?php 
+               
+                function update_cart(){
+                    
+                    global $connection;
+                    
+                    if(isset($_POST['update'])){
+                        
+                        foreach($_POST['remove'] as $remove_id){
+                            
+                            $delete_product = "delete from carts where p_id='$remove_id'";
+                            
+                            $run_delete = mysqli_query($connection, $delete_product);
+                            
+                            if($run_delete){
+                                
+                                echo "<script>window.open('cart.php','_self')</script>";
+                                
+                            }
+                            
+                        }
+                        
+                    }
+                    
                 }
-            }
-        })
-    }
-
-    $('#clearItems').click(function(){
-        $('#loader').show();
-        $.ajax({
-            url: "action.php",
-            data: "action=clear",
-            method: "post"
-        }).done(function(response) {
-            console.log(response);
-            var data = JSON.parse(response);
-            $('#loader').hide();
-            $('.alert').show();
-            if(data.status == 0) {
-                $('.alert').addClass('alert-danger');
-                $('#result').html(data.msg);
-            } else {
-                $('.alert').addClass('alert-success');
-                $('#result').html(data.msg);
-				
-				alert("INFO:  Cart Items Cleared");	
-
-                $('#itemCount').text( 0 );
-                $('#fullCart').hide();
-                $('#emptyCart').show();
-            }
-        })
-    })
-
-</script>
+               
+               echo @$up_cart = update_cart();
+               
+               ?>
+                              
+           </div><!-- col-md-9 Finish -->
+           
+		   
+		   
+           <div class="col-md-3"><!-- col-md-3 Begin -->
+               
+               <div id="order-summary" class="box"><!-- box Begin -->
+                   
+                   <div class="box-header"><!-- box-header Begin -->
+                       
+                       <h3>Order Summary</h3>
+                       
+                   </div><!-- box-header Finish -->
+                   
+                   <p class="text-muted"><!-- text-muted Begin -->
+                       
+                       Shipping and additional costs are calculated based on value you have entered
+                       
+                   </p><!-- text-muted Finish -->
+                   
+                   <div class="table-responsive"><!-- table-responsive Begin -->
+                       
+                       <table class="table"><!-- table Begin -->
+                           
+                           <tbody><!-- tbody Begin -->
+                               
+                               <tr><!-- tr Begin -->
+                                   
+                                   <td> Order All Sub-Total </td>
+                                   <th> RM <?php echo $totalWithoutTaxToFloat; ?> </th> </th>
+                                   
+                               </tr><!-- tr Finish -->
+                               
+                               <tr><!-- tr Begin -->
+                                   
+                                   <td> Tax (5%) </td>
+                                   <th> RM <?php echo number_format((float)$total_without_tax*0.05, 2, ".", '') ?> </th>
+                                   
+                               </tr><!-- tr Finish -->
+                               
+                               <tr class="total"><!-- tr Begin -->
+                                   
+                                   <td> Total </td>
+                                   <th> RM <?php echo number_format((float)$total_with_tax, 2, ".", '') ?> </th>
+                                   
+                               </tr><!-- tr Finish -->
+                               
+                           </tbody><!-- tbody Finish -->
+                           
+                       </table><!-- table Finish -->
+                       
+                   </div><!-- table-responsive Finish -->
+                   
+               </div><!-- box Finish -->
+               
+           </div><!-- col-md-3 Finish -->  
+       </div><!-- container Finish -->
+   </div><!-- #content Finish -->
+   
+    
+</body>
 </html>
