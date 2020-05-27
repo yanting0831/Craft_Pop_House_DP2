@@ -1,6 +1,45 @@
+
+<?php 
+
+	include("db.php");
+
+?>
+
+<?php 
+
+if(isset($_GET['product_id'])){
+    
+    $product_id = $_GET['product_id'];
+    
+    $get_product = "select * from products where product_id='$product_id'";
+    
+    $run_product = mysqli_query($connection,$get_product);
+    
+    $row_product = mysqli_fetch_array($run_product);
+    
+    $product_category_id = $row_product['product_category_id'];
+    
+    $product_title = $row_product['product_title'];
+    
+    $product_price = $row_product['product_price'];
+    
+    $product_description = $row_product['product_description'];
+    
+    $product_img = $row_product['product_img'];
+
+    $get_p_cat = "select * from products_categories where product_category_id='$product_category_id'";
+    
+    $run_p_cat = mysqli_query($connection,$get_p_cat);
+    
+    $row_p_cat = mysqli_fetch_array($run_p_cat);
+    
+    $product_category_title = $row_p_cat['product_category_title'];
+    
+}
+
+?>
+
 <?php
-	
-	
 	echo '<nav class="navbar navbar-fixed-top navbar-inverse">
 			<div class="container-fluid">
 				<div class="navbar-header">
@@ -11,7 +50,7 @@
 					<li><a href="products.php">Products</a></li>
 					<li><a href="aboutus.php">About Us</a></li>
 					<li><a href="contacts.php">Contacts</a></li>
-					<li><a href="events.php">Forum</a></li>
+					<li><a href="events.php">Events</a></li>
 				</ul>';
 				
 				//fetch session for login_id
@@ -44,18 +83,18 @@
 								$db   = new DbConnect();
 								$conn = $db->connect();
 									
-								require 'classes/cart.class.php';
-								$objCart = new cart($conn);
-								$objCart->setCid($_SESSION['cid']);
-								$cartItems = $objCart->getAllCartItems();
+								// require 'classes/cart.class.php';
+								// $objCart = new cart($conn);
+								// $objCart->setCid($_SESSION['cid']);
+								// $cartItems = $objCart->getAllCartItems();
 								//$count = count($_SESSION['cart']);
-								$count = count($cartItems);
-								echo "<span id=\"itemCount\" class=\"text-white\">$count</span>";
+								// $count = count($cartItems);
+								// echo "<span id=\"itemCount\" class=\"text-white\">$count</span>";
 							
-							/*else
-							{
-								echo "<span id=\"cart_count\" class=\"text-white\">0</span>";
-							}*/
+							// else
+							// {
+							// 	echo "<span id=\"cart_count\" class=\"text-white\">0</span>";
+							// }
 							
 					echo '</a>
 						</li>
