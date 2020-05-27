@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 26, 2020 at 01:58 PM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.3.9
+-- Generation Time: May 27, 2020 at 05:35 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -39,10 +38,10 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`cat_id`, `cat_name`, `cat_description`) VALUES
-(1, 'haha', '123'),
-(4, 'test', '1234'),
-(5, '11', '22'),
-(6, 'zxcasd', '1214');
+(1, 'Product', 'How about the product provided'),
+(2, 'seller', 'How about seller attitude'),
+(3, 'Interface', 'User Friendly Interface?'),
+(4, 'Feeling', 'Good Feeling?');
 
 --
 -- Indexes for dumped tables
