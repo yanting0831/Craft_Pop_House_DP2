@@ -27,7 +27,7 @@
 										<div class="form-group">
 											<label>Product Name</label>
 											<input type="text" name="edit_product_name" value="<?php echo $row['product_title']?>" placeholder="Enter Product Name" class="form-control">
-										  </div>
+										</div>
 										  <div class="form-group">
 											<label>Product Category</label>
 												<select name="edit_product_category" value="<?php echo $row['product_category']?>" class="form-control"><!-- form-control Begin -->
