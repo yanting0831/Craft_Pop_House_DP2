@@ -104,8 +104,8 @@
 									ARE U SURE U WANT TO ADD NEW PRODUCT.
 								  </div>
 								  <div class="modal-footer">
-									<button type="button" class="btn btn-primary form-control" data-dismiss="modal">Close</button>
-									<input name="submit" value="Insert Product" type="submit" class="btn btn-primary form-control"> 
+									<button type="button" class="btn btn-primary " data-dismiss="modal">Close</button>
+									<input name="submit" value="Insert Product" type="submit" class="btn btn-primary "> 
 								  </div>
 								</div>
 							  </div>
