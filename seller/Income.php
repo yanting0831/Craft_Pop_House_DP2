@@ -69,13 +69,13 @@
 							  if(mysqli_num_rows($query_run)>0)
 							  {
 								  while($row = mysqli_fetch_assoc($query_run))
-										if( $row['qty']==$_SESSION['sid'])
+										if( $row['seller_id']==$_SESSION['sid'])
 								  {
 									?>
 									
 								<tr>
 	
-									<td><?php echo $_SESSION['sid']; ?></td>
+									<td><?php echo $row['seller_id']; ?></td>
 									<td><?php echo $row['due_amount']; ?></td>
 									<td><?php echo $row['invoice_no']; ?></td>
 									<td><?php echo $row['qty']; ?></td>
