@@ -35,11 +35,11 @@
 						</div>
 					<ul class="navbar-nav flex-column mt-4">
 						<li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 current"><i class="fa fa-home text-light fa-lg mr-3"></i>Home</a></li>
-						<li class="nav-item"><a href="http://localhost/Craft_Pop_House_DP2/seller/Category.php" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-book text-light fa-lg mr-3"></i>Category</a></li>
-						<li class="nav-item"><a href="http://localhost/Craft_Pop_House_DP2/seller/SellerProduct.php" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-gift text-light fa-lg mr-3"></i>Product</a></li>
-											
-						<li class="nav-item"><a href="http://localhost/Craft_Pop_House_DP2/seller/Income.php" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-institution text-light fa-lg mr-3"></i>Income</a></li>						
-						<li class="nav-item"><a href="http://localhost/Craft_Pop_House_DP2/seller/InsertProduct.php" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-briefcase text-light fa-lg mr-3"></i>Insert Product</a></li>
+						<li class="nav-item"><a href="http://craftpophouse.byethost3.com/seller/Category.php" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-book text-light fa-lg mr-3"></i>Category</a></li>
+						<li class="nav-item"><a href="http://craftpophouse.byethost3.com/seller/SellerProduct.php" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-gift text-light fa-lg mr-3"></i>Product</a></li>
+						<li class="nav-item"><a href="http://craftpophouse.byethost3.com/seller/Income.php" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-institution text-light fa-lg mr-3"></i>Income</a></li>						
+						<li class="nav-item"><a href="http://craftpophouse.byethost3.com/seller/InsertProduct.php" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-briefcase text-light fa-lg mr-3"></i>Insert Product</a></li>
+						<li class="nav-item"><a href="http://craftpophouse.byethost3.com/" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-book text-light fa-lg mr-3"></i>Shop Page</a></li>
 					</ul>
 					<div class="col-xl-10 col-lg-9 col-md-8 ml-auto bg-dark fixed-top py-2 top-navbar">
 						<div class="row align-items-center">
