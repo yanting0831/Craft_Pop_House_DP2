@@ -38,12 +38,12 @@
 					<!--sidebar-->
 					<ul class="navbar-nav flex-column mt-4">
 						<li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 current"><i class="fa fa-home text-light fa-lg mr-3"></i>Home</a></li>
-						<li class="nav-item"><a href="http://craftpophouse.byethost3.com/admin/Category.php" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-book text-light fa-lg mr-3"></i>Category</a></li>
-						<li class="nav-item"><a href="http://craftpophouse.byethost3.com/admin/Aproduct.php" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-gift text-light fa-lg mr-3"></i>Product</a></li>
-						<li class="nav-item"><a href="http://craftpophouse.byethost3.com/admin/Admin.php" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-child text-light fa-lg mr-3"></i>Buyer</a></li>
-						<li class="nav-item"><a href="http://craftpophouse.byethost3.com/admin/SellerList.php" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-child text-light fa-lg mr-3"></i>Seller</a></li>						
-						<li class="nav-item"><a href="http://craftpophouse.byethost3.com/admin/IncomeCPH.php" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-institution text-light fa-lg mr-3"></i>Transcation List</a></li>						
-						<li class="nav-item"><a href="http://craftpophouse.byethost3.com/admin/slide.php" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-bell text-light fa-lg mr-3"></i>Announcement</a></li>
+						<li class="nav-item"><a href="http://localhost/Craft_Pop_House_DP2/admin/Category.php" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-book text-light fa-lg mr-3"></i>Category</a></li>
+						<li class="nav-item"><a href="http://localhost/Craft_Pop_House_DP2/admin/Aproduct.php" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-gift text-light fa-lg mr-3"></i>Product</a></li>
+						<li class="nav-item"><a href="http://localhost/Craft_Pop_House_DP2/admin/Admin.php" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-child text-light fa-lg mr-3"></i>Buyer</a></li>
+						<li class="nav-item"><a href="http://localhost/Craft_Pop_House_DP2/admin/SellerList.php" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-child text-light fa-lg mr-3"></i>Seller</a></li>						
+						<li class="nav-item"><a href="http://localhost/Craft_Pop_House_DP2/admin/IncomeCPH.php" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-institution text-light fa-lg mr-3"></i>Transcation List</a></li>						
+						<li class="nav-item"><a href="http://localhost/Craft_Pop_House_DP2/admin/slide.php" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-bell text-light fa-lg mr-3"></i>Announcement</a></li>
 					</ul>
 					<div class="col-xl-10 col-lg-9 col-md-8 ml-auto bg-dark fixed-top py-2 top-navbar">
 						<div class="row align-items-center">
