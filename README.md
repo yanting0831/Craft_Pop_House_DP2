@@ -12,3 +12,9 @@ to our lecturer: mercy plz , tqs
 
 For database, Please just import the cph.sql into phpmyadmin.
 And enjoy the website ! :P
+
+To access into admin, seller and buyer please change the user_type in users table database.
+Modifying the user_type into 'admin', 'seller' or 'user'.
+Admin user_type will lead your login into admin site.
+Seller user_type will lead your login into seller site.
+User (buyer) user_type will lead your login into the website.
