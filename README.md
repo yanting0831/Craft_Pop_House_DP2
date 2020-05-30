@@ -1,5 +1,5 @@
 # Craft_Pop_House_DP2
-Dp2 Project
+Dp2 (SWE30010) Project
 Creating a web application for Craft Pop House
 This is a site where handicrafts items are sold.
 There are three user types: admin, buyer and seller
