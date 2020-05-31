@@ -94,7 +94,7 @@
 													</button>
 												  </div>
 												  <div class="modal-body">
-													ARE U SURE U WANT TO DELETE.
+													ARE U SURE U WANT TO DELETE?
 												  </div>
 												  <div class="modal-footer">
 													<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
