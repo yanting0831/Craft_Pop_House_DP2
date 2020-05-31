@@ -31,7 +31,7 @@
    <br><br><br>
 
  
-
+<div class="container content">
    <div id="content"><!-- #content Begin -->
        
             <div id="cart" class="col-md-9"><!-- col-md-9 Begin -->
@@ -306,6 +306,9 @@
        </div><!-- container Finish -->
    </div><!-- #content Finish -->
    
-    
+    <?php
+		include "includes/footer.php";
+		subscribe();
+	?>
 </body>
 </html>
