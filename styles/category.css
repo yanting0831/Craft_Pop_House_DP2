@@ -63,7 +63,26 @@ input[type="submit"]{
 	border: 1px solid transparent;
 }
 
+footer
+{
+    margin-top: 5%;
+    background-color:#252525;
+    color: white;
+}
 
+html, body {
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+.content {
+    flex: 1 0 auto;
+}
+.footer {
+    flex-shrink: 0;
+}
 
 .breadcrumb{
 	padding:8px 15px;
