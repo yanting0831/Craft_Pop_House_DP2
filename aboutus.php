@@ -1,5 +1,6 @@
 <?php 
 	include('functions.php');
+	include("function.php");
 ?>
 
 <!DOCTYPE html>
@@ -39,6 +40,7 @@
 	</body>
 	<?php
 		include "includes/footer.php";
+		subscribe();
 	?>
 
 </html>
